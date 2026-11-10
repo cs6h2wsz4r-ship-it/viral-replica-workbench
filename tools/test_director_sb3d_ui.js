@@ -1,0 +1,43 @@
+/* SB3d uses the real renderers with synthetic state, never a live model. */
+const assert=require('node:assert/strict');
+const {setup}=require('./test_storyboard_sb1_ui');
+const {seed}=require('./test_v2_ui');
+async function main(){
+ const t=setup();
+ seed(t);
+ t.run(` P.director={format_version:3,summary:'先事故后救援',split_reason:'室外切到室内 <safe>',skip_cells:['c09','c10'],questions:['商品功能不确定'],warnings:[],segments:[{id:'d01',title:'求助',cells:['c01','c02'],what:'老人抬起手腕 <safe>',mode:'video',mode_reason:'保住摔倒动作',images:['c01','C1','product'],gen_images:['c01','C1','product'],timeline:[],check:['手表朝外','儿子扶稳父亲'],source_start:0,source_end:5.4,source_seconds:5.4,target_seconds:6,duration:6,stretch:6/5.4,prompt:'Assembled English brief',needs_rewrite:false}]};P.director_status={ready:true};directorDrafts.clear();renderSteps()`);
+ const card=t.$('[data-director-card="d01"]'),details=card.querySelector('details');
+ assert.equal(details.querySelector('summary').textContent,'完整提示词');assert.equal(details.hasAttribute('open'),false);details.open=true;
+ assert.equal(details.querySelector('[data-director-mode]'),null);assert.equal(details.querySelector('[data-director-ref]'),null);
+ assert.ok(details.querySelector('[data-director-prompt]'));assert.ok(details.querySelector('[data-director-count]'));
+ assert.equal(details.querySelector('[data-director-rewrite]').textContent,'重新写这一段（一次推理）');
+ for(const text of ['拍什么：老人抬起手腕 <safe>','怎么拍：原片视频 + 目标画面和照片','生成后重点看：'])assert.ok(card.textContent.includes(text),text);
+ assert.ok(t.$('#selectedSegmentHeader').textContent.includes('原片 0.0–5.4 秒 → 生成 6 秒'));
+ assert.equal(card.querySelector('safe'),null);
+ assert.equal(t.$$('[data-director-merge], [data-director-split]').length,0);
+ assert.equal(card.querySelectorAll('.director-panels button').length,0);
+ assert.equal(card.querySelectorAll('[data-director-materials] [data-director-zoom]').length,3);
+ await t.click(t.$('[data-director-zoom]'));assert.equal(t.$('#cameraLightbox').hidden,false);
+ assert.doesNotMatch(t.$('#directorView').textContent,/为什么是|平台页面/);
+ assert.match(t.$('#segmentAdvanced').textContent,/为什么是 2 段/);
+ assert.match(t.$('#directorView').textContent,/导演有疑问（可以回第 03 步补充说明，再重新生成）：商品功能不确定/);
+ assert.doesNotMatch(t.$('#directorView').textContent,/取舍：|风险等级|开头状态|结尾状态|成片取|为什么这样分/);
+ t.run(`P.director.segments[0].needs_rewrite=true;P.director.segments[0].rewrite_reason='提示词不能包含内部格号 <safe>';directorDrafts.clear();renderSteps()`);
+ assert.equal(t.$('[data-director-card] .director-rewrite-notice'),null,'stale prompt notices are handled by preparation');
+ assert.equal(t.run('comparisonNeedsPrompt(P.segments_plan.segments[0])'),true);
+ assert.ok(t.$('[data-director-rewrite]'),'manual rewrite is retained in advanced prompt details');
+ assert.equal(t.$('[data-director-card] safe'),null);assert.ok(t.$('[data-director-preview]'));
+ t.run(`P.director.segments[0].mode='image';P.director.segmentation_warning='模型两次都分成了 3 段，比这条视频需要的多。可以点“重新生成导演方案”再试一次。';P.director.warnings=[P.director.segmentation_warning];P.director_status.stale=true;P.director_status.segments=[{id:'d01',stale:true}];directorDrafts.clear();renderSteps()`);
+ assert.match(t.$('#directorView').textContent,/怎么拍：原片视频 \+ 目标画面和照片/,'current segment choice takes precedence over an expired director mode');
+ t.run(`P.segments_plan.segments[0].mode='image';renderSteps()`);
+ assert.match(t.$('#directorView').textContent,/怎么拍：只用目标画面和照片/);
+ assert.doesNotMatch(t.$('#directorView').textContent,/模型两次都分成了 3 段/);
+ assert.doesNotMatch(t.$('#directorView').textContent,/上游内容改过/);assert.equal(t.run('comparisonNeedsPrompt(P.segments_plan.segments[0])'),true);
+ t.run(`delete P.director.format_version;directorDrafts.clear();renderSteps()`);
+ assert.equal(t.$$('[data-director-card]').length,0);assert.equal(t.$('[data-director-prompt]'),null);
+ assert.ok(t.$('[data-director-preview]'));assert.equal(t.$('[data-comparison-batch="prompts"]'),null);
+ assert.doesNotMatch(t.$('#directorView').textContent,/先事故后救援|为什么是|导演有疑问/);
+ console.log('PASS SB3d: compact cards, closed adjustments, actionable notices, skip suffix, legacy gate');
+}
+if(require.main===module)main().catch(e=>{console.error(e);process.exitCode=1;});
+module.exports={main};

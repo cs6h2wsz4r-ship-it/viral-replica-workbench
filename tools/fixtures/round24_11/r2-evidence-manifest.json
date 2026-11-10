@@ -1,0 +1,8 @@
+{
+  "provenance": "Read-only snapshot of existing r2 report and locally generated ASR; no new transcription or model requests. Project records remain unchanged.",
+  "recorded_asr_path": "projects/p1028222359-9b21/jimmy-runs/p1028222359-9b21-seg-01-r2/motion-check/generated-transcript.json",
+  "fixture_sha256": {
+    "r2-generated-transcript.json": "762e649dfed54986487039b981fc19247d975acbf45ca8e0ca7af0d0ea601627",
+    "r2-motion-report.json": "c03c1fd5bf69dfa5b0cdc2a0e6b5e32471fca8464d4d08f3da922c02fdc3bd76"
+  }
+}

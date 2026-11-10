@@ -1,0 +1,172 @@
+{
+  "engine": "faster-whisper medium int8 + wav2vec2 alignment",
+  "language": "en",
+  "timing": "forced_alignment",
+  "segments": [
+    {
+      "start": 0.081,
+      "end": 1.88,
+      "text": "Excuse me, your skirt is beautiful.",
+      "words": [
+        {
+          "word": "Excuse",
+          "start": 0.081,
+          "end": 0.445
+        },
+        {
+          "word": "me,",
+          "start": 0.485,
+          "end": 0.627
+        },
+        {
+          "word": "your",
+          "start": 0.667,
+          "end": 0.829
+        },
+        {
+          "word": "skirt",
+          "start": 0.889,
+          "end": 1.193
+        },
+        {
+          "word": "is",
+          "start": 1.273,
+          "end": 1.354
+        },
+        {
+          "word": "beautiful.",
+          "start": 1.435,
+          "end": 1.88
+        }
+      ]
+    },
+    {
+      "start": 2.16,
+      "end": 3.418,
+      "text": "Oh, thank you so much.",
+      "words": [
+        {
+          "word": "Oh,",
+          "start": 2.16,
+          "end": 2.282
+        },
+        {
+          "word": "thank",
+          "start": 2.424,
+          "end": 2.647
+        },
+        {
+          "word": "you",
+          "start": 2.688,
+          "end": 2.809
+        },
+        {
+          "word": "so",
+          "start": 2.911,
+          "end": 3.114
+        },
+        {
+          "word": "much.",
+          "start": 3.175,
+          "end": 3.418
+        }
+      ]
+    },
+    {
+      "start": 4.08,
+      "end": 5.72,
+      "text": "It's knit and comfortable.",
+      "words": [
+        {
+          "word": "It's",
+          "start": 4.08,
+          "end": 4.222
+        },
+        {
+          "word": "knit",
+          "start": 4.384,
+          "end": 4.728
+        },
+        {
+          "word": "and",
+          "start": 4.951,
+          "end": 5.072
+        },
+        {
+          "word": "comfortable.",
+          "start": 5.173,
+          "end": 5.72
+        }
+      ]
+    },
+    {
+      "start": 6.321,
+      "end": 7.199,
+      "text": "I love the skirt.",
+      "words": [
+        {
+          "word": "I",
+          "start": 6.321,
+          "end": 6.382
+        },
+        {
+          "word": "love",
+          "start": 6.464,
+          "end": 6.689
+        },
+        {
+          "word": "the",
+          "start": 6.729,
+          "end": 6.831
+        },
+        {
+          "word": "skirt.",
+          "start": 6.872,
+          "end": 7.199
+        }
+      ]
+    },
+    {
+      "start": 8.1,
+      "end": 9.7,
+      "text": "The fabric is perfect for this weather.",
+      "words": [
+        {
+          "word": "The",
+          "start": 8.1,
+          "end": 8.181
+        },
+        {
+          "word": "fabric",
+          "start": 8.222,
+          "end": 8.586
+        },
+        {
+          "word": "is",
+          "start": 8.627,
+          "end": 8.688
+        },
+        {
+          "word": "perfect",
+          "start": 8.768,
+          "end": 9.113
+        },
+        {
+          "word": "for",
+          "start": 9.133,
+          "end": 9.254
+        },
+        {
+          "word": "this",
+          "start": 9.275,
+          "end": 9.396
+        },
+        {
+          "word": "weather.",
+          "start": 9.437,
+          "end": 9.7
+        }
+      ]
+    }
+  ]
+}

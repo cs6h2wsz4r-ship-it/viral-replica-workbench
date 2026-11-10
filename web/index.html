@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>爆款复刻工作台</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="logo">◐</span> 爆款复刻工作台</div>
+  <div class="project-switch">
+    <select id="projectSelect"></select>
+    <button class="ghost" id="newProjectBtn">＋ 新项目</button>
+    <button class="danger" id="deleteProjectBtn" title="删除当前项目及其所有视频和结果">删除项目</button>
+  </div>
+  <button class="ghost" id="statusToggle" aria-expanded="false" aria-controls="statusPills">状态</button>
+  <div class="status" id="statusPills"></div>
+  <button class="ghost" data-library-open>素材库</button>
+  <button class="ghost" id="settingsBtn">设置</button>
+</header>
+
+<div class="stale" id="staleBanner" hidden></div>
+<main id="app">
+  <section class="hero" id="emptyState" hidden>
+    <h1>先拆解对标视频，再生成可控的新版本</h1>
+    <p>上传参考视频 → 本地转录、切镜头、取关键帧 → 多模态模型拆成 7 张卡 → 换成你的人和货 → 分段交给 三方渠道（Seedance 2.0 Mini）生成 → 拼成片。</p>
+    <button id="heroNew">新建第一个项目</button>
+  </section>
+
+  <section id="batchBoard" class="panel batch-board" aria-label="批量看板" hidden></section>
+  <div id="workspace" hidden>
+    <section id="workflow" class="workflow" aria-label="项目流程"></section>
+    <div class="legacy-notice" id="legacyProjectBanner" role="status" hidden></div>
+    <div id="fissionBanner" class="fission-banner" hidden></div>
+      <div class="titlebar">
+      <span class="crumb">视频自动化 / 爆款复刻</span>
+      <h1 id="projectName" contenteditable="true" spellcheck="false"></h1>
+      <p class="sub">先拆解对标视频的角色、剧情、产品和镜头关系，再生成可控的新版本。每一步都可以手动改。</p>
+    </div>
+
+    <!-- 01 -->
+    <section class="panel" id="step-1" data-step="1">
+      <header><span class="no">01</span><div><h2>上传对标视频</h2><p>文件只保存在你的电脑上，上传后自动读取视频信息。</p></div></header>
+      <label class="drop" id="sourceDrop">
+        <input type="file" id="sourceInput" accept="video/*" hidden>
+        <strong>拖入或点击选择参考视频</strong><span>mp4 / mov，建议 60 秒以内</span>
+      </label>
+      <div class="source-view" id="sourceView"></div>
+    </section>
+
+    <!-- 02 -->
+    <section class="panel" id="step-2" data-step="2">
+      <header><span class="no">02</span><div><h2>拆解对标视频</h2><p>先识别台词和镜头切换，再看整片、逐段分析动作和画面。可以换模型再拆一次对比。</p></div></header>
+      <div class="row wrap">
+        <label>多模态模型 <select id="analyzeProvider"></select></label><span class="legacy-route" data-legacy-route="analysis"></span>
+        <label class="file-inline">已有字幕？上传 SRT 代替转录 <input type="file" id="srtInput" accept=".srt,.txt"></label>
+        <label class="check"><input type="checkbox" id="skipAsr"> 跳过转录（无口播的视频）</label>
+        <label class="check" title="把原视频压成低帧率小文件整段发给 Gemini，动作和节奏判断更准；只对三方渠道 Gemini 渠道生效"><input type="checkbox" id="sendVideo" disabled> 整段视频发给 Gemini（实验）</label>
+        <span class="hint" id="sendVideoHint">当前模型会把视频切成多张截图来分析（只有三方渠道 Gemini 能直接看整段视频）</span>
+        <button id="analyzeBtn">开始拆解</button>
+      </div>
+      <div class="runlog" id="analysisSteps"></div>
+      <div id="framesStrip"></div>
+      <div class="versions" id="breakdownVersions"></div>
+      <details id="breakdownDetails"><summary>展开拆解卡片</summary><div class="cards" id="breakdownCards"></div></details>
+      <div id="storyboardView"></div>
+    </section>
+
+    <!-- 03 -->
+    <section class="panel" id="step-3" data-step="3">
+      <header><span class="no">03</span><div><h2>选角和商品</h2><p>决定原片里谁要换、换成谁，商品换成什么。设定好后在下一步对照修改。</p></div></header>
+      <h3>这个项目的照片</h3>
+      <div class="row wrap">
+        <label class="drop small"><input type="file" id="assetInput" accept="image/*" multiple hidden><strong>＋ 图片素材</strong><span>人物 / 商品 / 场景</span></label>
+        <button class="ghost" data-library-project>从素材库添加</button>
+        <label class="drop small"><input type="file" id="audioInput" accept="audio/*" hidden><strong>＋ 声线样本</strong><span>1–15 秒干净人声，推荐 5 秒</span></label>
+      </div>
+      <div class="assets" id="assetGrid"></div>
+      <div id="replacementForm"></div>
+      <div id="cameraLightbox" class="camera-lightbox" role="dialog" aria-modal="true" aria-label="图片放大查看" hidden></div>
+      <div class="row end"><span class="hint" id="repHint"></span><button id="saveReplacements">保存</button></div>
+    </section>
+
+    <section class="panel" id="step-4" data-step="4">
+      <header><span class="no">04</span><div><h2>对照和修改</h2><p>选中哪段改哪段；点右边某一镜，只改这一镜。</p></div><div id="comparisonBatchActions" class="row wrap"></div></header>
+      <div id="segmentPlanView"></div>
+      <div id="segmentBar" class="segment-bar"></div>
+      <div id="comparisonView"></div>
+      <section id="selectedSegment">
+        <div id="segmentFoot"></div><div id="segmentCellEditor"></div>
+        <div id="segmentAdvanced" hidden>
+          <div id="selectedSegmentHeader"></div>
+          <section class="segment-work-block"><div id="newStoryboards"></div></section>
+          <section class="segment-work-block"><div id="directorView"></div></section>
+        </div>
+      </section>
+    </section>
+    <section class="panel" id="step-5" data-step="5"><header><span class="no">05</span><div><h2>成片</h2><p>把每段选定的结果按顺序直接拼成整片预览。</p></div></header><div id="finalPreviewView"></div></section>
+
+    <details id="legacyWorkflow" class="legacy-workflow"><summary>旧流程（过渡用，新流程做完后删除）</summary>
+    <!-- 04 -->
+    <section class="panel" id="legacy-step-4">
+      <header><span class="no">旧</span><div><h2>新脚本生成</h2><p>生成创作方案和可表演段落：口播包含台词与表演方向，无对白画面使用微故事。默认从转录逐字保留台词；时长以原片区间为准，只在长度上限、真实镜头或场景变化、参考图变化时切段。</p></div></header>
+      <div class="row wrap">
+        <label>模型 <select id="scriptProvider"></select></label><span class="legacy-route" data-legacy-route="script"></span><span class="legacy-route" data-legacy-route="dialogue_proposal"></span>
+        <label>台词 <select id="dialogueMode"><option value="keep">保留原片台词</option><option value="rewrite">按要求改写</option></select></label>
+        <label>复刻区间 <input id="rangeStart" type="number" step="0.1" placeholder="起" class="num"> – <input id="rangeEnd" type="number" step="0.1" placeholder="止" class="num"> 秒</label>
+      </div>
+      <textarea id="scriptInstruction" rows="2" placeholder="额外要求，例如：开场改成更直接的痛点，后半段不动；或：整体控制在 15 秒内"></textarea>
+      <div class="row end"><button id="scriptBtn">生成新脚本</button></div>
+      <span class="legacy-route" data-legacy-route="camera_prompt"></span><span class="legacy-route" data-legacy-route="camera_image"></span>
+      <div id="scriptFailure" role="status"></div>
+      <div id="scriptView"></div>
+    </section>
+
+    <!-- 05 -->
+    <section class="panel" id="legacy-step-5">
+      <header><span class="no">旧</span><div><h2>分段生成</h2><p>每段先生成预览，确认后才付费生成视频。哪段不满意只重做哪段。</p></div></header>
+      <span class="legacy-route" data-legacy-route="check"></span><span class="legacy-route" data-legacy-route="video"></span>
+      <div id="taskCards"></div>
+    </section>
+
+    <!-- 06 -->
+    <section class="panel" id="legacy-step-6">
+      <header><span class="no">旧</span><div><h2>成片</h2><p>按顺序拼接每段选中的版本。字幕要不要加，看完成片再决定。</p></div></header>
+      <div id="finalView"></div>
+    </section>
+
+    </details>
+
+    <section class="panel log-panel">
+      <header><div><h2>运行记录</h2></div></header>
+      <div class="log" id="logView"></div>
+    </section>
+  </div>
+</main>
+
+<section id="fissionPanel" class="fission-panel" role="dialog" aria-modal="true" aria-label="批量裂变" tabindex="-1" hidden></section>
+<section id="libraryPanel" class="fission-panel library-panel" role="dialog" aria-modal="true" aria-label="素材库" tabindex="-1" hidden></section>
+
+<dialog id="settingsDialog">
+  <form method="dialog" id="settingsForm">
+    <h2>设置</h2>
+    <p class="hint">Key 只保存在这台电脑上，不会写进项目文件。</p>
+    <div id="settingsFields"></div>
+    <div class="row end"><button value="cancel" class="ghost">取消</button><button id="saveSettings" value="default">保存</button></div>
+  </form>
+</dialog>
+
+<div id="storyboardLightbox" class="storyboard-lightbox" role="dialog" aria-modal="true" aria-labelledby="storyboardLightboxTitle" hidden></div>
+<div id="motionCheckModal" class="motion-check-modal" role="dialog" aria-modal="true" aria-labelledby="motionCheckTitle" hidden></div>
+<div id="pageConfirmation" class="page-confirmation" role="dialog" aria-modal="true" aria-labelledby="pageConfirmationTitle" hidden></div>
+<div class="toast" id="toast"></div>
+<script src="/static/app.js"></script>
+</body>
+</html>

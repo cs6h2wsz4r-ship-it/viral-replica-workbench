@@ -1,0 +1,61 @@
+{
+  "description": "Frozen project JSON only; real media remain read-only in projects and are checksum-verified before copying to runtime/temp. Only the listed main-project assets and image record were removed; all other records are preserved.",
+  "media_source_override": "ROUND24_MEDIA_SOURCE_DIR overrides the media source directory for p1029100000-r18v only; project.json is never read from that directory.",
+  "projects": {
+    "p1029100000-r18v": {
+      "source_project": "projects/p1029100000-r18v/project.json",
+      "source_project_sha256": "47b3aa6ee4124f8d9f3953602f135261e1a817998bc5aab310b78d8980f70a4d",
+      "fixture_sha256": "46614e02d9d11c756e7a12c63e0f7375b086b30f8583fef214009368bd852fdf",
+      "removed_asset_ids": [
+        "a1029120031-ac7d"
+      ],
+      "removed_image_ids": [
+        "img1029120047-7469"
+      ],
+      "media_sha256": {
+        "source/source.mp4": "35ba2f6a069909a6971ab8615b1e9cd8166ad0b8eadcb720774ae8102508e8cc",
+        "assets/a1028222447-602d.png": "2f86676a3c59ff4ac949a9c01fe63ac96c50c2cdffead5c47132023355208315",
+        "assets/a1028222505-83b0.png": "7cecc0bba9ef94920074fe2a0c2d1a11f1b7da1994ec6c52c7829cd163d7117b",
+        "assets/frame-C1-0.50.jpg": "348790088e10066fefb5229d0ce07981263ec28134e4f98eb197bd30284a9b58",
+        "assets/img1029085721-2d86.png": "0dc1ab03dc3add0b3d1c5e9a4681930b0ff5dd6d573cf218b315450583343c2d",
+        "assets/frame-C1-3.36.jpg": "92ad01c980a30dfbb3d9b1547170865203e2e077a32f87f90eaa4ca7555dc4ee"
+      }
+    },
+    "p1028222359-9b21": {
+      "source_project": "projects/p1028222359-9b21/project.json",
+      "source_project_sha256": "ab166c0d4bd961189fb15d5ecc4bdef84855fbc90eb8cd7eebdde1b88220f62d",
+      "fixture_sha256": "ab166c0d4bd961189fb15d5ecc4bdef84855fbc90eb8cd7eebdde1b88220f62d",
+      "removed_asset_ids": [],
+      "removed_image_ids": [],
+      "media_sha256": {}
+    },
+    "p1027232428-166a": {
+      "source_project": "projects/p1027232428-166a/project.json",
+      "source_project_sha256": "36e9e0890841a6665f46e7c15384ff443ec98be2cc3db79837ac7fa4eb50ffe4",
+      "fixture_sha256": "36e9e0890841a6665f46e7c15384ff443ec98be2cc3db79837ac7fa4eb50ffe4",
+      "removed_asset_ids": [],
+      "removed_image_ids": [],
+      "media_sha256": {}
+    },
+    "p1027195039-ccc0": {
+      "source_project": "projects/p1027195039-ccc0/project.json",
+      "source_project_sha256": "daa34c20896ce6fab487e47dba0dcb0e322fec7bec287759e3181e106fd7c2ed",
+      "fixture_sha256": "daa34c20896ce6fab487e47dba0dcb0e322fec7bec287759e3181e106fd7c2ed",
+      "removed_asset_ids": [],
+      "removed_image_ids": [],
+      "media_sha256": {
+        "assets/a1027195039-9e4e.png": "365a0954cd86a65179c53ff2e99a59fb1c8e1f5bc3d2a80de1eedeb3cafbfd53",
+        "assets/a1027195039-125e.png": "75e6fbdc64bbfdd390e1f09ab2d5be863d1c763bff31dd0b3c41c12c400330fd",
+        "assets/frame-C1-0.50.jpg": "6fa4e5dac2b653598d86fc03b87f292666557fe5eeb1b7dbf78f143cc83e58f5"
+      }
+    },
+    "p1027180021-c16a": {
+      "source_project": "projects/p1027180021-c16a/project.json",
+      "source_project_sha256": "9dffd962cbf0570de4bbe11fbad727e1c9568828b37e7f620e483f82e03a5345",
+      "fixture_sha256": "9dffd962cbf0570de4bbe11fbad727e1c9568828b37e7f620e483f82e03a5345",
+      "removed_asset_ids": [],
+      "removed_image_ids": [],
+      "media_sha256": {}
+    }
+  }
+}

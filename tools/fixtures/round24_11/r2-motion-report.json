@@ -1,0 +1,293 @@
+{
+  "task": {
+    "id": "seg-01",
+    "source_start": 0,
+    "source_end": 10.052,
+    "blank_captions": false,
+    "dialogue_lines": [
+      {
+        "start": 0.162,
+        "end": 1.979,
+        "speaker": "C2",
+        "onScreen": false,
+        "evidence": "声音来自镜头外，语气像在停车场临时向女子搭话，女子当时无说话口型。",
+        "text": "Excuse me, your skirt is beautiful."
+      },
+      {
+        "start": 2.782,
+        "end": 3.937,
+        "speaker": "C1",
+        "onScreen": true,
+        "evidence": "女子转向镜头后开口回应称赞，口型与“thank you”一致。",
+        "text": "Oh, thank you so much."
+      },
+      {
+        "start": 5.201,
+        "end": 6.56,
+        "speaker": "C1",
+        "onScreen": true,
+        "evidence": "女子面向镜头低头看裙身并配合手势说出卖点，口型与画面同步。",
+        "text": "It's knit and comfortable."
+      },
+      {
+        "start": 6.76,
+        "end": 7.578,
+        "speaker": "C1",
+        "onScreen": true,
+        "evidence": "女子正面面对镜头做小幅手势说出该句，口型可见。",
+        "text": "I love the skirt."
+      },
+      {
+        "start": 8.14,
+        "end": 9.72,
+        "speaker": "C1",
+        "onScreen": true,
+        "evidence": "女子持续正面口播并以手势辅助，句尾露出微笑，口型与台词对齐。",
+        "text": "The fabric is perfect for this weather."
+      }
+    ],
+    "dialogue": "Excuse me, your skirt is beautiful.\nOh, thank you so much.\nIt's knit and comfortable.\nI love the skirt.\nThe fabric is perfect for this weather."
+  },
+  "run": {
+    "rev": "r2",
+    "mode": "video",
+    "source_range": [
+      0.0,
+      10.052
+    ],
+    "motion_source": {
+      "file": "source/source.mp4",
+      "sha256": "35ba2f6a069909a6971ab8615b1e9cd8166ad0b8eadcb720774ae8102508e8cc",
+      "transcript": {
+        "engine": "faster-whisper medium int8 + wav2vec2 alignment",
+        "language": "en",
+        "timing": "forced_alignment",
+        "segments": [
+          {
+            "start": 0.162,
+            "end": 1.979,
+            "text": "Excuse me, your dress is beautiful.",
+            "words": [
+              {
+                "word": "Excuse",
+                "start": 0.162,
+                "end": 0.586
+              },
+              {
+                "word": "me,",
+                "start": 0.626,
+                "end": 0.788
+              },
+              {
+                "word": "your",
+                "start": 0.848,
+                "end": 0.99
+              },
+              {
+                "word": "dress",
+                "start": 1.03,
+                "end": 1.313
+              },
+              {
+                "word": "is",
+                "start": 1.353,
+                "end": 1.454
+              },
+              {
+                "word": "beautiful.",
+                "start": 1.535,
+                "end": 1.979
+              }
+            ]
+          },
+          {
+            "start": 2.782,
+            "end": 3.937,
+            "text": "Oh, thank you so much.",
+            "words": [
+              {
+                "word": "Oh,",
+                "start": 2.782,
+                "end": 2.903
+              },
+              {
+                "word": "thank",
+                "start": 3.005,
+                "end": 3.207
+              },
+              {
+                "word": "you",
+                "start": 3.248,
+                "end": 3.369
+              },
+              {
+                "word": "so",
+                "start": 3.41,
+                "end": 3.572
+              },
+              {
+                "word": "much.",
+                "start": 3.633,
+                "end": 3.937
+              }
+            ]
+          },
+          {
+            "start": 5.201,
+            "end": 6.56,
+            "text": "It's so flowy and comfortable.",
+            "words": [
+              {
+                "word": "It's",
+                "start": 5.201,
+                "end": 5.322
+              },
+              {
+                "word": "so",
+                "start": 5.383,
+                "end": 5.566
+              },
+              {
+                "word": "flowy",
+                "start": 5.647,
+                "end": 6.012
+              },
+              {
+                "word": "and",
+                "start": 6.032,
+                "end": 6.134
+              },
+              {
+                "word": "comfortable.",
+                "start": 6.174,
+                "end": 6.56
+              }
+            ]
+          },
+          {
+            "start": 6.76,
+            "end": 7.578,
+            "text": "I love the open back.",
+            "words": [
+              {
+                "word": "I",
+                "start": 6.76,
+                "end": 6.78
+              },
+              {
+                "word": "love",
+                "start": 6.801,
+                "end": 6.944
+              },
+              {
+                "word": "the",
+                "start": 6.965,
+                "end": 7.046
+              },
+              {
+                "word": "open",
+                "start": 7.108,
+                "end": 7.312
+              },
+              {
+                "word": "back.",
+                "start": 7.333,
+                "end": 7.578
+              }
+            ]
+          },
+          {
+            "start": 8.14,
+            "end": 9.72,
+            "text": "The fabric is perfect for this weather.",
+            "words": [
+              {
+                "word": "The",
+                "start": 8.14,
+                "end": 8.201
+              },
+              {
+                "word": "fabric",
+                "start": 8.241,
+                "end": 8.545
+              },
+              {
+                "word": "is",
+                "start": 8.565,
+                "end": 8.626
+              },
+              {
+                "word": "perfect",
+                "start": 8.748,
+                "end": 9.072
+              },
+              {
+                "word": "for",
+                "start": 9.133,
+                "end": 9.234
+              },
+              {
+                "word": "this",
+                "start": 9.254,
+                "end": 9.396
+              },
+              {
+                "word": "weather.",
+                "start": 9.457,
+                "end": 9.72
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "motion_check": {
+      "status": "misaligned",
+      "motion_lag_seconds": -2.0,
+      "motion_correlation": 0.7028,
+      "speech_lags": [
+        {
+          "text": "Excuse me, your dress is beautiful.",
+          "source_start": 0.162,
+          "expected_start": 0.162,
+          "generated_start": 0.081,
+          "lag_seconds": -0.081,
+          "match_score": 0.8
+        },
+        {
+          "text": "Oh, thank you so much.",
+          "source_start": 2.782,
+          "expected_start": 2.782,
+          "generated_start": 2.16,
+          "lag_seconds": -0.622,
+          "match_score": 1.0
+        },
+        {
+          "text": "The fabric is perfect for this weather.",
+          "source_start": 8.14,
+          "expected_start": 8.14,
+          "generated_start": 8.1,
+          "lag_seconds": -0.04,
+          "match_score": 1.0
+        }
+      ],
+      "warnings": [
+        "成片运动节奏比原片提前约 2.00 秒",
+        "成片未可靠匹配台词：It's so flowy and comfortable.",
+        "成片未可靠匹配台词：I love the open back.",
+        "“Oh, thank you so much.” 提前 0.62 秒"
+      ],
+      "source_start": 0.0,
+      "source_end": 10.052,
+      "thresholds": {
+        "max_lag_seconds": 0.5,
+        "min_correlation": 0.45
+      },
+      "method": "10fps 64x64 gray adjacent MAD; normalized correlation ±2s; ordered ASR sentence anchors",
+      "lag_sign": "negative = generated early",
+      "sample_fps": 10,
+      "source_timing": "forced_alignment",
+      "generated_timing": "forced_alignment"
+    }
+  }
+}

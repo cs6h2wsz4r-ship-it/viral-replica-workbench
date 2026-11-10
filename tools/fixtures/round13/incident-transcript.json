@@ -1,0 +1,212 @@
+{
+  "engine": "faster-whisper medium int8 + wav2vec2 alignment",
+  "language": "en",
+  "timing": "forced_alignment",
+  "segments": [
+    {
+      "start": 1.073,
+      "end": 3.727,
+      "text": "No, because why does this look this good when I walk?",
+      "words": [
+        {
+          "word": "No,",
+          "start": 1.073,
+          "end": 1.274
+        },
+        {
+          "word": "because",
+          "start": 1.314,
+          "end": 1.636
+        },
+        {
+          "word": "why",
+          "start": 1.756,
+          "end": 1.957
+        },
+        {
+          "word": "does",
+          "start": 1.977,
+          "end": 2.138
+        },
+        {
+          "word": "this",
+          "start": 2.178,
+          "end": 2.339
+        },
+        {
+          "word": "look",
+          "start": 2.4,
+          "end": 2.641
+        },
+        {
+          "word": "this",
+          "start": 2.661,
+          "end": 3.023
+        },
+        {
+          "word": "good",
+          "start": 3.103,
+          "end": 3.344
+        },
+        {
+          "word": "when",
+          "start": 3.365,
+          "end": 3.445
+        },
+        {
+          "word": "I",
+          "start": 3.465,
+          "end": 3.485
+        },
+        {
+          "word": "walk?",
+          "start": 3.586,
+          "end": 3.727
+        }
+      ]
+    },
+    {
+      "start": 5.07,
+      "end": 7.608,
+      "text": "The back, the slit, yeah.",
+      "words": [
+        {
+          "word": "The",
+          "start": 5.07,
+          "end": 5.171
+        },
+        {
+          "word": "back,",
+          "start": 5.211,
+          "end": 5.533
+        },
+        {
+          "word": "the",
+          "start": 6.118,
+          "end": 6.218
+        },
+        {
+          "word": "slit,",
+          "start": 6.279,
+          "end": 6.702
+        },
+        {
+          "word": "yeah.",
+          "start": 7.326,
+          "end": 7.608
+        }
+      ]
+    },
+    {
+      "start": 8.27,
+      "end": 9.93,
+      "text": "Somebody knew exactly what they were doing.",
+      "words": [
+        {
+          "word": "Somebody",
+          "start": 8.27,
+          "end": 8.594
+        },
+        {
+          "word": "knew",
+          "start": 8.634,
+          "end": 8.756
+        },
+        {
+          "word": "exactly",
+          "start": 8.816,
+          "end": 9.221
+        },
+        {
+          "word": "what",
+          "start": 9.241,
+          "end": 9.343
+        },
+        {
+          "word": "they",
+          "start": 9.383,
+          "end": 9.484
+        },
+        {
+          "word": "were",
+          "start": 9.525,
+          "end": 9.626
+        },
+        {
+          "word": "doing.",
+          "start": 9.666,
+          "end": 9.93
+        }
+      ]
+    },
+    {
+      "start": 10.63,
+      "end": 13.489,
+      "text": "This is giving rich girl at midnight energy",
+      "words": [
+        {
+          "word": "This",
+          "start": 10.63,
+          "end": 10.771
+        },
+        {
+          "word": "is",
+          "start": 10.852,
+          "end": 10.912
+        },
+        {
+          "word": "giving",
+          "start": 10.952,
+          "end": 11.355
+        },
+        {
+          "word": "rich",
+          "start": 11.637,
+          "end": 11.859
+        },
+        {
+          "word": "girl",
+          "start": 11.939,
+          "end": 12.241
+        },
+        {
+          "word": "at",
+          "start": 12.402,
+          "end": 12.503
+        },
+        {
+          "word": "midnight",
+          "start": 12.604,
+          "end": 13.067
+        },
+        {
+          "word": "energy",
+          "start": 13.147,
+          "end": 13.489
+        }
+      ]
+    },
+    {
+      "start": 13.773,
+      "end": 14.85,
+      "text": "and I'm obsessed.",
+      "words": [
+        {
+          "word": "and",
+          "start": 13.773,
+          "end": 13.875
+        },
+        {
+          "word": "I'm",
+          "start": 13.915,
+          "end": 14.119
+        },
+        {
+          "word": "obsessed.",
+          "start": 14.322,
+          "end": 14.85
+        }
+      ]
+    }
+  ]
+}

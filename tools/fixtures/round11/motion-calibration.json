@@ -1,0 +1,155 @@
+{
+  "provenance": "Measured using tools/test_motion_alignment.py --real, offline local medium int8 + wav2vec2 alignment; no remote transport or downloads",
+  "source_file": "projects/p1027195039-ccc0/source/source.mp4",
+  "result_file": "projects/p1027195039-ccc0/jimmy-runs/p1027195039-ccc0-seg-01-r1/results/video-seg-01.mp4",
+  "source_interval": [
+    0,
+    15
+  ],
+  "input_sha256": {
+    "projects/p1027195039-ccc0/source/source.mp4": "5d2c080eae54dea13e0b0373d66b28d64cd27c975dec7641e7685ce3ddb9dc87",
+    "projects/p1027195039-ccc0/jimmy-runs/p1027195039-ccc0-seg-01-r1/results/video-seg-01.mp4": "a29535fb6f17e444b7511527409ee98ea3354d816c136221debae8a015b9d953",
+    "projects/p1027195039-ccc0/analysis/transcript.raw.json": "ce510cf2b35bb0f79cba07654ccb9c6ea775947ee0c55f59c04c044018a0c455",
+    "console/media.py": "d959618a0680cec177bfd6f58755de54370a45aa3be707719abb9bd8a4b3b572",
+    "console/asr.py": "226bb63beb9258a606765e88091bcdab898f962c447394c888dc0bd344fc6d1a"
+  },
+  "transcript_sha256": {
+    "incident": "17a5f4236967582234f2637d9aea19b6e43a39adec2f2b04e5fd81eb1ecebfce",
+    "self": "ce510cf2b35bb0f79cba07654ccb9c6ea775947ee0c55f59c04c044018a0c455"
+  },
+  "reports": {
+    "incident": {
+      "status": "misaligned",
+      "motion_lag_seconds": -1.0,
+      "motion_correlation": 0.5024,
+      "speech_lags": [
+        {
+          "text": "No, because why does this look this good when I walk?",
+          "source_start": 1.073,
+          "expected_start": 1.073,
+          "generated_start": 0.121,
+          "lag_seconds": -0.952,
+          "match_score": 1.0
+        },
+        {
+          "text": "The back, the slit, yeah.",
+          "source_start": 5.07,
+          "expected_start": 5.07,
+          "generated_start": 4.04,
+          "lag_seconds": -1.03,
+          "match_score": 1.0
+        },
+        {
+          "text": "Somebody knew exactly what they were doing.",
+          "source_start": 8.27,
+          "expected_start": 8.27,
+          "generated_start": 7.62,
+          "lag_seconds": -0.65,
+          "match_score": 1.0
+        },
+        {
+          "text": "This is giving rich girl at midnight energy",
+          "source_start": 10.63,
+          "expected_start": 10.63,
+          "generated_start": 10.36,
+          "lag_seconds": -0.27,
+          "match_score": 1.0
+        },
+        {
+          "text": "and I'm obsessed.",
+          "source_start": 13.773,
+          "expected_start": 13.773,
+          "generated_start": 13.724,
+          "lag_seconds": -0.049,
+          "match_score": 1.0
+        }
+      ],
+      "warnings": [
+        "成片运动节奏比原片提前约 1.00 秒",
+        "“No, because why does this look this good when I walk?” 提前 0.95 秒",
+        "“The back, the slit, yeah.” 提前 1.03 秒",
+        "“Somebody knew exactly what they were doing.” 提前 0.65 秒"
+      ],
+      "source_start": 0,
+      "source_end": 15,
+      "thresholds": {
+        "max_lag_seconds": 0.5,
+        "min_correlation": 0.45
+      },
+      "method": "10fps 64x64 gray adjacent MAD; normalized correlation ±2s; ordered ASR sentence anchors",
+      "lag_sign": "negative = generated early",
+      "sample_fps": 10,
+      "source_timing": "forced_alignment",
+      "generated_timing": "forced_alignment"
+    },
+    "self": {
+      "status": "aligned",
+      "motion_lag_seconds": 0.0,
+      "motion_correlation": 1.0,
+      "speech_lags": [
+        {
+          "text": "No, because why does this look this good when I walk?",
+          "source_start": 1.073,
+          "expected_start": 1.073,
+          "generated_start": 1.073,
+          "lag_seconds": 0.0,
+          "match_score": 1.0
+        },
+        {
+          "text": "The back, the slit, yeah.",
+          "source_start": 5.07,
+          "expected_start": 5.07,
+          "generated_start": 5.07,
+          "lag_seconds": 0.0,
+          "match_score": 1.0
+        },
+        {
+          "text": "Somebody knew exactly what they were doing.",
+          "source_start": 8.27,
+          "expected_start": 8.27,
+          "generated_start": 8.27,
+          "lag_seconds": 0.0,
+          "match_score": 1.0
+        },
+        {
+          "text": "This is giving rich girl at midnight energy",
+          "source_start": 10.63,
+          "expected_start": 10.63,
+          "generated_start": 10.63,
+          "lag_seconds": 0.0,
+          "match_score": 1.0
+        },
+        {
+          "text": "and I'm obsessed.",
+          "source_start": 13.773,
+          "expected_start": 13.773,
+          "generated_start": 13.773,
+          "lag_seconds": 0.0,
+          "match_score": 1.0
+        }
+      ],
+      "warnings": [],
+      "source_start": 0,
+      "source_end": 15,
+      "thresholds": {
+        "max_lag_seconds": 0.5,
+        "min_correlation": 0.45
+      },
+      "method": "10fps 64x64 gray adjacent MAD; normalized correlation ±2s; ordered ASR sentence anchors",
+      "lag_sign": "negative = generated early",
+      "sample_fps": 10,
+      "source_timing": "forced_alignment",
+      "generated_timing": "forced_alignment"
+    }
+  },
+  "checklist_discrepancy": {
+    "source_forced_alignment_start": 1.073,
+    "source_independent_asr_estimate_start": 0.59,
+    "generated_forced_alignment_start": 0.121,
+    "generated_independent_asr_estimate_start": 0.0,
+    "same_method_forced_lag": -0.952,
+    "same_method_estimate_lag": -0.59,
+    "mixed_method_lag": -0.469,
+    "note": "Checklist approx -.47 combines source ASR estimate with generated forced alignment; preserve authoritative raw source timing for main report."
+  }
+}

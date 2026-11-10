@@ -1,0 +1,2555 @@
+[
+  {
+    "name": "normal",
+    "data": {
+      "routes": {
+        "script": {
+          "channel": "jimmy",
+          "model": "mock-model"
+        }
+      },
+      "assets": [
+        {
+          "id": "person",
+          "type": "image",
+          "label": "person",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "person"
+        },
+        {
+          "id": "camera",
+          "type": "image",
+          "label": "camera",
+          "roles": [
+            "target_state"
+          ],
+          "sha256": "camera"
+        },
+        {
+          "id": "product",
+          "type": "image",
+          "label": "product",
+          "roles": [
+            "product_truth"
+          ],
+          "sha256": "product"
+        },
+        {
+          "id": "other",
+          "type": "image",
+          "label": "other",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "other"
+        }
+      ],
+      "replacements": {
+        "characters": [
+          {
+            "source_id": "C1",
+            "action": "replace",
+            "asset_id": "person",
+            "camera_asset_id": "camera"
+          }
+        ],
+        "product": {
+          "action": "replace",
+          "asset_id": "product"
+        }
+      },
+      "breakdown": {
+        "characters": [
+          {
+            "id": "C1",
+            "appearance": "金色长发 blonde hair",
+            "outfit": "黑色无袖高领连衣裙 black high-neck sleeveless dress with the front slit"
+          }
+        ],
+        "overlays": [],
+        "productMoments": [
+          {
+            "product": "黑色连衣裙"
+          }
+        ]
+      },
+      "script": {
+        "provider": "jimmy",
+        "model": "mock-model",
+        "tasks": []
+      }
+    },
+    "task": {
+      "id": "seg-01",
+      "kind": "speaker",
+      "mode": "video",
+      "dialogue": "Hello!",
+      "action": "The person from @image1 smiles.",
+      "source_start": 0,
+      "source_end": 3,
+      "image_ids": [
+        "camera",
+        "product"
+      ],
+      "duration": 4,
+      "ratio": "9:16",
+      "mute_clip": false
+    },
+    "compare_motion": false,
+    "expected": {
+      "blocking": true,
+      "can_preview": false,
+      "errors": [
+        "替换设定在生成脚本之后改过，请重新生成新脚本"
+      ],
+      "codes": [
+        "script_stale"
+      ],
+      "dialogue_codes": []
+    }
+  },
+  {
+    "name": "no_images",
+    "data": {
+      "routes": {
+        "script": {
+          "channel": "jimmy",
+          "model": "mock-model"
+        }
+      },
+      "assets": [
+        {
+          "id": "person",
+          "type": "image",
+          "label": "person",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "person"
+        },
+        {
+          "id": "camera",
+          "type": "image",
+          "label": "camera",
+          "roles": [
+            "target_state"
+          ],
+          "sha256": "camera"
+        },
+        {
+          "id": "product",
+          "type": "image",
+          "label": "product",
+          "roles": [
+            "product_truth"
+          ],
+          "sha256": "product"
+        },
+        {
+          "id": "other",
+          "type": "image",
+          "label": "other",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "other"
+        }
+      ],
+      "replacements": {
+        "characters": [
+          {
+            "source_id": "C1",
+            "action": "replace",
+            "asset_id": "person",
+            "camera_asset_id": "camera"
+          }
+        ],
+        "product": {
+          "action": "replace",
+          "asset_id": "product"
+        }
+      },
+      "breakdown": {
+        "characters": [
+          {
+            "id": "C1",
+            "appearance": "金色长发 blonde hair",
+            "outfit": "黑色无袖高领连衣裙 black high-neck sleeveless dress with the front slit"
+          }
+        ],
+        "overlays": [],
+        "productMoments": [
+          {
+            "product": "黑色连衣裙"
+          }
+        ]
+      },
+      "script": {
+        "provider": "jimmy",
+        "model": "mock-model",
+        "tasks": []
+      }
+    },
+    "task": {
+      "id": "seg-01",
+      "kind": "speaker",
+      "mode": "video",
+      "dialogue": "Hello!",
+      "action": "The person from @image1 smiles.",
+      "source_start": 0,
+      "source_end": 3,
+      "image_ids": [],
+      "duration": 4,
+      "ratio": "9:16",
+      "mute_clip": false
+    },
+    "compare_motion": false,
+    "expected": {
+      "blocking": true,
+      "can_preview": false,
+      "errors": [
+        "这一段还没选参考图：请先在第 03 步设置替换，或在本段点选参考图（先点人物）",
+        "这一段缺少替换商品的参考图，请选入第 03 步的商品图，或先生成包含当前商品的主镜头图。",
+        "这一段缺少替换人物 C1 的参考图，请选入该人物的主镜头图或人物图。",
+        "视频参考模式下换人，需要先生成主镜头图：新人物在原片机位里的一帧完整画面",
+        "替换设定在生成脚本之后改过，请重新生成新脚本",
+        "参考图编号与本段实际顺序不一致：@image1"
+      ],
+      "codes": [
+        "missing_camera_image",
+        "no_images",
+        "person_replace_missing_image",
+        "product_missing_image",
+        "reference_mapping",
+        "script_stale"
+      ],
+      "dialogue_codes": []
+    }
+  },
+  {
+    "name": "invalid_image",
+    "data": {
+      "routes": {
+        "script": {
+          "channel": "jimmy",
+          "model": "mock-model"
+        }
+      },
+      "assets": [
+        {
+          "id": "person",
+          "type": "image",
+          "label": "person",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "person"
+        },
+        {
+          "id": "camera",
+          "type": "image",
+          "label": "camera",
+          "roles": [
+            "target_state"
+          ],
+          "sha256": "camera"
+        },
+        {
+          "id": "product",
+          "type": "image",
+          "label": "product",
+          "roles": [
+            "product_truth"
+          ],
+          "sha256": "product"
+        },
+        {
+          "id": "other",
+          "type": "image",
+          "label": "other",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "other"
+        }
+      ],
+      "replacements": {
+        "characters": [
+          {
+            "source_id": "C1",
+            "action": "replace",
+            "asset_id": "person",
+            "camera_asset_id": "camera"
+          }
+        ],
+        "product": {
+          "action": "replace",
+          "asset_id": "product"
+        }
+      },
+      "breakdown": {
+        "characters": [
+          {
+            "id": "C1",
+            "appearance": "金色长发 blonde hair",
+            "outfit": "黑色无袖高领连衣裙 black high-neck sleeveless dress with the front slit"
+          }
+        ],
+        "overlays": [],
+        "productMoments": [
+          {
+            "product": "黑色连衣裙"
+          }
+        ]
+      },
+      "script": {
+        "provider": "jimmy",
+        "model": "mock-model",
+        "tasks": []
+      }
+    },
+    "task": {
+      "id": "seg-01",
+      "kind": "broll",
+      "mode": "image",
+      "dialogue": "Hello!",
+      "action": "The person from @image1 smiles.",
+      "source_start": 0,
+      "source_end": 3,
+      "image_ids": [
+        "unknown"
+      ],
+      "duration": 4,
+      "ratio": "9:16",
+      "mute_clip": false
+    },
+    "compare_motion": false,
+    "expected": {
+      "blocking": true,
+      "can_preview": false,
+      "errors": [
+        "参考图 unknown 不存在或不是图片，请重新选择",
+        "这一段缺少替换商品的参考图，请选入第 03 步的商品图，或先生成包含当前商品的主镜头图。",
+        "替换设定在生成脚本之后改过，请重新生成新脚本"
+      ],
+      "codes": [
+        "invalid_image",
+        "product_missing_image",
+        "script_stale"
+      ],
+      "dialogue_codes": []
+    }
+  },
+  {
+    "name": "deleted_camera",
+    "data": {
+      "routes": {
+        "script": {
+          "channel": "jimmy",
+          "model": "mock-model"
+        }
+      },
+      "assets": [
+        {
+          "id": "person",
+          "type": "image",
+          "label": "person",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "person"
+        },
+        {
+          "id": "camera",
+          "type": "image",
+          "label": "camera",
+          "roles": [
+            "target_state"
+          ],
+          "sha256": "camera"
+        },
+        {
+          "id": "product",
+          "type": "image",
+          "label": "product",
+          "roles": [
+            "product_truth"
+          ],
+          "sha256": "product"
+        },
+        {
+          "id": "other",
+          "type": "image",
+          "label": "other",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "other"
+        }
+      ],
+      "replacements": {
+        "characters": [
+          {
+            "source_id": "C1",
+            "action": "replace",
+            "asset_id": "person",
+            "camera_asset_id": "camera"
+          }
+        ],
+        "product": {
+          "action": "replace",
+          "asset_id": "product"
+        }
+      },
+      "breakdown": {
+        "characters": [
+          {
+            "id": "C1",
+            "appearance": "金色长发 blonde hair",
+            "outfit": "黑色无袖高领连衣裙 black high-neck sleeveless dress with the front slit"
+          }
+        ],
+        "overlays": [],
+        "productMoments": [
+          {
+            "product": "黑色连衣裙"
+          }
+        ]
+      },
+      "script": {
+        "provider": "jimmy",
+        "model": "mock-model",
+        "tasks": []
+      }
+    },
+    "task": {
+      "id": "seg-01",
+      "kind": "speaker",
+      "mode": "video",
+      "dialogue": "Hello!",
+      "action": "The person from @image1 smiles.",
+      "source_start": 0,
+      "source_end": 3,
+      "image_ids": [
+        "unknown"
+      ],
+      "duration": 4,
+      "ratio": "9:16",
+      "mute_clip": false
+    },
+    "compare_motion": false,
+    "expected": {
+      "blocking": true,
+      "can_preview": false,
+      "errors": [
+        "这一段缺少替换商品的参考图，请选入第 03 步的商品图，或先生成包含当前商品的主镜头图。",
+        "seg-01 的图1 指向一张已删除或过期的主镜头图",
+        "口播段落的图1必须是出镜人物（主镜头图或人物照）：Seedance 模板把 @image1 当作说话人"
+      ],
+      "codes": [
+        "image1_not_person",
+        "invalid_camera_image",
+        "product_missing_image"
+      ],
+      "dialogue_codes": []
+    }
+  },
+  {
+    "name": "person_mismatch",
+    "data": {
+      "routes": {
+        "script": {
+          "channel": "jimmy",
+          "model": "mock-model"
+        }
+      },
+      "assets": [
+        {
+          "id": "person",
+          "type": "image",
+          "label": "person",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "person"
+        },
+        {
+          "id": "camera",
+          "type": "image",
+          "label": "camera",
+          "roles": [
+            "target_state"
+          ],
+          "sha256": "camera"
+        },
+        {
+          "id": "product",
+          "type": "image",
+          "label": "product",
+          "roles": [
+            "product_truth"
+          ],
+          "sha256": "product"
+        },
+        {
+          "id": "other",
+          "type": "image",
+          "label": "other",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "other"
+        }
+      ],
+      "replacements": {
+        "characters": [
+          {
+            "source_id": "C1",
+            "action": "replace",
+            "asset_id": "person",
+            "camera_asset_id": "camera"
+          }
+        ],
+        "product": {
+          "action": "replace",
+          "asset_id": "product"
+        }
+      },
+      "breakdown": {
+        "characters": [
+          {
+            "id": "C1",
+            "appearance": "金色长发 blonde hair",
+            "outfit": "黑色无袖高领连衣裙 black high-neck sleeveless dress with the front slit"
+          }
+        ],
+        "overlays": [],
+        "productMoments": [
+          {
+            "product": "黑色连衣裙"
+          }
+        ]
+      },
+      "script": {
+        "provider": "jimmy",
+        "model": "mock-model",
+        "tasks": []
+      }
+    },
+    "task": {
+      "id": "seg-01",
+      "kind": "speaker",
+      "mode": "video",
+      "dialogue": "Hello!",
+      "action": "The person from @image1 smiles.",
+      "source_start": 0,
+      "source_end": 3,
+      "image_ids": [
+        "other"
+      ],
+      "duration": 4,
+      "ratio": "9:16",
+      "mute_clip": false
+    },
+    "compare_motion": false,
+    "expected": {
+      "blocking": true,
+      "can_preview": false,
+      "errors": [
+        "人物图 other 不属于第 03 步的任何‘替换’人物，请选择该人物的人物图或主镜头图，并重新生成新脚本。",
+        "这一段缺少替换商品的参考图，请选入第 03 步的商品图，或先生成包含当前商品的主镜头图。",
+        "这一段缺少替换人物 C1 的参考图，请选入该人物的主镜头图或人物图。",
+        "视频参考模式下换人，需要先生成主镜头图：新人物在原片机位里的一帧完整画面",
+        "替换设定在生成脚本之后改过，请重新生成新脚本"
+      ],
+      "codes": [
+        "missing_camera_image",
+        "person_image_mismatch",
+        "person_replace_missing_image",
+        "product_missing_image",
+        "script_stale"
+      ],
+      "dialogue_codes": []
+    }
+  },
+  {
+    "name": "image1",
+    "data": {
+      "routes": {
+        "script": {
+          "channel": "jimmy",
+          "model": "mock-model"
+        }
+      },
+      "assets": [
+        {
+          "id": "person",
+          "type": "image",
+          "label": "person",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "person"
+        },
+        {
+          "id": "camera",
+          "type": "image",
+          "label": "camera",
+          "roles": [
+            "target_state"
+          ],
+          "sha256": "camera"
+        },
+        {
+          "id": "product",
+          "type": "image",
+          "label": "product",
+          "roles": [
+            "product_truth"
+          ],
+          "sha256": "product"
+        },
+        {
+          "id": "other",
+          "type": "image",
+          "label": "other",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "other"
+        }
+      ],
+      "replacements": {
+        "characters": [
+          {
+            "source_id": "C1",
+            "action": "replace",
+            "asset_id": "person",
+            "camera_asset_id": "camera"
+          }
+        ],
+        "product": {
+          "action": "replace",
+          "asset_id": "product"
+        }
+      },
+      "breakdown": {
+        "characters": [
+          {
+            "id": "C1",
+            "appearance": "金色长发 blonde hair",
+            "outfit": "黑色无袖高领连衣裙 black high-neck sleeveless dress with the front slit"
+          }
+        ],
+        "overlays": [],
+        "productMoments": [
+          {
+            "product": "黑色连衣裙"
+          }
+        ]
+      },
+      "script": {
+        "provider": "jimmy",
+        "model": "mock-model",
+        "tasks": []
+      }
+    },
+    "task": {
+      "id": "seg-01",
+      "kind": "speaker",
+      "mode": "video",
+      "dialogue": "Hello!",
+      "action": "The person from @image1 smiles.",
+      "source_start": 0,
+      "source_end": 3,
+      "image_ids": [
+        "product",
+        "person"
+      ],
+      "duration": 4,
+      "ratio": "9:16",
+      "mute_clip": false
+    },
+    "compare_motion": false,
+    "expected": {
+      "blocking": true,
+      "can_preview": false,
+      "errors": [
+        "视频参考模式下换人，需要先生成主镜头图：新人物在原片机位里的一帧完整画面",
+        "替换设定在生成脚本之后改过，请重新生成新脚本",
+        "口播段落的图1必须是出镜人物（主镜头图或人物照）：Seedance 模板把 @image1 当作说话人"
+      ],
+      "codes": [
+        "image1_not_person",
+        "missing_camera_image",
+        "script_stale"
+      ],
+      "dialogue_codes": []
+    }
+  },
+  {
+    "name": "product_missing",
+    "data": {
+      "routes": {
+        "script": {
+          "channel": "jimmy",
+          "model": "mock-model"
+        }
+      },
+      "assets": [
+        {
+          "id": "person",
+          "type": "image",
+          "label": "person",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "person"
+        },
+        {
+          "id": "camera",
+          "type": "image",
+          "label": "camera",
+          "roles": [
+            "target_state"
+          ],
+          "sha256": "camera"
+        },
+        {
+          "id": "product",
+          "type": "image",
+          "label": "product",
+          "roles": [
+            "product_truth"
+          ],
+          "sha256": "product"
+        },
+        {
+          "id": "other",
+          "type": "image",
+          "label": "other",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "other"
+        }
+      ],
+      "replacements": {
+        "characters": [
+          {
+            "source_id": "C1",
+            "action": "replace",
+            "asset_id": "person",
+            "camera_asset_id": "camera"
+          }
+        ],
+        "product": {
+          "action": "replace",
+          "asset_id": "product"
+        }
+      },
+      "breakdown": {
+        "characters": [
+          {
+            "id": "C1",
+            "appearance": "金色长发 blonde hair",
+            "outfit": "黑色无袖高领连衣裙 black high-neck sleeveless dress with the front slit"
+          }
+        ],
+        "overlays": [],
+        "productMoments": [
+          {
+            "product": "黑色连衣裙"
+          }
+        ]
+      },
+      "script": {
+        "provider": "jimmy",
+        "model": "mock-model",
+        "tasks": []
+      }
+    },
+    "task": {
+      "id": "seg-01",
+      "kind": "speaker",
+      "mode": "video",
+      "dialogue": "Hello!",
+      "action": "The person from @image1 smiles.",
+      "source_start": 0,
+      "source_end": 3,
+      "image_ids": [
+        "camera"
+      ],
+      "duration": 4,
+      "ratio": "9:16",
+      "mute_clip": false
+    },
+    "compare_motion": false,
+    "expected": {
+      "blocking": true,
+      "can_preview": false,
+      "errors": [
+        "这一段缺少替换商品的参考图，请选入第 03 步的商品图，或先生成包含当前商品的主镜头图。",
+        "替换设定在生成脚本之后改过，请重新生成新脚本"
+      ],
+      "codes": [
+        "product_missing_image",
+        "script_stale"
+      ],
+      "dialogue_codes": []
+    }
+  },
+  {
+    "name": "appearance",
+    "data": {
+      "routes": {
+        "script": {
+          "channel": "jimmy",
+          "model": "mock-model"
+        }
+      },
+      "assets": [
+        {
+          "id": "person",
+          "type": "image",
+          "label": "person",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "person"
+        },
+        {
+          "id": "camera",
+          "type": "image",
+          "label": "camera",
+          "roles": [
+            "target_state"
+          ],
+          "sha256": "camera"
+        },
+        {
+          "id": "product",
+          "type": "image",
+          "label": "product",
+          "roles": [
+            "product_truth"
+          ],
+          "sha256": "product"
+        },
+        {
+          "id": "other",
+          "type": "image",
+          "label": "other",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "other"
+        }
+      ],
+      "replacements": {
+        "characters": [
+          {
+            "source_id": "C1",
+            "action": "replace",
+            "asset_id": "person",
+            "camera_asset_id": "camera"
+          }
+        ],
+        "product": {
+          "action": "replace",
+          "asset_id": "product"
+        }
+      },
+      "breakdown": {
+        "characters": [
+          {
+            "id": "C1",
+            "appearance": "金色长发 blonde hair",
+            "outfit": "黑色无袖高领连衣裙 black high-neck sleeveless dress with the front slit"
+          }
+        ],
+        "overlays": [],
+        "productMoments": [
+          {
+            "product": "黑色连衣裙"
+          }
+        ]
+      },
+      "script": {
+        "provider": "jimmy",
+        "model": "mock-model",
+        "tasks": []
+      }
+    },
+    "task": {
+      "id": "seg-01",
+      "kind": "speaker",
+      "mode": "video",
+      "dialogue": "Hello!",
+      "action": "A black dress.",
+      "source_start": 0,
+      "source_end": 3,
+      "image_ids": [
+        "camera",
+        "product"
+      ],
+      "duration": 4,
+      "ratio": "9:16",
+      "mute_clip": false
+    },
+    "compare_motion": false,
+    "expected": {
+      "blocking": true,
+      "can_preview": false,
+      "errors": [
+        "替换设定在生成脚本之后改过，请重新生成新脚本",
+        "映射安全检查发现原片外观冲突词：black、dress；请改为对应的 @image 引用后保存脚本。"
+      ],
+      "codes": [
+        "appearance_conflict",
+        "script_stale"
+      ],
+      "dialogue_codes": []
+    }
+  },
+  {
+    "name": "mapping",
+    "data": {
+      "routes": {
+        "script": {
+          "channel": "jimmy",
+          "model": "mock-model"
+        }
+      },
+      "assets": [
+        {
+          "id": "person",
+          "type": "image",
+          "label": "person",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "person"
+        },
+        {
+          "id": "camera",
+          "type": "image",
+          "label": "camera",
+          "roles": [
+            "target_state"
+          ],
+          "sha256": "camera"
+        },
+        {
+          "id": "product",
+          "type": "image",
+          "label": "product",
+          "roles": [
+            "product_truth"
+          ],
+          "sha256": "product"
+        },
+        {
+          "id": "other",
+          "type": "image",
+          "label": "other",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "other"
+        }
+      ],
+      "replacements": {
+        "characters": [
+          {
+            "source_id": "C1",
+            "action": "replace",
+            "asset_id": "person",
+            "camera_asset_id": "camera"
+          }
+        ],
+        "product": {
+          "action": "replace",
+          "asset_id": "product"
+        }
+      },
+      "breakdown": {
+        "characters": [
+          {
+            "id": "C1",
+            "appearance": "金色长发 blonde hair",
+            "outfit": "黑色无袖高领连衣裙 black high-neck sleeveless dress with the front slit"
+          }
+        ],
+        "overlays": [],
+        "productMoments": [
+          {
+            "product": "黑色连衣裙"
+          }
+        ]
+      },
+      "script": {
+        "provider": "jimmy",
+        "model": "mock-model",
+        "tasks": []
+      }
+    },
+    "task": {
+      "id": "seg-01",
+      "kind": "speaker",
+      "mode": "video",
+      "dialogue": "Hello!",
+      "action": "Smile at @image8.",
+      "source_start": 0,
+      "source_end": 3,
+      "image_ids": [
+        "camera",
+        "product"
+      ],
+      "duration": 4,
+      "ratio": "9:16",
+      "mute_clip": false
+    },
+    "compare_motion": false,
+    "expected": {
+      "blocking": true,
+      "can_preview": false,
+      "errors": [
+        "替换设定在生成脚本之后改过，请重新生成新脚本",
+        "参考图编号与本段实际顺序不一致：@image8"
+      ],
+      "codes": [
+        "reference_mapping",
+        "script_stale"
+      ],
+      "dialogue_codes": []
+    }
+  },
+  {
+    "name": "video_required",
+    "data": {
+      "routes": {
+        "script": {
+          "channel": "jimmy",
+          "model": "mock-model"
+        }
+      },
+      "assets": [
+        {
+          "id": "person",
+          "type": "image",
+          "label": "person",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "person"
+        },
+        {
+          "id": "camera",
+          "type": "image",
+          "label": "camera",
+          "roles": [
+            "target_state"
+          ],
+          "sha256": "camera"
+        },
+        {
+          "id": "product",
+          "type": "image",
+          "label": "product",
+          "roles": [
+            "product_truth"
+          ],
+          "sha256": "product"
+        },
+        {
+          "id": "other",
+          "type": "image",
+          "label": "other",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "other"
+        }
+      ],
+      "replacements": {
+        "characters": [
+          {
+            "source_id": "C1",
+            "action": "replace",
+            "asset_id": "person",
+            "camera_asset_id": "camera"
+          }
+        ],
+        "product": {
+          "action": "replace",
+          "asset_id": "product"
+        }
+      },
+      "breakdown": {
+        "characters": [
+          {
+            "id": "C1",
+            "appearance": "金色长发 blonde hair",
+            "outfit": "黑色无袖高领连衣裙 black high-neck sleeveless dress with the front slit"
+          }
+        ],
+        "overlays": [],
+        "productMoments": [
+          {
+            "product": "黑色连衣裙"
+          }
+        ]
+      },
+      "script": {
+        "provider": "jimmy",
+        "model": "mock-model",
+        "tasks": []
+      }
+    },
+    "task": {
+      "id": "seg-01",
+      "kind": "motion",
+      "mode": "image",
+      "dialogue": "Hello!",
+      "action": "The person from @image1 smiles.",
+      "source_start": 0,
+      "source_end": 3,
+      "image_ids": [
+        "camera",
+        "product"
+      ],
+      "duration": 4,
+      "ratio": "9:16",
+      "mute_clip": false
+    },
+    "compare_motion": false,
+    "expected": {
+      "blocking": true,
+      "can_preview": false,
+      "errors": [
+        "替换设定在生成脚本之后改过，请重新生成新脚本",
+        "动作/运镜复刻段落需要原片片段（参考方式选“原片片段 + 图”）"
+      ],
+      "codes": [
+        "script_stale",
+        "video_reference_required"
+      ],
+      "dialogue_codes": []
+    }
+  },
+  {
+    "name": "missing_dialogue",
+    "data": {
+      "routes": {
+        "script": {
+          "channel": "jimmy",
+          "model": "mock-model"
+        }
+      },
+      "assets": [
+        {
+          "id": "person",
+          "type": "image",
+          "label": "person",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "person"
+        },
+        {
+          "id": "camera",
+          "type": "image",
+          "label": "camera",
+          "roles": [
+            "target_state"
+          ],
+          "sha256": "camera"
+        },
+        {
+          "id": "product",
+          "type": "image",
+          "label": "product",
+          "roles": [
+            "product_truth"
+          ],
+          "sha256": "product"
+        },
+        {
+          "id": "other",
+          "type": "image",
+          "label": "other",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "other"
+        }
+      ],
+      "replacements": {
+        "characters": [
+          {
+            "source_id": "C1",
+            "action": "replace",
+            "asset_id": "person",
+            "camera_asset_id": "camera"
+          }
+        ],
+        "product": {
+          "action": "replace",
+          "asset_id": "product"
+        }
+      },
+      "breakdown": {
+        "characters": [
+          {
+            "id": "C1",
+            "appearance": "金色长发 blonde hair",
+            "outfit": "黑色无袖高领连衣裙 black high-neck sleeveless dress with the front slit"
+          }
+        ],
+        "overlays": [],
+        "productMoments": [
+          {
+            "product": "黑色连衣裙"
+          }
+        ]
+      },
+      "script": {
+        "provider": "jimmy",
+        "model": "mock-model",
+        "tasks": []
+      }
+    },
+    "task": {
+      "id": "seg-01",
+      "kind": "speaker",
+      "mode": "video",
+      "dialogue": "",
+      "action": "The person from @image1 smiles.",
+      "source_start": 0,
+      "source_end": 3,
+      "image_ids": [
+        "camera",
+        "product"
+      ],
+      "duration": 4,
+      "ratio": "9:16",
+      "mute_clip": false
+    },
+    "compare_motion": false,
+    "expected": {
+      "blocking": true,
+      "can_preview": false,
+      "errors": [
+        "替换设定在生成脚本之后改过，请重新生成新脚本",
+        "口播段落缺少台词"
+      ],
+      "codes": [
+        "missing_dialogue",
+        "script_stale"
+      ],
+      "dialogue_codes": []
+    }
+  },
+  {
+    "name": "performance",
+    "data": {
+      "routes": {
+        "script": {
+          "channel": "jimmy",
+          "model": "mock-model"
+        }
+      },
+      "assets": [
+        {
+          "id": "person",
+          "type": "image",
+          "label": "person",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "person"
+        },
+        {
+          "id": "camera",
+          "type": "image",
+          "label": "camera",
+          "roles": [
+            "target_state"
+          ],
+          "sha256": "camera"
+        },
+        {
+          "id": "product",
+          "type": "image",
+          "label": "product",
+          "roles": [
+            "product_truth"
+          ],
+          "sha256": "product"
+        },
+        {
+          "id": "other",
+          "type": "image",
+          "label": "other",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "other"
+        }
+      ],
+      "replacements": {
+        "characters": [
+          {
+            "source_id": "C1",
+            "action": "replace",
+            "asset_id": "person",
+            "camera_asset_id": "camera"
+          }
+        ],
+        "product": {
+          "action": "replace",
+          "asset_id": "product"
+        }
+      },
+      "breakdown": {
+        "characters": [
+          {
+            "id": "C1",
+            "appearance": "金色长发 blonde hair",
+            "outfit": "黑色无袖高领连衣裙 black high-neck sleeveless dress with the front slit"
+          }
+        ],
+        "overlays": [],
+        "productMoments": [
+          {
+            "product": "黑色连衣裙"
+          }
+        ]
+      },
+      "script": {
+        "provider": "jimmy",
+        "model": "mock-model",
+        "tasks": []
+      }
+    },
+    "task": {
+      "id": "seg-01",
+      "kind": "speaker",
+      "mode": "video",
+      "dialogue": "Hello!",
+      "action": "Walk forwards.",
+      "source_start": 0,
+      "source_end": 3,
+      "image_ids": [
+        "camera",
+        "product"
+      ],
+      "duration": 4,
+      "ratio": "9:16",
+      "mute_clip": false
+    },
+    "compare_motion": false,
+    "expected": {
+      "blocking": true,
+      "can_preview": false,
+      "errors": [
+        "替换设定在生成脚本之后改过，请重新生成新脚本",
+        "动作描述里仍有身体动作：‘Walk forwards.’；视频参考模式下动作由原片时间轴决定，请删掉这些描述"
+      ],
+      "codes": [
+        "performance_has_motion",
+        "script_stale"
+      ],
+      "dialogue_codes": []
+    }
+  },
+  {
+    "name": "anchor",
+    "data": {
+      "routes": {
+        "script": {
+          "channel": "jimmy",
+          "model": "mock-model"
+        }
+      },
+      "assets": [
+        {
+          "id": "person",
+          "type": "image",
+          "label": "person",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "person"
+        },
+        {
+          "id": "camera",
+          "type": "image",
+          "label": "camera",
+          "roles": [
+            "target_state"
+          ],
+          "sha256": "camera"
+        },
+        {
+          "id": "product",
+          "type": "image",
+          "label": "product",
+          "roles": [
+            "product_truth"
+          ],
+          "sha256": "product"
+        },
+        {
+          "id": "other",
+          "type": "image",
+          "label": "other",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "other"
+        }
+      ],
+      "replacements": {
+        "characters": [
+          {
+            "source_id": "C1",
+            "action": "replace",
+            "asset_id": "person",
+            "camera_asset_id": "camera"
+          }
+        ],
+        "product": {
+          "action": "replace",
+          "asset_id": "product"
+        }
+      },
+      "breakdown": {
+        "characters": [
+          {
+            "id": "C1",
+            "appearance": "金色长发 blonde hair",
+            "outfit": "黑色无袖高领连衣裙 black high-neck sleeveless dress with the front slit"
+          }
+        ],
+        "overlays": [],
+        "productMoments": [
+          {
+            "product": "黑色连衣裙"
+          }
+        ]
+      },
+      "script": {
+        "provider": "jimmy",
+        "model": "mock-model",
+        "tasks": []
+      }
+    },
+    "task": {
+      "id": "seg-01",
+      "kind": "speaker",
+      "mode": "video",
+      "dialogue": "Hello then bye",
+      "action": "On 'bye' smile. On 'Hello' smile.",
+      "source_start": 0,
+      "source_end": 3,
+      "image_ids": [
+        "camera",
+        "product"
+      ],
+      "duration": 4,
+      "ratio": "9:16",
+      "mute_clip": false
+    },
+    "compare_motion": false,
+    "expected": {
+      "blocking": true,
+      "can_preview": false,
+      "errors": [
+        "替换设定在生成脚本之后改过，请重新生成新脚本",
+        "动作描述的台词顺序与台词不一致：‘bye’ 写在 ‘Hello’ 前面（台词顺序：Hello → bye）"
+      ],
+      "codes": [
+        "anchor_order",
+        "script_stale"
+      ],
+      "dialogue_codes": []
+    }
+  },
+  {
+    "name": "keep_conflicts",
+    "data": {
+      "routes": {
+        "script": {
+          "channel": "jimmy",
+          "model": "mock-model"
+        }
+      },
+      "assets": [
+        {
+          "id": "person",
+          "type": "image",
+          "label": "person",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "person"
+        },
+        {
+          "id": "camera",
+          "type": "image",
+          "label": "camera",
+          "roles": [
+            "target_state"
+          ],
+          "sha256": "camera"
+        },
+        {
+          "id": "product",
+          "type": "image",
+          "label": "product",
+          "roles": [
+            "product_truth"
+          ],
+          "sha256": "product"
+        },
+        {
+          "id": "other",
+          "type": "image",
+          "label": "other",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "other"
+        }
+      ],
+      "replacements": {
+        "characters": [
+          {
+            "source_id": "C1",
+            "action": "keep",
+            "asset_id": "person",
+            "camera_asset_id": "camera"
+          }
+        ],
+        "product": {
+          "action": "keep",
+          "asset_id": "product"
+        }
+      },
+      "breakdown": {
+        "characters": [
+          {
+            "id": "C1",
+            "appearance": "金色长发 blonde hair",
+            "outfit": "黑色无袖高领连衣裙 black high-neck sleeveless dress with the front slit"
+          }
+        ],
+        "overlays": [],
+        "productMoments": [
+          {
+            "product": "黑色连衣裙"
+          }
+        ]
+      },
+      "script": {
+        "provider": "jimmy",
+        "model": "mock-model",
+        "tasks": []
+      }
+    },
+    "task": {
+      "id": "seg-01",
+      "kind": "speaker",
+      "mode": "video",
+      "dialogue": "Hello!",
+      "action": "The person from @image1 smiles.",
+      "source_start": 0,
+      "source_end": 3,
+      "image_ids": [
+        "person",
+        "product"
+      ],
+      "duration": 4,
+      "ratio": "9:16",
+      "mute_clip": false
+    },
+    "compare_motion": false,
+    "expected": {
+      "blocking": true,
+      "can_preview": false,
+      "errors": [
+        "第 03 步人物处理是‘保持’，但这一段用了新人物图。要换人请把处理改成‘替换’并重新生成新脚本；不换人请去掉这张图。",
+        "第 03 步商品处理是‘保持’或所选商品图与这一段不一致。要换商品请把处理改成‘替换’并选择这张图、重新生成新脚本；不换商品请去掉这张图。",
+        "替换设定在生成脚本之后改过，请重新生成新脚本"
+      ],
+      "codes": [
+        "person_keep_with_image",
+        "product_mismatch",
+        "script_stale"
+      ],
+      "dialogue_codes": []
+    }
+  },
+  {
+    "name": "camera_stale",
+    "data": {
+      "routes": {
+        "script": {
+          "channel": "jimmy",
+          "model": "mock-model"
+        }
+      },
+      "assets": [
+        {
+          "id": "person",
+          "type": "image",
+          "label": "person",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "person"
+        },
+        {
+          "id": "camera",
+          "type": "image",
+          "label": "camera",
+          "roles": [
+            "target_state"
+          ],
+          "sha256": "camera",
+          "camera_character": "C1",
+          "camera_binding": "old"
+        },
+        {
+          "id": "product",
+          "type": "image",
+          "label": "product",
+          "roles": [
+            "product_truth"
+          ],
+          "sha256": "product"
+        },
+        {
+          "id": "other",
+          "type": "image",
+          "label": "other",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "other"
+        }
+      ],
+      "replacements": {
+        "characters": [
+          {
+            "source_id": "C1",
+            "action": "replace",
+            "asset_id": "person",
+            "camera_asset_id": "camera"
+          }
+        ],
+        "product": {
+          "action": "replace",
+          "asset_id": "product"
+        }
+      },
+      "breakdown": {
+        "characters": [
+          {
+            "id": "C1",
+            "appearance": "金色长发 blonde hair",
+            "outfit": "黑色无袖高领连衣裙 black high-neck sleeveless dress with the front slit"
+          }
+        ],
+        "overlays": [],
+        "productMoments": [
+          {
+            "product": "黑色连衣裙"
+          }
+        ]
+      },
+      "script": {
+        "provider": "jimmy",
+        "model": "mock-model",
+        "tasks": []
+      }
+    },
+    "task": {
+      "id": "seg-01",
+      "kind": "speaker",
+      "mode": "video",
+      "dialogue": "Hello!",
+      "action": "The person from @image1 smiles.",
+      "source_start": 0,
+      "source_end": 3,
+      "image_ids": [
+        "camera",
+        "product"
+      ],
+      "duration": 4,
+      "ratio": "9:16",
+      "mute_clip": false
+    },
+    "compare_motion": false,
+    "expected": {
+      "blocking": true,
+      "can_preview": false,
+      "errors": [
+        "seg-01 的图1 指向一张已删除或过期的主镜头图；主镜头图的替换依据已变化"
+      ],
+      "codes": [
+        "camera_image_stale"
+      ],
+      "dialogue_codes": []
+    }
+  },
+  {
+    "name": "missing_camera",
+    "data": {
+      "routes": {
+        "script": {
+          "channel": "jimmy",
+          "model": "mock-model"
+        }
+      },
+      "assets": [
+        {
+          "id": "person",
+          "type": "image",
+          "label": "person",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "person"
+        },
+        {
+          "id": "camera",
+          "type": "image",
+          "label": "camera",
+          "roles": [
+            "target_state"
+          ],
+          "sha256": "camera"
+        },
+        {
+          "id": "product",
+          "type": "image",
+          "label": "product",
+          "roles": [
+            "product_truth"
+          ],
+          "sha256": "product"
+        },
+        {
+          "id": "other",
+          "type": "image",
+          "label": "other",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "other"
+        }
+      ],
+      "replacements": {
+        "characters": [
+          {
+            "source_id": "C1",
+            "action": "replace",
+            "asset_id": "person"
+          }
+        ],
+        "product": {
+          "action": "replace",
+          "asset_id": "product"
+        }
+      },
+      "breakdown": {
+        "characters": [
+          {
+            "id": "C1",
+            "appearance": "金色长发 blonde hair",
+            "outfit": "黑色无袖高领连衣裙 black high-neck sleeveless dress with the front slit"
+          }
+        ],
+        "overlays": [],
+        "productMoments": [
+          {
+            "product": "黑色连衣裙"
+          }
+        ]
+      },
+      "script": {
+        "provider": "jimmy",
+        "model": "mock-model",
+        "tasks": []
+      }
+    },
+    "task": {
+      "id": "seg-01",
+      "kind": "speaker",
+      "mode": "video",
+      "dialogue": "Hello!",
+      "action": "The person from @image1 smiles.",
+      "source_start": 0,
+      "source_end": 3,
+      "image_ids": [
+        "person",
+        "product"
+      ],
+      "duration": 4,
+      "ratio": "9:16",
+      "mute_clip": false
+    },
+    "compare_motion": false,
+    "expected": {
+      "blocking": true,
+      "can_preview": false,
+      "errors": [
+        "seg-01 在场景 S1（默认场景），还缺 C1 在这个场景的主镜头图",
+        "替换设定在生成脚本之后改过，请重新生成新脚本"
+      ],
+      "codes": [
+        "missing_camera_image",
+        "script_stale"
+      ],
+      "dialogue_codes": []
+    }
+  },
+  {
+    "name": "caption_bbox",
+    "data": {
+      "routes": {
+        "script": {
+          "channel": "jimmy",
+          "model": "mock-model"
+        }
+      },
+      "assets": [
+        {
+          "id": "person",
+          "type": "image",
+          "label": "person",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "person"
+        },
+        {
+          "id": "camera",
+          "type": "image",
+          "label": "camera",
+          "roles": [
+            "target_state"
+          ],
+          "sha256": "camera"
+        },
+        {
+          "id": "product",
+          "type": "image",
+          "label": "product",
+          "roles": [
+            "product_truth"
+          ],
+          "sha256": "product"
+        },
+        {
+          "id": "other",
+          "type": "image",
+          "label": "other",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "other"
+        }
+      ],
+      "replacements": {
+        "characters": [
+          {
+            "source_id": "C1",
+            "action": "replace",
+            "asset_id": "person",
+            "camera_asset_id": "camera"
+          }
+        ],
+        "product": {
+          "action": "replace",
+          "asset_id": "product"
+        }
+      },
+      "breakdown": {
+        "characters": [
+          {
+            "id": "C1",
+            "appearance": "金色长发 blonde hair",
+            "outfit": "黑色无袖高领连衣裙 black high-neck sleeveless dress with the front slit"
+          }
+        ],
+        "overlays": [
+          {
+            "kind": "caption",
+            "start": 0,
+            "end": 3,
+            "text": "Hello"
+          }
+        ],
+        "productMoments": [
+          {
+            "product": "黑色连衣裙"
+          }
+        ]
+      },
+      "script": {
+        "provider": "jimmy",
+        "model": "mock-model",
+        "tasks": []
+      }
+    },
+    "task": {
+      "id": "seg-01",
+      "kind": "speaker",
+      "mode": "video",
+      "dialogue": "Hello!",
+      "action": "The person from @image1 smiles.",
+      "source_start": 0,
+      "source_end": 3,
+      "image_ids": [
+        "camera",
+        "product"
+      ],
+      "duration": 4,
+      "ratio": "9:16",
+      "mute_clip": false
+    },
+    "compare_motion": false,
+    "expected": {
+      "blocking": true,
+      "can_preview": false,
+      "errors": [
+        "替换设定在生成脚本之后改过，请重新生成新脚本",
+        "这次拆解没有记录字幕位置，请重新拆解后再预览；也可取消‘参考片段去掉字幕区域’，明确保留原字幕。"
+      ],
+      "codes": [
+        "analysis_no_caption_bbox",
+        "script_stale"
+      ],
+      "dialogue_codes": []
+    }
+  },
+  {
+    "name": "scene_cross",
+    "data": {
+      "routes": {
+        "script": {
+          "channel": "jimmy",
+          "model": "mock-model"
+        }
+      },
+      "assets": [
+        {
+          "id": "person",
+          "type": "image",
+          "label": "person",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "person"
+        },
+        {
+          "id": "camera",
+          "type": "image",
+          "label": "camera",
+          "roles": [
+            "target_state"
+          ],
+          "sha256": "camera"
+        },
+        {
+          "id": "product",
+          "type": "image",
+          "label": "product",
+          "roles": [
+            "product_truth"
+          ],
+          "sha256": "product"
+        },
+        {
+          "id": "other",
+          "type": "image",
+          "label": "other",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "other"
+        }
+      ],
+      "replacements": {
+        "characters": [
+          {
+            "source_id": "C1",
+            "action": "replace",
+            "asset_id": "person",
+            "camera_asset_id": "camera",
+            "camera_assets": {
+              "S1": "camera",
+              "S2": "other"
+            }
+          }
+        ],
+        "product": {
+          "action": "replace",
+          "asset_id": "product"
+        }
+      },
+      "breakdown": {
+        "characters": [
+          {
+            "id": "C1",
+            "appearance": "金色长发 blonde hair",
+            "outfit": "黑色无袖高领连衣裙 black high-neck sleeveless dress with the front slit"
+          }
+        ],
+        "overlays": [],
+        "productMoments": [
+          {
+            "product": "黑色连衣裙"
+          }
+        ],
+        "scene": [
+          {
+            "id": "S1",
+            "name": "室内",
+            "timeRanges": [
+              [
+                0,
+                2
+              ]
+            ]
+          },
+          {
+            "id": "S2",
+            "name": "室外",
+            "timeRanges": [
+              [
+                2,
+                4
+              ]
+            ]
+          }
+        ]
+      },
+      "script": {
+        "provider": "jimmy",
+        "model": "mock-model",
+        "tasks": []
+      }
+    },
+    "task": {
+      "id": "seg-01",
+      "kind": "speaker",
+      "mode": "video",
+      "dialogue": "Hello!",
+      "action": "The person from @image1 smiles.",
+      "source_start": 0,
+      "source_end": 4,
+      "image_ids": [
+        "camera",
+        "product"
+      ],
+      "duration": 4,
+      "ratio": "9:16",
+      "mute_clip": false
+    },
+    "compare_motion": false,
+    "expected": {
+      "blocking": true,
+      "can_preview": false,
+      "errors": [
+        "seg-01 缺少跨场景参考图：场景 S2 的主镜头图",
+        "替换设定在生成脚本之后改过，请重新生成新脚本"
+      ],
+      "codes": [
+        "camera_scene_mismatch",
+        "script_stale"
+      ],
+      "dialogue_codes": []
+    }
+  },
+  {
+    "name": "scene_first",
+    "data": {
+      "routes": {
+        "script": {
+          "channel": "jimmy",
+          "model": "mock-model"
+        }
+      },
+      "assets": [
+        {
+          "id": "person",
+          "type": "image",
+          "label": "person",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "person"
+        },
+        {
+          "id": "camera",
+          "type": "image",
+          "label": "camera",
+          "roles": [
+            "target_state"
+          ],
+          "sha256": "camera"
+        },
+        {
+          "id": "product",
+          "type": "image",
+          "label": "product",
+          "roles": [
+            "product_truth"
+          ],
+          "sha256": "product"
+        },
+        {
+          "id": "other",
+          "type": "image",
+          "label": "other",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "other"
+        }
+      ],
+      "replacements": {
+        "characters": [
+          {
+            "source_id": "C1",
+            "action": "replace",
+            "asset_id": "person",
+            "camera_asset_id": "camera",
+            "camera_assets": {
+              "S1": "camera",
+              "S2": "other"
+            }
+          }
+        ],
+        "product": {
+          "action": "replace",
+          "asset_id": "product"
+        }
+      },
+      "breakdown": {
+        "characters": [
+          {
+            "id": "C1",
+            "appearance": "金色长发 blonde hair",
+            "outfit": "黑色无袖高领连衣裙 black high-neck sleeveless dress with the front slit"
+          }
+        ],
+        "overlays": [],
+        "productMoments": [
+          {
+            "product": "黑色连衣裙"
+          }
+        ],
+        "scene": [
+          {
+            "id": "S1",
+            "name": "室内",
+            "timeRanges": [
+              [
+                0,
+                2
+              ]
+            ]
+          },
+          {
+            "id": "S2",
+            "name": "室外",
+            "timeRanges": [
+              [
+                2,
+                4
+              ]
+            ]
+          }
+        ]
+      },
+      "script": {
+        "provider": "jimmy",
+        "model": "mock-model",
+        "tasks": []
+      }
+    },
+    "task": {
+      "id": "seg-01",
+      "kind": "speaker",
+      "mode": "video",
+      "dialogue": "Hello!",
+      "action": "The person from @image1 smiles.",
+      "source_start": 2,
+      "source_end": 4,
+      "image_ids": [
+        "camera",
+        "product"
+      ],
+      "duration": 4,
+      "ratio": "9:16",
+      "mute_clip": false
+    },
+    "compare_motion": false,
+    "expected": {
+      "blocking": true,
+      "can_preview": false,
+      "errors": [
+        "人物图 camera 不属于第 03 步的任何‘替换’人物，请选择该人物的人物图或主镜头图，并重新生成新脚本。",
+        "这一段缺少替换人物 C1 的参考图，请选入该人物的主镜头图或人物图。",
+        "seg-01 图1不是场景 S2 的主镜头图",
+        "替换设定在生成脚本之后改过，请重新生成新脚本"
+      ],
+      "codes": [
+        "camera_scene_mismatch",
+        "person_image_mismatch",
+        "person_replace_missing_image",
+        "script_stale"
+      ],
+      "dialogue_codes": []
+    }
+  },
+  {
+    "name": "motion_additions",
+    "data": {
+      "routes": {
+        "script": {
+          "channel": "jimmy",
+          "model": "mock-model"
+        }
+      },
+      "assets": [
+        {
+          "id": "person",
+          "type": "image",
+          "label": "person",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "person"
+        },
+        {
+          "id": "camera",
+          "type": "image",
+          "label": "camera",
+          "roles": [
+            "target_state"
+          ],
+          "sha256": "camera"
+        },
+        {
+          "id": "product",
+          "type": "image",
+          "label": "product",
+          "roles": [
+            "product_truth"
+          ],
+          "sha256": "product"
+        },
+        {
+          "id": "other",
+          "type": "image",
+          "label": "other",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "other"
+        }
+      ],
+      "replacements": {
+        "characters": [
+          {
+            "source_id": "C1",
+            "action": "replace",
+            "asset_id": "person",
+            "camera_asset_id": "camera"
+          }
+        ],
+        "product": {
+          "action": "replace",
+          "asset_id": "product"
+        }
+      },
+      "breakdown": {
+        "characters": [
+          {
+            "id": "C1",
+            "appearance": "金色长发 blonde hair",
+            "outfit": "黑色无袖高领连衣裙 black high-neck sleeveless dress with the front slit"
+          }
+        ],
+        "overlays": [],
+        "productMoments": [
+          {
+            "product": "黑色连衣裙"
+          }
+        ]
+      },
+      "script": {
+        "provider": "jimmy",
+        "model": "mock-model",
+        "tasks": []
+      }
+    },
+    "task": {
+      "id": "seg-01",
+      "kind": "speaker",
+      "mode": "video",
+      "dialogue": "Hello!",
+      "action": "The person from @image1 smiles.",
+      "source_start": 0,
+      "source_end": 3,
+      "image_ids": [
+        "camera",
+        "product"
+      ],
+      "duration": 4,
+      "ratio": "9:16",
+      "mute_clip": false
+    },
+    "compare_motion": true,
+    "expected": {
+      "blocking": true,
+      "can_preview": false,
+      "errors": [
+        "替换设定在生成脚本之后改过，请重新生成新脚本",
+        "新增动作"
+      ],
+      "codes": [
+        "motion_additions",
+        "script_stale"
+      ],
+      "dialogue_codes": []
+    }
+  },
+  {
+    "name": "ready",
+    "data": {
+      "routes": {
+        "script": {
+          "channel": "jimmy",
+          "model": "mock-model"
+        }
+      },
+      "assets": [
+        {
+          "id": "person",
+          "type": "image",
+          "label": "person",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "person"
+        },
+        {
+          "id": "camera",
+          "type": "image",
+          "label": "camera",
+          "roles": [
+            "target_state"
+          ],
+          "sha256": "camera"
+        },
+        {
+          "id": "product",
+          "type": "image",
+          "label": "product",
+          "roles": [
+            "product_truth"
+          ],
+          "sha256": "product"
+        },
+        {
+          "id": "other",
+          "type": "image",
+          "label": "other",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "other"
+        }
+      ],
+      "replacements": {
+        "characters": [
+          {
+            "source_id": "C1",
+            "action": "replace",
+            "asset_id": "person",
+            "camera_asset_id": "camera"
+          }
+        ],
+        "product": {
+          "action": "replace",
+          "asset_id": "product"
+        }
+      },
+      "breakdown": {
+        "characters": [
+          {
+            "id": "C1",
+            "appearance": "金色长发 blonde hair",
+            "outfit": "黑色无袖高领连衣裙 black high-neck sleeveless dress with the front slit"
+          }
+        ],
+        "overlays": [],
+        "productMoments": [
+          {
+            "product": "黑色连衣裙"
+          }
+        ]
+      },
+      "script": {
+        "provider": "jimmy",
+        "model": "mock-model",
+        "tasks": [],
+        "replacements_fingerprint": "6532a614418c2d81934a77a87162e941d3ce85d33a14ce384dd4c62b60478d9a"
+      }
+    },
+    "task": {
+      "id": "seg-01",
+      "kind": "speaker",
+      "mode": "video",
+      "dialogue": "Hello!",
+      "action": "The person from @image1 smiles.",
+      "source_start": 0,
+      "source_end": 3,
+      "image_ids": [
+        "camera",
+        "product"
+      ],
+      "duration": 4,
+      "ratio": "9:16",
+      "mute_clip": false
+    },
+    "compare_motion": false,
+    "expected": {
+      "blocking": false,
+      "can_preview": true,
+      "errors": [],
+      "codes": [],
+      "dialogue_codes": []
+    }
+  },
+  {
+    "name": "dialogue_warning",
+    "data": {
+      "routes": {
+        "script": {
+          "channel": "jimmy",
+          "model": "mock-model"
+        }
+      },
+      "assets": [
+        {
+          "id": "person",
+          "type": "image",
+          "label": "person",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "person"
+        },
+        {
+          "id": "camera",
+          "type": "image",
+          "label": "camera",
+          "roles": [
+            "target_state"
+          ],
+          "sha256": "camera"
+        },
+        {
+          "id": "product",
+          "type": "image",
+          "label": "product",
+          "roles": [
+            "product_truth"
+          ],
+          "sha256": "product"
+        },
+        {
+          "id": "other",
+          "type": "image",
+          "label": "other",
+          "roles": [
+            "person_identity"
+          ],
+          "sha256": "other"
+        }
+      ],
+      "replacements": {
+        "characters": [
+          {
+            "source_id": "C1",
+            "action": "replace",
+            "asset_id": "person",
+            "camera_asset_id": "camera"
+          }
+        ],
+        "product": {
+          "action": "replace",
+          "asset_id": "product"
+        }
+      },
+      "breakdown": {
+        "characters": [
+          {
+            "id": "C1",
+            "appearance": "金色长发 blonde hair",
+            "outfit": "黑色无袖高领连衣裙 black high-neck sleeveless dress with the front slit"
+          }
+        ],
+        "overlays": [],
+        "productMoments": [
+          {
+            "product": "黑色连衣裙"
+          }
+        ]
+      },
+      "script": {
+        "provider": "jimmy",
+        "model": "mock-model",
+        "tasks": [],
+        "replacements_fingerprint": "6532a614418c2d81934a77a87162e941d3ce85d33a14ce384dd4c62b60478d9a"
+      }
+    },
+    "task": {
+      "id": "seg-01",
+      "kind": "speaker",
+      "mode": "video",
+      "dialogue": "A black dress with a slit",
+      "action": "Smile.",
+      "source_start": 0,
+      "source_end": 3,
+      "image_ids": [
+        "camera",
+        "product"
+      ],
+      "duration": 4,
+      "ratio": "9:16",
+      "mute_clip": false
+    },
+    "compare_motion": false,
+    "expected": {
+      "blocking": false,
+      "can_preview": true,
+      "errors": [],
+      "codes": [],
+      "dialogue_codes": [
+        "dialogue_conflict"
+      ]
+    }
+  }
+]

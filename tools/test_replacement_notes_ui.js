@@ -1,0 +1,13 @@
+const assert=require('node:assert/strict');
+const {setup}=require('./test_storyboard_sb1_ui');
+(async()=>{const t=setup();
+ const note=t.$('[data-cast-description="C1"]');note.value='28 岁；保留发型\n甲：<说明> & "引号"';await t.event('input',note);
+ const product=t.$('[data-cast-description="product"]');product.value='米色针织开衫，柔软不起球';await t.event('input',product);
+ const expected=JSON.parse(t.run('JSON.stringify(readReplacements())'));await t.run('saveReplacements()');
+ assert.deepEqual(t.requests.at(-1).body,expected);
+ t.run('P=clone(P);renderReplacements(true)');assert.equal(t.$('[data-cast-description="C1"]').value,expected.characters[0].description);
+ assert.equal(t.$('[data-cast-description="product"]').value,expected.product.description);
+ const empty=t.$('[data-cast-description="C1"]');empty.value='';await t.event('input',empty);assert.equal(t.run('readReplacements().characters[0].description'),'');
+ assert.equal(t.$('.reptable'),null);assert.doesNotMatch(t.$('#step-3').textContent,/主镜头图/);
+ console.log('PASS SB1: independent card descriptions, escaping, save/reopen and empty values');
+})().catch(e=>{console.error(e);process.exitCode=1;});

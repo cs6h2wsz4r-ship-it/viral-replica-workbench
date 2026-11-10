@@ -1,0 +1,15 @@
+{
+  "provenance": "24.11 intentional changes: authored dialogue text at absolute source times; boundary lags are inconclusive. Original round11 measurements and round22 unchanged-symbol hashes retained. Synthetic and measured regression checks run offline.",
+  "previous_media_sha256": "070a6290a4ac563a0a64be8aab0e206aa5ab6459a887dbf47d5d914a6e677c61",
+  "current_media_sha256": "5bbb124d5d284a5fa6d54628e833ecbf63b2ca59182261d379f3a2fba79ef796",
+  "changed_symbols": {
+    "_speech_lags": {
+      "previous_sha256": "5a033aa207e637db20ba2020ab01500a50e27063ec94ebe57bc906675d22f7a7",
+      "current_sha256": "cb5f39b3c01eac4da438e3d4890576fc0f536ae35de77685d5c991215e5d3eb5"
+    },
+    "motion_alignment": {
+      "previous_sha256": "c1e9babdbe06257d9fcd2bacb2449a207aeef49ec06fa7ce8660c49ac7a18923",
+      "current_sha256": "87831178fc793ab3ee431fd7acf61e4e090b95567c96843dac35f18cebf317b4"
+    }
+  }
+}

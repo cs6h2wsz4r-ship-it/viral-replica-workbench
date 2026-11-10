@@ -1,0 +1,2028 @@
+{
+  "id": "p1027180021-c16a",
+  "name": "复刻 2026/10/27",
+  "created_at": "2026-10-27 18:00:21",
+  "source": {
+    "file": "source/source.mp4",
+    "name": "TikSave.io_7642726975089560846.mp4",
+    "probe": {
+      "duration": 15.167,
+      "size_bytes": 1848111,
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "has_video": true,
+      "audio_stream_count": 1,
+      "width": 720,
+      "height": 1280,
+      "fps": 30.0,
+      "video_codec": "h264",
+      "ratio_hint": "9:16",
+      "audio_codec": "aac",
+      "sample_rate": "44100",
+      "channels": 2
+    },
+    "sha256": "5d2c080eae54dea13e0b0373d66b28d64cd27c975dec7641e7685ce3ddb9dc87"
+  },
+  "assets": [
+    {
+      "id": "a1027180115-c3e4",
+      "type": "image",
+      "label": "ChatGPT Image 2026年8月8日 22_17_43",
+      "roles": [
+        "person_identity"
+      ],
+      "file": "assets/a1027180115-c3e4.png",
+      "sha256": "365a0954cd86a65179c53ff2e99a59fb1c8e1f5bc3d2a80de1eedeb3cafbfd53",
+      "description": ""
+    },
+    {
+      "id": "a1027180615-ee86",
+      "type": "image",
+      "label": "ChatGPT 图像 2026年10月16日 22_49_51",
+      "roles": [
+        "product_truth"
+      ],
+      "file": "assets/a1027180615-ee86.png",
+      "sha256": "75e6fbdc64bbfdd390e1f09ab2d5be863d1c763bff31dd0b3c41c12c400330fd",
+      "description": ""
+    }
+  ],
+  "analysis": {
+    "status": "done",
+    "provider": "jimmy",
+    "steps": {
+      "probe": {
+        "title": "01 媒体探测",
+        "tool": "ffprobe（= hypit media probe）· 本地免费",
+        "status": "done",
+        "output": {
+          "duration": 15.167,
+          "width": 720,
+          "height": 1280,
+          "fps": 30.0,
+          "audio_stream_count": 1
+        }
+      },
+      "transcribe": {
+        "title": "02 逐词转录",
+        "tool": "faster-whisper medium int8 + wav2vec2 alignment · 本地免费",
+        "status": "done",
+        "output": {
+          "sentences": 5,
+          "words": 34
+        }
+      },
+      "boundaries": {
+        "title": "03 切点检测与帧网格",
+        "tool": "hypit boundaries 同算法 + 带台词帧网格 · 本地免费",
+        "status": "done",
+        "output": {
+          "cut_candidates": 1,
+          "shots": 1,
+          "overview_every_s": 1.0,
+          "overview_grids": 2
+        }
+      },
+      "overview": {
+        "title": "04 整片理解 → ANALYSIS.md",
+        "tool": "吉米 · GPT-5.6 Sol（共用 Jimmy Key） · 外部计费",
+        "status": "done",
+        "output": {
+          "model": "gpt-5.6-sol",
+          "input": "2 张帧网格",
+          "passages": 7,
+          "systems": 4,
+          "seconds": 103.0
+        }
+      },
+      "close": {
+        "title": "05 逐段细读 → TIMELINE.md",
+        "tool": "吉米 · GPT-5.6 Sol（共用 Jimmy Key） · 外部计费",
+        "status": "done",
+        "progress": "7/7",
+        "output": {
+          "passages": 7,
+          "failed": 0,
+          "seconds": 284.0
+        }
+      },
+      "pack": {
+        "title": "06 拆解包",
+        "tool": "7 卡 + 图层表 + 文档",
+        "status": "done",
+        "output": {
+          "characters": 1,
+          "scene": 1,
+          "beats": 7,
+          "shots": 16,
+          "productMoments": 12,
+          "dialogue": 5,
+          "overlays": 10
+        }
+      }
+    },
+    "started": 1793095241.2900312,
+    "shots": [
+      {
+        "index": 1,
+        "start": 0.0,
+        "end": 15.167,
+        "cut_score": null,
+        "frame": "analysis/frames/shot-001.jpg"
+      }
+    ],
+    "transcript": [
+      {
+        "start": 1.073,
+        "end": 3.727,
+        "text": "No, because why does this look this good when I walk?",
+        "words": [
+          {
+            "word": "No,",
+            "start": 1.073,
+            "end": 1.274
+          },
+          {
+            "word": "because",
+            "start": 1.314,
+            "end": 1.636
+          },
+          {
+            "word": "why",
+            "start": 1.756,
+            "end": 1.957
+          },
+          {
+            "word": "does",
+            "start": 1.977,
+            "end": 2.138
+          },
+          {
+            "word": "this",
+            "start": 2.178,
+            "end": 2.339
+          },
+          {
+            "word": "look",
+            "start": 2.4,
+            "end": 2.641
+          },
+          {
+            "word": "this",
+            "start": 2.661,
+            "end": 3.023
+          },
+          {
+            "word": "good",
+            "start": 3.103,
+            "end": 3.344
+          },
+          {
+            "word": "when",
+            "start": 3.365,
+            "end": 3.445
+          },
+          {
+            "word": "I",
+            "start": 3.465,
+            "end": 3.485
+          },
+          {
+            "word": "walk?",
+            "start": 3.586,
+            "end": 3.727
+          }
+        ]
+      },
+      {
+        "start": 5.07,
+        "end": 7.608,
+        "text": "The back, the slit, yeah.",
+        "words": [
+          {
+            "word": "The",
+            "start": 5.07,
+            "end": 5.171
+          },
+          {
+            "word": "back,",
+            "start": 5.211,
+            "end": 5.533
+          },
+          {
+            "word": "the",
+            "start": 6.118,
+            "end": 6.218
+          },
+          {
+            "word": "slit,",
+            "start": 6.279,
+            "end": 6.702
+          },
+          {
+            "word": "yeah.",
+            "start": 7.326,
+            "end": 7.608
+          }
+        ]
+      },
+      {
+        "start": 8.27,
+        "end": 9.93,
+        "text": "Somebody knew exactly what they were doing.",
+        "words": [
+          {
+            "word": "Somebody",
+            "start": 8.27,
+            "end": 8.594
+          },
+          {
+            "word": "knew",
+            "start": 8.634,
+            "end": 8.756
+          },
+          {
+            "word": "exactly",
+            "start": 8.816,
+            "end": 9.221
+          },
+          {
+            "word": "what",
+            "start": 9.241,
+            "end": 9.343
+          },
+          {
+            "word": "they",
+            "start": 9.383,
+            "end": 9.484
+          },
+          {
+            "word": "were",
+            "start": 9.525,
+            "end": 9.626
+          },
+          {
+            "word": "doing.",
+            "start": 9.666,
+            "end": 9.93
+          }
+        ]
+      },
+      {
+        "start": 10.63,
+        "end": 13.489,
+        "text": "This is giving rich girl at midnight energy",
+        "words": [
+          {
+            "word": "This",
+            "start": 10.63,
+            "end": 10.771
+          },
+          {
+            "word": "is",
+            "start": 10.852,
+            "end": 10.912
+          },
+          {
+            "word": "giving",
+            "start": 10.952,
+            "end": 11.355
+          },
+          {
+            "word": "rich",
+            "start": 11.637,
+            "end": 11.859
+          },
+          {
+            "word": "girl",
+            "start": 11.939,
+            "end": 12.241
+          },
+          {
+            "word": "at",
+            "start": 12.402,
+            "end": 12.503
+          },
+          {
+            "word": "midnight",
+            "start": 12.604,
+            "end": 13.067
+          },
+          {
+            "word": "energy",
+            "start": 13.147,
+            "end": 13.489
+          }
+        ]
+      },
+      {
+        "start": 13.773,
+        "end": 14.85,
+        "text": "and I'm obsessed.",
+        "words": [
+          {
+            "word": "and",
+            "start": 13.773,
+            "end": 13.875
+          },
+          {
+            "word": "I'm",
+            "start": 13.915,
+            "end": 14.119
+          },
+          {
+            "word": "obsessed.",
+            "start": 14.322,
+            "end": 14.85
+          }
+        ]
+      }
+    ],
+    "overview_grids": [
+      {
+        "file": "analysis/evidence/overview/ov-grid-01.jpg",
+        "cells": [
+          {
+            "t": 0.0,
+            "words": ""
+          },
+          {
+            "t": 1.0,
+            "words": "No, because"
+          },
+          {
+            "t": 2.0,
+            "words": "because why does this look"
+          },
+          {
+            "t": 3.0,
+            "words": "look this good when I"
+          },
+          {
+            "t": 4.0,
+            "words": "walk?"
+          },
+          {
+            "t": 5.0,
+            "words": "The back,"
+          },
+          {
+            "t": 6.0,
+            "words": "back, the slit,"
+          },
+          {
+            "t": 7.0,
+            "words": "slit, yeah."
+          },
+          {
+            "t": 8.0,
+            "words": "yeah. Somebody"
+          },
+          {
+            "t": 9.0,
+            "words": "Somebody knew exactly what they"
+          },
+          {
+            "t": 10.0,
+            "words": "were doing."
+          },
+          {
+            "t": 11.0,
+            "words": "This is giving"
+          }
+        ]
+      },
+      {
+        "file": "analysis/evidence/overview/ov-grid-02.jpg",
+        "cells": [
+          {
+            "t": 12.0,
+            "words": "rich girl at"
+          },
+          {
+            "t": 13.0,
+            "words": "at midnight energy"
+          },
+          {
+            "t": 14.0,
+            "words": "and I'm obsessed."
+          }
+        ]
+      }
+    ],
+    "passages": [
+      {
+        "id": "P1",
+        "start": 0.0,
+        "end": 1.07,
+        "phase": "钩子",
+        "summary": "视频从女性近距离穿着黑色连衣裙面对镜头开始。她尚未开始可确认的完整台词，画面先用人物、服装和近距离姿态建立注意力。",
+        "question": "开头0.00-1.07秒是否有无台词的表情、手势或环境声音，能否进一步确认第一句口播前的吸引动作？",
+        "every": 0.2,
+        "grids": [
+          "analysis/evidence/close/f67c1b5efc38ea26f834/c1d0cde375f0349b/p1-grid-01.jpg"
+        ]
+      },
+      {
+        "id": "P2",
+        "start": 1.07,
+        "end": 4.0,
+        "phase": "钩子",
+        "summary": "在说“No, because why does this look this good when I walk?”时，人物从较近位置向后移动并展示正面和走动状态。她把观众问题聚焦到服装在行走时的视觉效果。",
+        "question": "说到“when I walk”时，她的步伐、裙摆和开衩是否有明确的摆动或露腿动作，字幕是否始终覆盖在裙摆区域？",
+        "every": 0.2,
+        "grids": [
+          "analysis/evidence/close/c7d4f23ecb05bfec53b9/ec45594710b7cd7f/p2-grid-01.jpg",
+          "analysis/evidence/close/c7d4f23ecb05bfec53b9/ec45594710b7cd7f/p2-grid-02.jpg"
+        ]
+      },
+      {
+        "id": "P3",
+        "start": 4.0,
+        "end": 5.07,
+        "phase": "卖点",
+        "summary": "上一句结束后，人物保持全身展示并准备改变方向。画面从正面走动过渡到背面展示，视觉上形成一个短暂的动作转折。",
+        "question": "4.00-5.07秒人物具体何时开始转身，转身是否由手部、肩部或裙摆动作触发？",
+        "every": 0.2,
+        "grids": [
+          "analysis/evidence/close/90283deb91f126930cac/ec9e75a8ecdf65e7/p3-grid-01.jpg"
+        ]
+      },
+      {
+        "id": "P4",
+        "start": 5.07,
+        "end": 8.27,
+        "phase": "卖点",
+        "summary": "在“The back, the slit, yeah.”期间，人物转向侧后方，依次让观众看到裙子的背部和开衩。台词直接点名两个设计区域，动作承担主要证明作用。",
+        "question": "说到“the back”和“the slit”时，镜头中被突出的是背部裸露、裙身剪裁还是腿部开衩；人物是否有扶裙或回头动作？",
+        "every": 0.2,
+        "grids": [
+          "analysis/evidence/close/780c2edf15013450ea3b/b01285ecf9b69325/p4-grid-01.jpg",
+          "analysis/evidence/close/780c2edf15013450ea3b/b01285ecf9b69325/p4-grid-02.jpg"
+        ]
+      },
+      {
+        "id": "P5",
+        "start": 8.27,
+        "end": 10.63,
+        "phase": "证明",
+        "summary": "在“Somebody knew exactly what they were doing.”期间，人物回到更正面的方向并以手势、表情和姿态表达对设计的认可。这一段把具体卖点上升为设计者有意完成的效果。",
+        "question": "说到“exactly what they were doing”时，人物的表情和手势是否明显加强了认可感，是否再次露出开衩或背部？",
+        "every": 0.2,
+        "grids": [
+          "analysis/evidence/close/15bb1504c80835771267/804eb19317648261/p5-grid-01.jpg"
+        ]
+      },
+      {
+        "id": "P6",
+        "start": 10.63,
+        "end": 13.77,
+        "phase": "信任",
+        "summary": "在“This is giving rich girl at midnight energy”期间，人物向后拉开距离并展示完整造型和走动效果。服装从单个细节被重新包装成一种“午夜富家女孩”的整体氛围联想。",
+        "question": "说到“rich girl”与“midnight energy”时，人物的距离、步伐、鞋子和整体姿态是否发生变化，画面是否完整展示裙长和鞋履？",
+        "every": 0.2,
+        "grids": [
+          "analysis/evidence/close/1163718684a370112aac/7b744c8576376a11/p6-grid-01.jpg",
+          "analysis/evidence/close/1163718684a370112aac/7b744c8576376a11/p6-grid-02.jpg"
+        ]
+      },
+      {
+        "id": "P7",
+        "start": 13.77,
+        "end": 15.17,
+        "phase": "促单",
+        "summary": "在“and I’m obsessed.”期间，人物重新靠近镜头并以正面姿态结束。没有明确购买指令，但用强烈的个人喜爱表达完成情绪化种草和记忆点收束。",
+        "question": "片尾人物是否在说“obsessed”时微笑、停步或做出最后的服装展示动作，字幕在最后一帧如何退出？",
+        "every": 0.2,
+        "grids": [
+          "analysis/evidence/close/40921b7584b052d0335a/59b18d530d9799c8/p7-grid-01.jpg"
+        ]
+      }
+    ],
+    "docs": {
+      "ANALYSIS.md": "analysis/ANALYSIS.md",
+      "TIMELINE.md": "analysis/TIMELINE.md",
+      "台词表.srt": "analysis/台词表.srt",
+      "逐词时间轴.csv": "analysis/逐词时间轴.csv",
+      "transcript.json": "analysis/transcript.json",
+      "boundaries.json": "analysis/boundaries.json",
+      "passages.json": "analysis/passages.json"
+    }
+  },
+  "breakdown": {
+    "overview": {
+      "oneLine": "一位女性在家中连续展示黑色高领开衩连衣裙，通过走近、转身和走动突出裙子的正面、背面与开衩设计，最后用“rich girl at midnight”式情绪表达完成种草。",
+      "genre": "口播带货/服装试穿展示",
+      "visualTone": "黑白为主、自然室内光、生活化高级感、固定竖屏机位配合人物走位和转身展示",
+      "language": "en",
+      "duration": 15.167
+    },
+    "characters": [
+      {
+        "id": "C1",
+        "name": "未提供姓名",
+        "role": "试穿并展示黑色连衣裙的女性",
+        "appearance": "金色长发，年轻女性年龄感，身材修长；面部和体型细节以帧网格可见范围为准",
+        "outfit": "黑色无袖修身长裙，接近高领，裙身有明显开衩；穿浅色或金色细带高跟鞋",
+        "voice": "女性英文口播，语气兴奋、即时、带有审美赞叹感；具体音色不确定",
+        "screenTime": "0.00-15.167s，持续在画面中"
+      }
+    ],
+    "scene": [
+      {
+        "id": "S1",
+        "name": "明亮住宅客厅",
+        "description": "人物在室内客厅中央展示服装。背景可见浅色沙发、开放式置物架、吉他、木地板和浅色墙面。固定竖屏机位，人物通过前后移动和转身改变景别。",
+        "lighting": "明亮、均匀的室内自然光或混合室内光；未见强烈彩色灯光或明显戏剧化阴影",
+        "timeRanges": [
+          [
+            0,
+            15.167
+          ]
+        ]
+      }
+    ],
+    "systems": [
+      {
+        "name": "底部英文口播字幕",
+        "kind": "caption",
+        "description": "白色英文字幕，带黑色描边或阴影，位于画面下方，通常分为一到两行。字幕跟随口播逐句或逐词更新，从约1.00秒开始可见，内容与转录一致；在人物腿部或裙摆区域附近显示。具体淡入淡出方式不确定，片尾仍可见“and I’m obsessed”。",
+        "timeRanges": [
+          [
+            1.0,
+            15.167
+          ]
+        ]
+      },
+      {
+        "name": "人物试穿展示",
+        "kind": "a-roll",
+        "description": "同一位女性持续承担表演和商品展示。她从近距离正面状态向后移动，随后正面走动、转身展示背面和开衩，再拉远展示整体造型，最后走回镜头。动作与“walk”“the back”“the slit”等词直接对应。",
+        "timeRanges": [
+          [
+            0,
+            15.167
+          ]
+        ]
+      },
+      {
+        "name": "固定竖屏手机机位",
+        "kind": "effect",
+        "description": "画面保持竖屏固定构图，未观察到明确剪辑、镜头摇移或推拉。人物前后走位造成近景、全身和中远景变化。机械切点候选0.17秒不对应可确认的剧情或镜头变化。",
+        "timeRanges": [
+          [
+            0,
+            15.167
+          ]
+        ]
+      },
+      {
+        "name": "英文即时口播",
+        "kind": "a-roll",
+        "description": "女性直接对镜头表达对服装外观、背面、开衩和整体氛围的评价。口播是主要叙事和说服声音，未提供可确认的其他声音系统。",
+        "timeRanges": [
+          [
+            1.07,
+            14.85
+          ]
+        ]
+      }
+    ],
+    "beats": [
+      {
+        "id": "P1",
+        "start": 0.0,
+        "end": 1.07,
+        "function": "钩子",
+        "summary": "视频从女性近距离穿着黑色连衣裙面对镜头开始。她尚未开始可确认的完整台词，画面先用人物、服装和近距离姿态建立注意力。",
+        "performance": "C1从一开始就正面直视镜头，表情整体平静而专注，嘴唇逐渐张开但这一段没有可核对的台词。她后退时保持面向观众，约0.72秒后抬手触碰或靠近胸口/领口，形成一个明确的注意力引导手势；该动作更像是在准备介绍或强调服装上身效果。具体情绪强度和是否已经开始发声，仅凭帧网格无法确认。",
+        "sound": "这一段未提供可核对的音频证据。逐词台词标注为空，因此没有可挂接的口播词语；无法确认0.00–1.07秒是否存在环境声、BGM、衣料摩擦声或其他音效。"
+      },
+      {
+        "id": "P2",
+        "start": 1.07,
+        "end": 4.0,
+        "function": "钩子",
+        "summary": "在说“No, because why does this look this good when I walk?”时，人物从较近位置向后移动并展示正面和走动状态。她把观众问题聚焦到服装在行走时的视觉效果。",
+        "performance": "C1 直接对镜头说话，语气带惊讶、兴奋和审美赞叹，像是在即时感叹裙子走起来的效果。“why”与“this good”承载疑问和赞叹的重点；说到“when I walk”及“walk?”时，她迈步展示裙子，表情仍面向镜头，随后短暂低头看向前方或裙身。手部大致保持一手在肩颈附近、另一手在裙侧；未见明确的大幅手势。",
+        "sound": "可确认有人声英文口播。仅凭给定帧网格和台词无法判断BGM、环境声或具体音效是否存在，也无法确认声音变化点。"
+      },
+      {
+        "id": "P3",
+        "start": 4.0,
+        "end": 5.07,
+        "function": "卖点",
+        "summary": "上一句结束后，人物保持全身展示并准备改变方向。画面从正面走动过渡到背面展示，视觉上形成一个短暂的动作转折。",
+        "performance": "人物面对镜头，表情从较专注逐渐显出笑意，整体像是在继续进行即时口播展示。手在颈口/肩部附近的姿势持续数帧，随后另一只手落到裙侧；没有可确认的转身准备动作或转身重音。本段没有提供逐词台词，因此无法确认具体关键词重音。",
+        "sound": "未提供可供核对的音轨或声音描述；无法确认本段口播、BGM、音效或环境声的具体变化。"
+      },
+      {
+        "id": "P4",
+        "start": 5.07,
+        "end": 8.27,
+        "function": "卖点",
+        "summary": "在“The back, the slit, yeah.”期间，人物转向侧后方，依次让观众看到裙子的背部和开衩。台词直接点名两个设计区域，动作承担主要证明作用。",
+        "performance": "人物整体是兴奋、带审美确认感的即时口播，像是在对镜头强调这件裙子最有吸引力的设计细节。“the back”说得直接，但她当时仍基本正面，视觉证明稍晚于台词；说到“the slit”时重音落在“slit”，身体同步开始转向侧后方。她没有明显回头去看身后，而是在转身后用侧脸和回看镜头的方式保持与观众的联系。手部动作主要是经过颈肩和沿身体自然下落，没有看清楚的扶裙或主动拉开裙摆动作。说“yeah.”时表情更像带笑确认，身体停在展示背部的姿态。",
+        "sound": "可确认的声音是女性英文口播，5.07–8.27s连续说“The back, the slit, yeah.”。未提供可确认的音效、环境声或BGM变化；这一段没有可据画面和给定信息确认的转场音、衣料摩擦音或音乐重音。"
+      },
+      {
+        "id": "P5",
+        "start": 8.27,
+        "end": 10.63,
+        "function": "证明",
+        "summary": "在“Somebody knew exactly what they were doing.”期间，人物回到更正面的方向并以手势、表情和姿态表达对设计的认可。这一段把具体卖点上升为设计者有意完成的效果。",
+        "performance": "人物以面对镜头的审美认可口吻说这句话，态度从直接评论转向带有肯定意味的赞叹。说到“exactly”时，她仍保持正面，表情更明亮、嘴部张开并带有轻微笑意，同时手在头发附近形成较明显的强调动作；到“what they were doing”时，她开始把身体拉远，手臂向下并向两侧打开，用姿态认可整体设计。认可感确实比段落开始更明显，但主要来自表情变亮、触发头发和随后展开双臂，并不是夸张的指向或大幅手势。她没有转身，因此没有再次露出背部；正面腿部开衩在整个段落中都能看到。",
+        "sound": "可确认的是女性英文口播，词语节奏对应“Somebody knew exactly what they were doing.”，约10.4秒后进入下一句。画面证据未提供可确认的独立音效、BGM变化或环境声变化；背景声类型和音量变化不确定。"
+      },
+      {
+        "id": "P6",
+        "start": 10.63,
+        "end": 13.77,
+        "function": "信任",
+        "summary": "在“This is giving rich girl at midnight energy”期间，人物向后拉开距离并展示完整造型和走动效果。服装从单个细节被重新包装成一种“午夜富家女孩”的整体氛围联想。",
+        "performance": "C1面向镜头口播，整体是轻松、带欣赏感的造型评价。说到“rich girl”时以转身展示侧面和背侧轮廓配合这句联想；“midnight”附近转回正面；“energy”期间带着笑意朝镜头走近。帧图支持她面带微笑，但具体语音重音、音高变化和手势细节无法仅凭帧图确认。",
+        "sound": "给定逐词转录为“This is giving rich girl at midnight energy”。没有提供可核验的音频片段，无法确认BGM、环境声或音效及其变化点。"
+      },
+      {
+        "id": "P7",
+        "start": 13.77,
+        "end": 15.17,
+        "function": "促单",
+        "summary": "在“and I’m obsessed.”期间，人物重新靠近镜头并以正面姿态结束。没有明确购买指令，但用强烈的个人喜爱表达完成情绪化种草和记忆点收束。",
+        "performance": "C1以兴奋、亲近镜头的口吻表达强烈个人喜爱。重心落在“obsessed”；她在说这句话时持续走近，末段面向镜头露出轻微笑意。画面没有足够证据确认她停步，也没有看出单独的最后展示手势。",
+        "sound": "可确认的声音信息为女性英文口播“and I’m obsessed.”。本段材料未提供可确认的BGM、音效或环境声变化。"
+      }
+    ],
+    "shots": [
+      {
+        "start": 0.0,
+        "end": 0.4,
+        "shotSize": "近距离正面半身/胸部以上为主",
+        "camera": "固定竖屏机位；无可确认的推拉、摇移或剪辑",
+        "action": "C1正面面对镜头并保持直视，嘴唇由轻微闭合或抿嘴逐渐张开；身体基本稳定",
+        "characters": [
+          "C1"
+        ],
+        "sceneId": "S1",
+        "product": "黑色无袖高领修身长裙；领口、胸腰褶皱和前侧开衩清晰可见",
+        "onScreenText": "",
+        "id": "K1"
+      },
+      {
+        "start": 0.4,
+        "end": 0.72,
+        "shotSize": "中近景，人物上身至大腿逐渐可见",
+        "camera": "固定机位；人物向后移动造成景别变远",
+        "action": "C1开始向后退，正面朝向镜头，双臂从身体两侧自然移动；裙身和前侧开衩露出范围增加",
+        "characters": [
+          "C1"
+        ],
+        "sceneId": "S1",
+        "product": "黑色修身长裙整体正面；腰部贴合、裙摆和前侧开衩更完整可见",
+        "onScreenText": "",
+        "id": "K2"
+      },
+      {
+        "start": 0.72,
+        "end": 1.07,
+        "shotSize": "中景至接近全身",
+        "camera": "固定竖屏机位；人物继续后退，未见镜头主动运动",
+        "action": "C1继续正面面对镜头，一只手抬至胸口/高领附近，另一只手位于身体侧方；动作像是在强调上身或领口区域",
+        "characters": [
+          "C1"
+        ],
+        "sceneId": "S1",
+        "product": "黑色高领修身长裙；胸口、腰线、裙身垂坠与前侧开衩同时可见",
+        "onScreenText": "",
+        "id": "K3"
+      },
+      {
+        "start": 1.07,
+        "end": 2.47,
+        "shotSize": "中景逐渐变为中远景",
+        "camera": "固定竖屏机位；人物向后移动造成景别变化，无可确认的摇移或推拉",
+        "action": "从较近位置向后退，逐渐露出更多裙身与腿部；一手靠近肩颈，另一手落在裙侧附近",
+        "characters": [
+          "C1"
+        ],
+        "sceneId": "S1",
+        "product": "黑色无袖高领修身长裙，正面可见开衩",
+        "onScreenText": "no because why does this look / this good when I walk",
+        "id": "K4"
+      },
+      {
+        "start": 2.47,
+        "end": 4.0,
+        "shotSize": "全身至接近全身",
+        "camera": "固定竖屏机位；人物基本站在较远位置，靠迈步和重心变化展示裙摆",
+        "action": "面向镜头展示正面，随后迈步、轻微交叉或换步；开衩随腿部动作打开，裙摆有轻微摆动并回落",
+        "characters": [
+          "C1"
+        ],
+        "sceneId": "S1",
+        "product": "黑色无袖高领修身长裙；开衩处露出腿部，裙摆随步伐轻动",
+        "onScreenText": "no because why does this look / this good when I walk",
+        "id": "K5"
+      },
+      {
+        "start": 4.0,
+        "end": 5.07,
+        "shotSize": "固定竖屏机位；人物由接近全身逐渐走近至较近的全身/中景，脚部逐渐靠近画面下缘",
+        "camera": "固定机位，无可确认的摇移、推拉或剪辑",
+        "action": "持续正面朝镜头走近。4.00–4.60 秒一只手保持在颈口/肩部附近；到 4.80 秒另一只手落向裙侧。裙摆随步伐轻微移动。给定帧截至 4.80 秒均未显示转身，5.07 秒的姿势无法由这些帧确认。",
+        "characters": [
+          "C1"
+        ],
+        "sceneId": "S1",
+        "product": "黑色无袖修身长裙，正面及前侧开衩可见；未见背面",
+        "onScreenText": "no because why does this look / this good when I walk",
+        "id": "K6"
+      },
+      {
+        "start": 5.07,
+        "end": 6.02,
+        "shotSize": "中近景至近全身",
+        "camera": "固定竖屏机位，无明显推拉摇移；人物向镜头前方站立",
+        "action": "正面对镜头说“the back”，手在肩颈附近，另一只手靠近裙身下侧；裙前开衩和腿部仍清楚可见",
+        "characters": [
+          "C1"
+        ],
+        "sceneId": "S1",
+        "product": "黑色无袖修身高领长裙，正面裙身与高开衩可见",
+        "onScreenText": "the back",
+        "id": "K7"
+      },
+      {
+        "start": 6.02,
+        "end": 7.33,
+        "shotSize": "中近景至近全身",
+        "camera": "固定机位；人物通过身体转动改变画面中的展示角度",
+        "action": "人物从正面转向侧面和侧后方。她的手经过颈肩位置，另一只手自然落在身体下侧；未明确扶裙、拉裙或掀开裙摆。转身后露出裙子的侧后方剪裁和背部露肤/开口",
+        "characters": [
+          "C1"
+        ],
+        "sceneId": "S1",
+        "product": "黑色连衣裙的后背开口、侧后方贴身剪裁；前部开衩随转身逐渐离开主要视线",
+        "onScreenText": "the slit",
+        "id": "K8"
+      },
+      {
+        "start": 7.33,
+        "end": 8.27,
+        "shotSize": "中近景至近全身",
+        "camera": "固定机位；人物停留在侧后方姿态",
+        "action": "人物保持侧后方站姿，回头看向镜头并微笑，以“yeah.”确认展示效果；没有继续明显操作裙身",
+        "characters": [
+          "C1"
+        ],
+        "sceneId": "S1",
+        "product": "裙子侧后方和背部状态保持可见",
+        "onScreenText": "yeah.",
+        "id": "K9"
+      },
+      {
+        "start": 8.27,
+        "end": 9.67,
+        "shotSize": "中近景至中景，人物从头部拍到小腿附近",
+        "camera": "固定竖屏机位，无可确认的推拉、摇移或剪辑；人物基本站在镜头前正面",
+        "action": "人物边口播边触碰、整理头发，另一只手停在身体前侧；正面保持稳定，裙身前侧和开衩持续可见",
+        "characters": [
+          "C1"
+        ],
+        "sceneId": "S1",
+        "product": "黑色无袖高领修身长裙，正面右腿侧开衩可见",
+        "onScreenText": "somebody knew exactly what they were doing",
+        "id": "K10"
+      },
+      {
+        "start": 9.67,
+        "end": 10.63,
+        "shotSize": "中景退至全身或中远景",
+        "camera": "固定竖屏机位；人物向后走使景别拉远，非镜头运动",
+        "action": "人物从近距离位置向后退，手臂逐渐放低并向两侧打开，展示连衣裙的完整正面轮廓和走动时的开衩；没有转身",
+        "characters": [
+          "C1"
+        ],
+        "sceneId": "S1",
+        "product": "黑色修身长裙，正面开衩仍可见；背面未展示",
+        "onScreenText": "somebody knew exactly what they were doing; 约10.4秒后更新为 this is giving rich girl at midnight energy",
+        "id": "K11"
+      },
+      {
+        "start": 10.63,
+        "end": 11.03,
+        "shotSize": "全身景",
+        "camera": "固定竖屏机位；人物站在房间中部，镜头无可确认的移动。",
+        "action": "从正面展示整体造型，随后开始转向侧面；人物距离镜头没有明显突变。",
+        "characters": [
+          "C1"
+        ],
+        "sceneId": "S1",
+        "product": "黑色无袖高领修身长裙，正面开衩；浅色细带高跟鞋。",
+        "onScreenText": "this is giving rich girl at midnight energy",
+        "id": "K12"
+      },
+      {
+        "start": 11.03,
+        "end": 12.83,
+        "shotSize": "全身景",
+        "camera": "固定机位；人物原地转身，构图保持稳定。",
+        "action": "人物从侧面转向背侧并短暂停留，身体略侧向镜头；裙身侧面及背部轮廓可见。到“midnight”附近开始转回正面。步伐以转身和小幅调整为主，未见明显后退拉开距离。",
+        "characters": [
+          "C1"
+        ],
+        "sceneId": "S1",
+        "product": "长裙从腰臀至脚踝的轮廓及侧面可见；高跟鞋在停留姿势下可见。",
+        "onScreenText": "this is giving rich girl at midnight energy",
+        "id": "K13"
+      },
+      {
+        "start": 12.83,
+        "end": 13.77,
+        "shotSize": "全身景，人物走近时逐渐趋近中远景",
+        "camera": "固定机位；人物从房间中部朝镜头走来，景别变化由人物走位造成。",
+        "action": "人物转回正面，在“energy”期间向镜头走动；裙摆随步伐摆动，开衩显露腿部。鞋履仍可见，但随着靠近画面下缘及字幕区域，腿部、裙摆和鞋子受到一定遮挡。",
+        "characters": [
+          "C1"
+        ],
+        "sceneId": "S1",
+        "product": "正面整体造型、长裙开衩与走动时的裙摆动态；浅色细带高跟鞋可见。",
+        "onScreenText": "this is giving rich girl at midnight energy；约13.63秒切换为 and I'm obsessed",
+        "id": "K14"
+      },
+      {
+        "start": 13.77,
+        "end": 14.3,
+        "shotSize": "全身至中全景",
+        "camera": "固定竖屏机位；人物向镜头走近造成景别变化，无可确认的镜头运动或剪辑",
+        "action": "C1正面朝向镜头继续前行，裙摆随步伐移动，开衩随行走显露",
+        "characters": [
+          "C1"
+        ],
+        "sceneId": "S1",
+        "product": "黑色无袖高领修身长裙，前行时可见裙身和开衩",
+        "onScreenText": "and I'm obsessed",
+        "id": "K15"
+      },
+      {
+        "start": 14.3,
+        "end": 15.17,
+        "shotSize": "中景，末帧接近上半身与裙身构图",
+        "camera": "同一固定机位；人物继续靠近镜头，未见镜头推拉",
+        "action": "C1正面继续走近；在“obsessed”期间面向镜头，末段带轻微笑意。是否在片段结束前停步不确定；未见明确额外摆姿展示动作",
+        "characters": [
+          "C1"
+        ],
+        "sceneId": "S1",
+        "product": "黑色连衣裙正面轮廓与开衩仍可见，裙摆随步伐摆动",
+        "onScreenText": "and I'm obsessed",
+        "id": "K16"
+      }
+    ],
+    "productMoments": [
+      {
+        "start": 0.0,
+        "end": 0.4,
+        "product": "黑色无袖高领修身长裙",
+        "presentation": "穿着面对镜头的近距离展示",
+        "sellingPoint": "近距离突出高领、黑色面料、胸腰褶皱和修身轮廓"
+      },
+      {
+        "start": 0.4,
+        "end": 1.07,
+        "product": "黑色无袖高领修身长裙",
+        "presentation": "穿着并后退拉开距离展示",
+        "sellingPoint": "让观众看到更完整的正面剪裁、腰线、裙摆和前侧开衩"
+      },
+      {
+        "start": 1.07,
+        "end": 2.47,
+        "product": "黑色无袖高领修身长裙",
+        "presentation": "人物面向镜头，从近处后退至较远位置，展示正面轮廓",
+        "sellingPoint": "正面剪裁及开衩设计可见"
+      },
+      {
+        "start": 2.47,
+        "end": 4.0,
+        "product": "黑色无袖高领修身长裙",
+        "presentation": "全身走动展示",
+        "sellingPoint": "迈步时开衩打开并露出腿部，裙摆轻微摆动；摆幅较小"
+      },
+      {
+        "start": 4.0,
+        "end": 5.07,
+        "product": "黑色无袖修身长裙，正面开衩",
+        "presentation": "人物正面穿着并向镜头走近；颈口附近手势与裙侧手部位置可见",
+        "sellingPoint": "字幕提及行走时的观感；画面中可见正面轮廓及行走时轻微摆动的裙摆。未见背面展示。"
+      },
+      {
+        "start": 5.07,
+        "end": 6.02,
+        "product": "黑色高领无袖开衩连衣裙",
+        "presentation": "正面穿着展示",
+        "sellingPoint": "此时实际最清楚的是前方高开衩和露出的腿部；“the back”口播先行，但背部尚未被正面呈现"
+      },
+      {
+        "start": 6.02,
+        "end": 7.33,
+        "product": "黑色高领无袖开衩连衣裙",
+        "presentation": "转身展示侧面与侧后方",
+        "sellingPoint": "转身过程中展示后背露肤/开口和裙身剪裁；开衩本身因角度改变不再是最突出的视觉区域"
+      },
+      {
+        "start": 7.33,
+        "end": 8.27,
+        "product": "黑色高领无袖开衩连衣裙",
+        "presentation": "侧后方定格并回头确认",
+        "sellingPoint": "用停留姿态和回头表情确认背部与侧后方设计，不再通过扶裙强化开衩"
+      },
+      {
+        "start": 8.27,
+        "end": 9.67,
+        "product": "黑色无袖高领修身长裙",
+        "presentation": "正面穿着展示，中近景",
+        "sellingPoint": "正面修身轮廓和右腿侧开衩持续可见；人物以触发头发和面部认可表达设计效果"
+      },
+      {
+        "start": 9.67,
+        "end": 10.63,
+        "product": "黑色无袖高领修身长裙",
+        "presentation": "正面穿着展示，人物后退至更完整的全身构图",
+        "sellingPoint": "展示整体比例、裙摆和正面开衩的完整效果；没有背部展示"
+      },
+      {
+        "start": 10.63,
+        "end": 13.77,
+        "product": "黑色无袖高领修身长裙，带正面开衩；浅色细带高跟鞋",
+        "presentation": "全身试穿展示；人物先转身呈现侧面和背侧轮廓，再转回正面并朝镜头走动。",
+        "sellingPoint": "呈现裙子的整体长度、修身轮廓、开衩和行走时的裙摆动态，并将整套造型与“rich girl at midnight energy”的氛围评价联系起来。"
+      },
+      {
+        "start": 13.77,
+        "end": 15.17,
+        "product": "黑色无袖高领修身长裙，带开衩",
+        "presentation": "人物正面穿着并向镜头走近",
+        "sellingPoint": "行走中可见正面修身轮廓及开衩；具体卖点未由本段台词明确说明"
+      }
+    ],
+    "dialogue": [
+      {
+        "start": 1.073,
+        "end": 3.727,
+        "speaker": "",
+        "text": "No, because why does this look this good when I walk?"
+      },
+      {
+        "start": 5.07,
+        "end": 7.608,
+        "speaker": "",
+        "text": "The back, the slit, yeah."
+      },
+      {
+        "start": 8.27,
+        "end": 9.93,
+        "speaker": "",
+        "text": "Somebody knew exactly what they were doing."
+      },
+      {
+        "start": 10.63,
+        "end": 13.489,
+        "speaker": "",
+        "text": "This is giving rich girl at midnight energy"
+      },
+      {
+        "start": 13.773,
+        "end": 14.85,
+        "speaker": "",
+        "text": "and I'm obsessed."
+      }
+    ],
+    "overlays": [
+      {
+        "system": "底部英文口播字幕",
+        "kind": "caption",
+        "text": "no because why does this look\nthis good when I walk",
+        "position": "画面下方约 1/4，居中，横跨裙摆与腿部区域",
+        "style": "白色英文字幕，黑色描边或阴影，两行；具体字体和字号不确定",
+        "start": 1.07,
+        "end": 4.0,
+        "enter": "本段首帧已可见，具体淡入方式不确定",
+        "exit": "至 3.87 秒仍可见，之后的退出方式不确定",
+        "anchor": "口播“No, because why does this look this good when I walk?”；在“when I walk”和“walk?”时字幕仍覆盖裙摆区域"
+      },
+      {
+        "system": "底部英文口播字幕",
+        "kind": "caption",
+        "text": "no because why does this look\nthis good when I walk",
+        "position": "画面下方，居中，约下方 1/4 区域",
+        "style": "白色英文字幕，黑色描边或阴影；两行，具体字体与描边细节不确定",
+        "start": 4.0,
+        "end": 4.8,
+        "enter": "4.00 秒帧中已可见；本段内未观察到进入动画",
+        "exit": "4.80 秒帧仍可见；之后退出时间不确定",
+        "anchor": "画面字幕对应“no because why does this look this good when I walk”；逐词台词未提供，无法将字幕精确挂到本段语音词时"
+      },
+      {
+        "system": "底部英文口播字幕",
+        "kind": "caption",
+        "text": "the back",
+        "position": "画面下方约1/4区域，水平居中偏下，覆盖在裙身/腿部附近",
+        "style": "白色英文小字，带黑色描边或阴影；具体字体和淡入方式不确定",
+        "start": 5.07,
+        "end": 6.05,
+        "enter": "随口播字幕更新进入；具体动效不确定",
+        "exit": "在下一个词组更新时直接替换或消失，具体方式不确定",
+        "anchor": "台词“the back”，5.07–约6.00s"
+      },
+      {
+        "system": "底部英文口播字幕",
+        "kind": "caption",
+        "text": "the slit",
+        "position": "画面下方约1/4区域，水平居中偏下，位于裙身区域上方",
+        "style": "白色英文小字，带黑色描边或阴影；具体字体和淡入方式不确定",
+        "start": 6.07,
+        "end": 7.25,
+        "enter": "随说到“the slit”更新进入",
+        "exit": "在“yeah.”字幕更新前退出或被替换，具体方式不确定",
+        "anchor": "台词“the slit”，6.12–6.28s及其后短暂停留；与人物转向侧后方动作重合"
+      },
+      {
+        "system": "底部英文口播字幕",
+        "kind": "caption",
+        "text": "yeah.",
+        "position": "画面下方约1/4区域，水平居中偏下",
+        "style": "白色英文小字，带黑色描边或阴影；具体字体和淡入淡出方式不确定",
+        "start": 7.27,
+        "end": 8.07,
+        "enter": "随口播更新进入",
+        "exit": "约8.07s后被下一句字幕替换；网格中下一句为“somebody knew exactly what they were doing”",
+        "anchor": "台词“yeah.”，7.33s；人物停在侧后方并回头微笑"
+      },
+      {
+        "system": "底部英文口播字幕",
+        "kind": "caption",
+        "text": "somebody knew exactly what they were doing",
+        "position": "画面下方约1/4区域居中，覆盖裙身下部附近",
+        "style": "白色小号英文字幕，带黑色描边或阴影，两行排列；具体字体不确定",
+        "start": 8.27,
+        "end": 10.4,
+        "enter": "随口播逐词或逐句更新出现；具体淡入方式不确定",
+        "exit": "约10.4秒整句更新为下一条字幕，非明确淡出",
+        "anchor": "对应“Somebody knew exactly what they were doing.”"
+      },
+      {
+        "system": "底部英文口播字幕",
+        "kind": "caption",
+        "text": "this is giving rich girl at midnight energy",
+        "position": "画面下方约1/4区域居中",
+        "style": "白色英文字幕，带黑色描边或阴影；网格中为两行，具体字体和字号不确定",
+        "start": 10.4,
+        "end": 10.63,
+        "enter": "替换上一条字幕，具体切换或淡入方式不确定",
+        "exit": "本段结束时仍在画面中，后续退出时间不确定",
+        "anchor": "约10.4秒开始，挂在人物后退并展示整体造型的动作上"
+      },
+      {
+        "system": "底部英文口播字幕",
+        "kind": "caption",
+        "text": "this is giving rich girl at midnight energy",
+        "position": "画面下方约1/4区域居中，两行",
+        "style": "白色英文字幕，黑色描边或阴影；字重、字体和确切字号不确定。",
+        "start": 10.63,
+        "end": 13.62,
+        "enter": "该段起始帧已显示；具体淡入方式不确定。",
+        "exit": "约13.63秒更新为下一句字幕；具体转场方式不确定。",
+        "anchor": "对应“This is giving rich girl at midnight energy”；“rich girl”时人物转向侧面/背侧，“midnight”时开始转回正面，“energy”时朝镜头走来。"
+      },
+      {
+        "system": "底部英文口播字幕",
+        "kind": "caption",
+        "text": "and I'm obsessed",
+        "position": "画面下方居中，一行",
+        "style": "白色英文字幕，黑色描边或阴影；字重、字体和确切字号不确定。",
+        "start": 13.63,
+        "end": 13.77,
+        "enter": "替换上一条两行字幕；具体动效不确定。",
+        "exit": "本段帧网格未显示后续退出方式。",
+        "anchor": "约13.63秒切换字幕；与本段给定台词“This is giving rich girl at midnight energy”之后的口播相接。"
+      },
+      {
+        "system": "底部英文口播字幕",
+        "kind": "caption",
+        "text": "and I'm obsessed",
+        "position": "画面下方居中，叠在裙摆及腿部附近",
+        "style": "白色英文字幕，带黑色描边或阴影；具体字体和字号不确定",
+        "start": 13.77,
+        "end": 15.17,
+        "enter": "本段首帧已显示，未观察到明确进入动效",
+        "exit": "片段末帧仍可见；之后如何退出不确定",
+        "anchor": "对应口播“and”@13.77、“I'm”@13.91、“obsessed”@14.32"
+      }
+    ],
+    "viralLogic": {
+      "hook": "用“No, because why does this look this good when I walk?”制造即时惊叹和问题感，同时承诺展示服装走动时的效果。观众需要继续看才能知道究竟是什么设计让她产生这种反应。",
+      "structure": "近距离正面建立人物和服装印象，后退展示全身；以“the back”和“the slit”作为具体卖点并通过转身验证；用“Somebody knew exactly what they were doing”强化设计价值；再以“rich girl at midnight energy”提供可传播的审美标签，最后用“I’m obsessed”完成情绪回报。",
+      "whyItWorks": [
+        "口播不是平铺直叙的产品介绍，而是模拟真实试穿时的即时反应，降低广告感。",
+        "台词与动作高度同步，说到“walk”时走动，说到“back”和“slit”时转身展示对应部位。",
+        "连续镜头让观众持续等待下一个展示角度，注意力转移由人物走位完成。",
+        "黑色连衣裙的视觉重点明确，背部、开衩和整体剪裁可以在短时间内被反复确认。",
+        "“rich girl at midnight energy”将服装功能转译为身份和场景想象，便于观众形成穿着联想。",
+        "字幕覆盖口播内容，使视频在无声播放时仍能理解主要信息。"
+      ],
+      "replicateTips": [
+        "换人换货时必须保留“即时惊叹口播”和“动作验证卖点”的关系。",
+        "必须让第一句直接提出视觉效果问题或强烈反应，并在随后几秒内用动作回答。",
+        "至少安排一个由正面转向背面或侧面的角度变化，让观众看到前后不同信息。",
+        "每个被口播点名的卖点都要在同一时间窗口内进入画面重点，例如说到开衩时让开衩清晰可见。",
+        "保留一个可复述的整体氛围标签，用来把具体商品转化成生活方式想象。",
+        "结尾需要有明确的态度确认或情绪回报，即使没有直接购买指令，也要让观众知道展示者最终是否认可。"
+      ],
+      "risks": [
+        "当前素材没有价格、品牌、购买入口或尺码等转化信息，因此更偏种草展示，直接促单能力有限。",
+        "如果换货后背部、开衩或走动效果不够明显，原有台词与动作的对应关系会失效。",
+        "“rich girl at midnight energy”属于主观审美表达，可能对不同受众的共鸣强度不一致。",
+        "连续固定机位依赖人物走位和服装本身的变化，若表演幅度不足，画面可能显得单调。",
+        "提供的信息无法确认是否有背景音乐或额外音效，复制时不应把未经证实的音乐节奏当作原片必要结构。"
+      ]
+    }
+  },
+  "script": {
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "dialogue_mode": "keep",
+    "instruction": "",
+    "summary": "保留同一人同一裙一镜到底的试穿结构，用新参考图锁死脸与裙型，把“惊叹—走动—转身看背和开衩—设计归因—午夜千金标签—我上头了”的六拍原样重建。",
+    "treatment_md": "# TREATMENT.md\n\n## 一句话\n同一个人、同一条黑色高领开衩长裙、同一个客厅，用一镜到底的“走近—走开—转身—再走近”把原片那句即时惊叹和三次身体验证原样复现，只把画面主体锁进新给的参考图。\n\n## 人物与声音的选角\n- **出镜人（@image1）**：沿用参考图 `ChatGPT Image 2026年8月8日 22_17_43` 中的金发年轻女性。全片由她一个人对镜头说话、走动、转身、回头，中途不换人、不切镜。\n- **声音**：保留原声口播的即时感——不是念稿，是“刚在镜子前发现自己很好看”的那种半信半疑的兴奋。五个语气落点：`why` 上扬带疑问、`this good` 半笑半叹、`walk` 用脚步压重音、`slit` 明确点出、`obsessed` 放软压低但带着笑意。\n- **台词**：`keep`。一名女性对镜头的五句原话一字不改，程序按逐词转录挂回原时间点，模型不写也不改台词。\n\n## 商品与场景\n- **商品（@image2）**：沿用参考图 `ChatGPT 图像 2026年10月16日 22_49_51` 中的黑色无袖高领修身长裙——侧/前侧高开衩、裙长至脚踝、面料贴身有垂坠，配浅色细带高跟鞋。这条裙子的三个可视信息（正面修身轮廓、背面开口、开衩露腿）就是全片唯一的“证据”。\n- **场景**：保持原片客厅——浅色墙、木地板、浅色沙发、开放式置物架、吉他，明亮均匀的室内光。**固定竖屏机位**，镜头全程不动，所有景别变化都由人物前后走位造成。\n\n## 保留原片的哪些关系\n1. **钩子即问题+承诺**：第一句“why does this look this good when I walk?”一边质疑一边承诺“走起来好看”，说完立刻用走动兑现。\n2. **台词与动作同步验证**：说 `walk` 就迈步让裙摆分开；说 `the back`、`the slit` 就转身把背部和开衩送到画面中心；`yeah.` 落在回头确认的笑上。这是原片最不能丢的因果。\n3. **把细节升格为设计价值**：“Somebody knew exactly what they were doing.” 在 `exactly` 上抬手撩发，把“好看”说成“有人有意为之”。\n4. **可复述的审美标签**：“rich girl at midnight energy”配合后退拉远看整体、再转回正面走近，把裙子翻译成一种身份想象。\n5. **情绪收束**：`and I’m obsessed` 边走边靠近镜头，用个人态度而不是购买指令收尾。\n6. **字幕系统**：原片那套白字黑描边的底部口播字幕，由工作台按台词时间叠加，画面内不生成任何文字。\n\n## 重新设计的地方\n- 人物与商品都换成新参考图后，**参考图锁定成为首要任务**：脸、发色长度、裙型（高领、无袖、开衩位置、长度）、鞋款必须在第一帧就成立，否则后面 14 秒的转身展示全部失效。\n- 转身时机重新排布到 `the back`—`the slit`—`yeah.` 三拍上：原片里台词比视觉早约一秒，这个“先说后给看”的错位保留，但把回头的确认笑精确压在 `yeah.` 上。\n- 末段走近的步幅略放大，让 `obsessed` 落地时人物已到中景，和开头近距离姿态形成闭合。\n- 全片不出现任何文字、花字、贴纸、转场特效，避免破坏“随手拍的试穿”质感。\n\n## 段落作用（单段结构）\n**0.00–15.17 整段一镜到底**：0–1s 近距离直视镜头+后退建立全身（钩子）；1–4s 走动兑现“when I walk”；4–5s 收手回正、蓄力转身（过渡）；5–8.3s 转身给背部和开衩、回头笑（卖点验证）；8.3–10.6s 撩发、张手、后退看整体（设计价值归因）；10.6–13.8s 侧身停留再转正走近（审美标签+整体造型）；13.8–15.17s 正面走回镜头、笑意收尾（情绪回报）。因为原片是单一连续长镜头、无剪辑点，全片只作一段，按 15 秒上限请求，不制造尾段。",
+    "tasks": [
+      {
+        "id": "seg-01",
+        "order": 1,
+        "title": "一镜到底：惊叹钩子→走动验证→转身看背与开衩→整体氛围→上头收束",
+        "kind": "speaker",
+        "source_start": 0,
+        "source_end": 15.167,
+        "duration": 15,
+        "ratio": "9:16",
+        "mode": "video",
+        "footage_reason": "全片价值在于一段连续的时间行为：走动时机与 'walk' 对齐、转身与 'the back/the slit' 对齐、回头笑与 'yeah.' 对齐、末段走近与 'obsessed' 对齐，只有原片片段能保住这套节奏与走位。",
+        "split_reason": "原片为单一连续长镜头，无剪辑点、无场景变化；15.167 秒按 15 秒上限整段请求，不切分、不产生尾段。",
+        "dialogue": "No, because why does this look this good when I walk? The back, the slit, yeah. Somebody knew exactly what they were doing. This is giving rich girl at midnight energy and I'm obsessed.",
+        "action": "She talks straight into the lens the way you'd show a friend something you just put on — excited, a little disbelieving, sharing a find. @image1 is the speaker: keep her face, blonde hair and build identical to that still; she wears the black high-neck sleeveless dress with the front slit from @image2, ankle length, pale strappy heels. Open on a tight half-body stance facing camera, then step back so the whole dress and the slit come into frame. Lift a brow and half-laugh on 'why does this look this good', and press the weight onto 'walk' exactly as she takes the step that lets the hem part. Keep her eyes on the lens while the body turns away on 'the back' and 'the slit', then glance back over the shoulder with a small confirming smile landing on 'yeah.' Lightly sweep one hand to the hairline on 'exactly', open both arms as she steps back for the full-length look, and walk the last two steps into the lens with a soft smile settling on 'obsessed'. Camera stays locked the whole time; only her walking changes the framing.",
+        "story": "",
+        "direction": "",
+        "recipe": {
+          "composition-stability": "strict-locked",
+          "camera-motion": "none",
+          "edit-rhythm": "continuous-take",
+          "performance": "high-energy-ugc",
+          "gesture": "natural"
+        },
+        "pace": "normal",
+        "padding": 0,
+        "estimate": 10.22,
+        "language": "en",
+        "overlays": [
+          {
+            "text": "no because why does this look this good when I walk",
+            "textZh": "不是，为什么我一走起来它就这么好看？",
+            "kind": "caption",
+            "anchor": "walk",
+            "position": "画面下方约 1/4 区域，水平居中，覆盖裙摆与腿部",
+            "style": "白色英文字幕，黑色描边或阴影，两行居中"
+          },
+          {
+            "text": "the back",
+            "textZh": "背面",
+            "kind": "caption",
+            "anchor": "the back",
+            "position": "画面下方约 1/4 区域，水平居中偏下",
+            "style": "白色小号英文字幕，黑色描边或阴影"
+          },
+          {
+            "text": "the slit",
+            "textZh": "开衩",
+            "kind": "caption",
+            "anchor": "the slit",
+            "position": "画面下方约 1/4 区域，水平居中偏下，位于裙身区域上方",
+            "style": "白色小号英文字幕，黑色描边或阴影"
+          },
+          {
+            "text": "yeah.",
+            "textZh": "对。",
+            "kind": "caption",
+            "anchor": "yeah.",
+            "position": "画面下方约 1/4 区域，水平居中偏下",
+            "style": "白色小号英文字幕，黑色描边或阴影"
+          },
+          {
+            "text": "somebody knew exactly what they were doing",
+            "textZh": "有人完全知道自己在做什么。",
+            "kind": "caption",
+            "anchor": "exactly",
+            "position": "画面下方约 1/4 区域居中，覆盖裙身下部",
+            "style": "白色小号英文字幕，黑色描边或阴影，两行排列"
+          },
+          {
+            "text": "this is giving rich girl at midnight energy",
+            "textZh": "这有一种午夜富家千金的气质。",
+            "kind": "caption",
+            "anchor": "rich girl at midnight",
+            "position": "画面下方约 1/4 区域居中",
+            "style": "白色英文字幕，黑色描边或阴影，两行"
+          },
+          {
+            "text": "and I'm obsessed",
+            "textZh": "我彻底爱上了。",
+            "kind": "caption",
+            "anchor": "obsessed",
+            "position": "画面下方居中，叠在裙摆及腿部附近",
+            "style": "白色英文字幕，黑色描边或阴影，一行"
+          }
+        ],
+        "prompt": "",
+        "start_state": "",
+        "end_state": "",
+        "image_ids": [
+          "a1027180115-c3e4",
+          "a1027180615-ee86"
+        ],
+        "mute_clip": false,
+        "audio_id": null,
+        "voice_approved": false
+      }
+    ],
+    "at": "18:45:24",
+    "dialogue": [
+      {
+        "segment": "seg-01",
+        "text": "No, because why does this look this good when I walk? The back, the slit, yeah. Somebody knew exactly what they were doing. This is giving rich girl at midnight energy and I'm obsessed."
+      }
+    ]
+  },
+  "runs": {
+    "seg-01": [
+      {
+        "rev": "r1",
+        "job_id": "p1027180021-c16a-seg-01-r1",
+        "state": "completed",
+        "model": "seedance2.0-mini-video",
+        "mode": "video",
+        "job_sha256": "4b99d56f4ab695e112392326e1266004a3e2133e660405c0cfbece76575b22f7",
+        "package": "packages/seg-01-r1",
+        "preview": {
+          "job_id": "p1027180021-c16a-seg-01-r1",
+          "schema_version": "jimmy-video-job.v1",
+          "tasks": [
+            {
+              "duration": 15,
+              "id": "seg-01",
+              "images": [
+                {
+                  "path": "/path/to/viral-replica-workbench/projects/p1027180021-c16a/assets/a1027180115-c3e4.png",
+                  "sha256": "365a0954cd86a65179c53ff2e99a59fb1c8e1f5bc3d2a80de1eedeb3cafbfd53",
+                  "source": "file"
+                },
+                {
+                  "path": "/path/to/viral-replica-workbench/projects/p1027180021-c16a/assets/a1027180615-ee86.png",
+                  "sha256": "75e6fbdc64bbfdd390e1f09ab2d5be863d1c763bff31dd0b3c41c12c400330fd",
+                  "source": "file"
+                }
+              ],
+              "model": "seedance2.0-mini-video",
+              "prompt": "Create a realistic vertical phone-shot talking-head video. @image1 is the visible speaker and scene reference. Preserve the person's identity, face, outfit, setting, lighting, lens feel, and broad composition.\n\nOTHER REFERENCES: @image2 \"ChatGPT 图像 2026年10月16日 22_49_51\": product truth: preserve its colors, structure, packaging text and real proportions.\n\n@video1 is source footage carrying the performed timing: replicate its body motion, gestures, blocking, camera framing and movement, and the rhythm of its actions and cuts. Do not inherit @video1's people, faces, outfits, products, captions or any on-screen text; the visible people, products and setting come from the image references.\n\nDeliver the supplied script exactly in order with clear lip-sync. The visible person speaks every line. Do not rewrite, summarize, add, remove, or reorder words.\n\nCOMPOSITION: preserve subject placement, perspective, left-right orientation, background relationship, and framing envelope throughout the shot.\n\nCAMERA: hold a steady fixed framing.\n\nEDIT RHYTHM: one continuous creator explanation with natural breath timing.\n\nPERFORMANCE: vivid, energetic short-form delivery with nimble phrasing, animated intonation, and emphatic key ideas. Let the voice and visible reactions develop together as the speaker makes their point.\n\nGESTURE: natural creator gestures such as open palms, small pointing beats, nods, and posture shifts where the script calls for them.\n\nKeep face, hands, skin texture, lighting, and motion photoreal and stable. Add no subtitles, captions, labels, logos, UI text, floating words, or other readable on-screen text.\n\nSCRIPT TO DELIVER:\nNo, because why does this look this good when I walk? The back, the slit, yeah. Somebody knew exactly what they were doing. This is giving rich girl at midnight energy and I'm obsessed.\n\nPERFORMANCE AND ACTION DIRECTION:\nShe talks straight into the lens the way you'd show a friend something you just put on — excited, a little disbelieving, sharing a find. @image1 is the speaker: keep her face, blonde hair and build identical to that still; she wears the black high-neck sleeveless dress with the front slit from @image2, ankle length, pale strappy heels. Open on a tight half-body stance facing camera, then step back so the whole dress and the slit come into frame. Lift a brow and half-laugh on 'why does this look this good', and press the weight onto 'walk' exactly as she takes the step that lets the hem part. Keep her eyes on the lens while the body turns away on 'the back' and 'the slit', then glance back over the shoulder with a small confirming smile landing on 'yeah.' Lightly sweep one hand to the hairline on 'exactly', open both arms as she steps back for the full-length look, and walk the last two steps into the lens with a soft smile settling on 'obsessed'. Camera stays locked the whole time; only her walking changes the framing.",
+              "ratio": "9:16",
+              "reference_videos": [
+                {
+                  "path": "/path/to/viral-replica-workbench/projects/p1027180021-c16a/clips/seg-01-r1.mp4",
+                  "sha256": "9a3f89b26e6fa4279d11a8db986812a6247e35b41caa9c02d5ed9e15a9734999",
+                  "source": "file"
+                }
+              ]
+            }
+          ]
+        },
+        "billing_seconds": 30,
+        "billing_note": "输出 15s + 参考视频 15s；单价以 Jimmy 账户为准",
+        "clip": "clips/seg-01-r1.mp4",
+        "created": "19:06:53",
+        "retryable": false,
+        "run_dir": "jimmy-runs/p1027180021-c16a-seg-01-r1",
+        "confirmed_at": "19:07:03",
+        "upload_retry_active": false,
+        "upload_retries": 0,
+        "previous_errors": [],
+        "phase": "completed",
+        "remote_status": "completed",
+        "remote_task_id": "task_80971378b8d2447cb4ebae59e783c3df",
+        "error": null,
+        "result": "jimmy-runs/p1027180021-c16a-seg-01-r1/results/video-seg-01.mp4",
+        "motion_check": {
+          "status": "inconclusive",
+          "warnings": [
+            "本地动作对齐检查未完成：运行记录缺少原片及区间证据"
+          ]
+        }
+      }
+    ]
+  },
+  "images": {},
+  "final": null,
+  "log": [
+    {
+      "t": "18:00:30",
+      "level": "info",
+      "msg": "已上传参考视频 TikSave.io_7642726975089560846.mp4（15.2s，720x1280）"
+    },
+    {
+      "t": "18:04:41",
+      "level": "info",
+      "msg": "拆解完成（吉米 · GPT-5.6 Sol（共用 Jimmy Key））：7 个段落、16 个分镜、10 条字幕/花字图层"
+    },
+    {
+      "t": "18:06:55",
+      "level": "error",
+      "msg": "新脚本生成失败：deepseek 返回 HTTP 400: {\"error\":{\"message\":\"The supported API model names are deepseek-flash, deepseek-v4-pro, but you passed deepseek/deepseek-v4.1-flash-1017. (request_id: 2af6b103-67e7-4491-84d9-821b95f9fbcc)\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_request_error\"}}"
+    },
+    {
+      "t": "18:45:24",
+      "level": "info",
+      "msg": "Treatment 与 1 个可表演段落已生成（DeepSeek V4.1 Flash）"
+    },
+    {
+      "t": "19:07:03",
+      "level": "info",
+      "msg": "seg-01 r1 已确认，交给 Jimmy 生成（seedance2.0-mini-video，计费约 30s）"
+    }
+  ],
+  "breakdown_versions": {
+    "jimmy": {
+      "provider": "jimmy",
+      "input": "帧网格",
+      "pack": {
+        "overview": {
+          "oneLine": "一位女性在家中连续展示黑色高领开衩连衣裙，通过走近、转身和走动突出裙子的正面、背面与开衩设计，最后用“rich girl at midnight”式情绪表达完成种草。",
+          "genre": "口播带货/服装试穿展示",
+          "visualTone": "黑白为主、自然室内光、生活化高级感、固定竖屏机位配合人物走位和转身展示",
+          "language": "en",
+          "duration": 15.167
+        },
+        "characters": [
+          {
+            "id": "C1",
+            "name": "未提供姓名",
+            "role": "试穿并展示黑色连衣裙的女性",
+            "appearance": "金色长发，年轻女性年龄感，身材修长；面部和体型细节以帧网格可见范围为准",
+            "outfit": "黑色无袖修身长裙，接近高领，裙身有明显开衩；穿浅色或金色细带高跟鞋",
+            "voice": "女性英文口播，语气兴奋、即时、带有审美赞叹感；具体音色不确定",
+            "screenTime": "0.00-15.167s，持续在画面中"
+          }
+        ],
+        "scene": [
+          {
+            "id": "S1",
+            "name": "明亮住宅客厅",
+            "description": "人物在室内客厅中央展示服装。背景可见浅色沙发、开放式置物架、吉他、木地板和浅色墙面。固定竖屏机位，人物通过前后移动和转身改变景别。",
+            "lighting": "明亮、均匀的室内自然光或混合室内光；未见强烈彩色灯光或明显戏剧化阴影",
+            "timeRanges": [
+              [
+                0,
+                15.167
+              ]
+            ]
+          }
+        ],
+        "systems": [
+          {
+            "name": "底部英文口播字幕",
+            "kind": "caption",
+            "description": "白色英文字幕，带黑色描边或阴影，位于画面下方，通常分为一到两行。字幕跟随口播逐句或逐词更新，从约1.00秒开始可见，内容与转录一致；在人物腿部或裙摆区域附近显示。具体淡入淡出方式不确定，片尾仍可见“and I’m obsessed”。",
+            "timeRanges": [
+              [
+                1.0,
+                15.167
+              ]
+            ]
+          },
+          {
+            "name": "人物试穿展示",
+            "kind": "a-roll",
+            "description": "同一位女性持续承担表演和商品展示。她从近距离正面状态向后移动，随后正面走动、转身展示背面和开衩，再拉远展示整体造型，最后走回镜头。动作与“walk”“the back”“the slit”等词直接对应。",
+            "timeRanges": [
+              [
+                0,
+                15.167
+              ]
+            ]
+          },
+          {
+            "name": "固定竖屏手机机位",
+            "kind": "effect",
+            "description": "画面保持竖屏固定构图，未观察到明确剪辑、镜头摇移或推拉。人物前后走位造成近景、全身和中远景变化。机械切点候选0.17秒不对应可确认的剧情或镜头变化。",
+            "timeRanges": [
+              [
+                0,
+                15.167
+              ]
+            ]
+          },
+          {
+            "name": "英文即时口播",
+            "kind": "a-roll",
+            "description": "女性直接对镜头表达对服装外观、背面、开衩和整体氛围的评价。口播是主要叙事和说服声音，未提供可确认的其他声音系统。",
+            "timeRanges": [
+              [
+                1.07,
+                14.85
+              ]
+            ]
+          }
+        ],
+        "beats": [
+          {
+            "id": "P1",
+            "start": 0.0,
+            "end": 1.07,
+            "function": "钩子",
+            "summary": "视频从女性近距离穿着黑色连衣裙面对镜头开始。她尚未开始可确认的完整台词，画面先用人物、服装和近距离姿态建立注意力。",
+            "performance": "C1从一开始就正面直视镜头，表情整体平静而专注，嘴唇逐渐张开但这一段没有可核对的台词。她后退时保持面向观众，约0.72秒后抬手触碰或靠近胸口/领口，形成一个明确的注意力引导手势；该动作更像是在准备介绍或强调服装上身效果。具体情绪强度和是否已经开始发声，仅凭帧网格无法确认。",
+            "sound": "这一段未提供可核对的音频证据。逐词台词标注为空，因此没有可挂接的口播词语；无法确认0.00–1.07秒是否存在环境声、BGM、衣料摩擦声或其他音效。"
+          },
+          {
+            "id": "P2",
+            "start": 1.07,
+            "end": 4.0,
+            "function": "钩子",
+            "summary": "在说“No, because why does this look this good when I walk?”时，人物从较近位置向后移动并展示正面和走动状态。她把观众问题聚焦到服装在行走时的视觉效果。",
+            "performance": "C1 直接对镜头说话，语气带惊讶、兴奋和审美赞叹，像是在即时感叹裙子走起来的效果。“why”与“this good”承载疑问和赞叹的重点；说到“when I walk”及“walk?”时，她迈步展示裙子，表情仍面向镜头，随后短暂低头看向前方或裙身。手部大致保持一手在肩颈附近、另一手在裙侧；未见明确的大幅手势。",
+            "sound": "可确认有人声英文口播。仅凭给定帧网格和台词无法判断BGM、环境声或具体音效是否存在，也无法确认声音变化点。"
+          },
+          {
+            "id": "P3",
+            "start": 4.0,
+            "end": 5.07,
+            "function": "卖点",
+            "summary": "上一句结束后，人物保持全身展示并准备改变方向。画面从正面走动过渡到背面展示，视觉上形成一个短暂的动作转折。",
+            "performance": "人物面对镜头，表情从较专注逐渐显出笑意，整体像是在继续进行即时口播展示。手在颈口/肩部附近的姿势持续数帧，随后另一只手落到裙侧；没有可确认的转身准备动作或转身重音。本段没有提供逐词台词，因此无法确认具体关键词重音。",
+            "sound": "未提供可供核对的音轨或声音描述；无法确认本段口播、BGM、音效或环境声的具体变化。"
+          },
+          {
+            "id": "P4",
+            "start": 5.07,
+            "end": 8.27,
+            "function": "卖点",
+            "summary": "在“The back, the slit, yeah.”期间，人物转向侧后方，依次让观众看到裙子的背部和开衩。台词直接点名两个设计区域，动作承担主要证明作用。",
+            "performance": "人物整体是兴奋、带审美确认感的即时口播，像是在对镜头强调这件裙子最有吸引力的设计细节。“the back”说得直接，但她当时仍基本正面，视觉证明稍晚于台词；说到“the slit”时重音落在“slit”，身体同步开始转向侧后方。她没有明显回头去看身后，而是在转身后用侧脸和回看镜头的方式保持与观众的联系。手部动作主要是经过颈肩和沿身体自然下落，没有看清楚的扶裙或主动拉开裙摆动作。说“yeah.”时表情更像带笑确认，身体停在展示背部的姿态。",
+            "sound": "可确认的声音是女性英文口播，5.07–8.27s连续说“The back, the slit, yeah.”。未提供可确认的音效、环境声或BGM变化；这一段没有可据画面和给定信息确认的转场音、衣料摩擦音或音乐重音。"
+          },
+          {
+            "id": "P5",
+            "start": 8.27,
+            "end": 10.63,
+            "function": "证明",
+            "summary": "在“Somebody knew exactly what they were doing.”期间，人物回到更正面的方向并以手势、表情和姿态表达对设计的认可。这一段把具体卖点上升为设计者有意完成的效果。",
+            "performance": "人物以面对镜头的审美认可口吻说这句话，态度从直接评论转向带有肯定意味的赞叹。说到“exactly”时，她仍保持正面，表情更明亮、嘴部张开并带有轻微笑意，同时手在头发附近形成较明显的强调动作；到“what they were doing”时，她开始把身体拉远，手臂向下并向两侧打开，用姿态认可整体设计。认可感确实比段落开始更明显，但主要来自表情变亮、触发头发和随后展开双臂，并不是夸张的指向或大幅手势。她没有转身，因此没有再次露出背部；正面腿部开衩在整个段落中都能看到。",
+            "sound": "可确认的是女性英文口播，词语节奏对应“Somebody knew exactly what they were doing.”，约10.4秒后进入下一句。画面证据未提供可确认的独立音效、BGM变化或环境声变化；背景声类型和音量变化不确定。"
+          },
+          {
+            "id": "P6",
+            "start": 10.63,
+            "end": 13.77,
+            "function": "信任",
+            "summary": "在“This is giving rich girl at midnight energy”期间，人物向后拉开距离并展示完整造型和走动效果。服装从单个细节被重新包装成一种“午夜富家女孩”的整体氛围联想。",
+            "performance": "C1面向镜头口播，整体是轻松、带欣赏感的造型评价。说到“rich girl”时以转身展示侧面和背侧轮廓配合这句联想；“midnight”附近转回正面；“energy”期间带着笑意朝镜头走近。帧图支持她面带微笑，但具体语音重音、音高变化和手势细节无法仅凭帧图确认。",
+            "sound": "给定逐词转录为“This is giving rich girl at midnight energy”。没有提供可核验的音频片段，无法确认BGM、环境声或音效及其变化点。"
+          },
+          {
+            "id": "P7",
+            "start": 13.77,
+            "end": 15.17,
+            "function": "促单",
+            "summary": "在“and I’m obsessed.”期间，人物重新靠近镜头并以正面姿态结束。没有明确购买指令，但用强烈的个人喜爱表达完成情绪化种草和记忆点收束。",
+            "performance": "C1以兴奋、亲近镜头的口吻表达强烈个人喜爱。重心落在“obsessed”；她在说这句话时持续走近，末段面向镜头露出轻微笑意。画面没有足够证据确认她停步，也没有看出单独的最后展示手势。",
+            "sound": "可确认的声音信息为女性英文口播“and I’m obsessed.”。本段材料未提供可确认的BGM、音效或环境声变化。"
+          }
+        ],
+        "shots": [
+          {
+            "start": 0.0,
+            "end": 0.4,
+            "shotSize": "近距离正面半身/胸部以上为主",
+            "camera": "固定竖屏机位；无可确认的推拉、摇移或剪辑",
+            "action": "C1正面面对镜头并保持直视，嘴唇由轻微闭合或抿嘴逐渐张开；身体基本稳定",
+            "characters": [
+              "C1"
+            ],
+            "sceneId": "S1",
+            "product": "黑色无袖高领修身长裙；领口、胸腰褶皱和前侧开衩清晰可见",
+            "onScreenText": "",
+            "id": "K1"
+          },
+          {
+            "start": 0.4,
+            "end": 0.72,
+            "shotSize": "中近景，人物上身至大腿逐渐可见",
+            "camera": "固定机位；人物向后移动造成景别变远",
+            "action": "C1开始向后退，正面朝向镜头，双臂从身体两侧自然移动；裙身和前侧开衩露出范围增加",
+            "characters": [
+              "C1"
+            ],
+            "sceneId": "S1",
+            "product": "黑色修身长裙整体正面；腰部贴合、裙摆和前侧开衩更完整可见",
+            "onScreenText": "",
+            "id": "K2"
+          },
+          {
+            "start": 0.72,
+            "end": 1.07,
+            "shotSize": "中景至接近全身",
+            "camera": "固定竖屏机位；人物继续后退，未见镜头主动运动",
+            "action": "C1继续正面面对镜头，一只手抬至胸口/高领附近，另一只手位于身体侧方；动作像是在强调上身或领口区域",
+            "characters": [
+              "C1"
+            ],
+            "sceneId": "S1",
+            "product": "黑色高领修身长裙；胸口、腰线、裙身垂坠与前侧开衩同时可见",
+            "onScreenText": "",
+            "id": "K3"
+          },
+          {
+            "start": 1.07,
+            "end": 2.47,
+            "shotSize": "中景逐渐变为中远景",
+            "camera": "固定竖屏机位；人物向后移动造成景别变化，无可确认的摇移或推拉",
+            "action": "从较近位置向后退，逐渐露出更多裙身与腿部；一手靠近肩颈，另一手落在裙侧附近",
+            "characters": [
+              "C1"
+            ],
+            "sceneId": "S1",
+            "product": "黑色无袖高领修身长裙，正面可见开衩",
+            "onScreenText": "no because why does this look / this good when I walk",
+            "id": "K4"
+          },
+          {
+            "start": 2.47,
+            "end": 4.0,
+            "shotSize": "全身至接近全身",
+            "camera": "固定竖屏机位；人物基本站在较远位置，靠迈步和重心变化展示裙摆",
+            "action": "面向镜头展示正面，随后迈步、轻微交叉或换步；开衩随腿部动作打开，裙摆有轻微摆动并回落",
+            "characters": [
+              "C1"
+            ],
+            "sceneId": "S1",
+            "product": "黑色无袖高领修身长裙；开衩处露出腿部，裙摆随步伐轻动",
+            "onScreenText": "no because why does this look / this good when I walk",
+            "id": "K5"
+          },
+          {
+            "start": 4.0,
+            "end": 5.07,
+            "shotSize": "固定竖屏机位；人物由接近全身逐渐走近至较近的全身/中景，脚部逐渐靠近画面下缘",
+            "camera": "固定机位，无可确认的摇移、推拉或剪辑",
+            "action": "持续正面朝镜头走近。4.00–4.60 秒一只手保持在颈口/肩部附近；到 4.80 秒另一只手落向裙侧。裙摆随步伐轻微移动。给定帧截至 4.80 秒均未显示转身，5.07 秒的姿势无法由这些帧确认。",
+            "characters": [
+              "C1"
+            ],
+            "sceneId": "S1",
+            "product": "黑色无袖修身长裙，正面及前侧开衩可见；未见背面",
+            "onScreenText": "no because why does this look / this good when I walk",
+            "id": "K6"
+          },
+          {
+            "start": 5.07,
+            "end": 6.02,
+            "shotSize": "中近景至近全身",
+            "camera": "固定竖屏机位，无明显推拉摇移；人物向镜头前方站立",
+            "action": "正面对镜头说“the back”，手在肩颈附近，另一只手靠近裙身下侧；裙前开衩和腿部仍清楚可见",
+            "characters": [
+              "C1"
+            ],
+            "sceneId": "S1",
+            "product": "黑色无袖修身高领长裙，正面裙身与高开衩可见",
+            "onScreenText": "the back",
+            "id": "K7"
+          },
+          {
+            "start": 6.02,
+            "end": 7.33,
+            "shotSize": "中近景至近全身",
+            "camera": "固定机位；人物通过身体转动改变画面中的展示角度",
+            "action": "人物从正面转向侧面和侧后方。她的手经过颈肩位置，另一只手自然落在身体下侧；未明确扶裙、拉裙或掀开裙摆。转身后露出裙子的侧后方剪裁和背部露肤/开口",
+            "characters": [
+              "C1"
+            ],
+            "sceneId": "S1",
+            "product": "黑色连衣裙的后背开口、侧后方贴身剪裁；前部开衩随转身逐渐离开主要视线",
+            "onScreenText": "the slit",
+            "id": "K8"
+          },
+          {
+            "start": 7.33,
+            "end": 8.27,
+            "shotSize": "中近景至近全身",
+            "camera": "固定机位；人物停留在侧后方姿态",
+            "action": "人物保持侧后方站姿，回头看向镜头并微笑，以“yeah.”确认展示效果；没有继续明显操作裙身",
+            "characters": [
+              "C1"
+            ],
+            "sceneId": "S1",
+            "product": "裙子侧后方和背部状态保持可见",
+            "onScreenText": "yeah.",
+            "id": "K9"
+          },
+          {
+            "start": 8.27,
+            "end": 9.67,
+            "shotSize": "中近景至中景，人物从头部拍到小腿附近",
+            "camera": "固定竖屏机位，无可确认的推拉、摇移或剪辑；人物基本站在镜头前正面",
+            "action": "人物边口播边触碰、整理头发，另一只手停在身体前侧；正面保持稳定，裙身前侧和开衩持续可见",
+            "characters": [
+              "C1"
+            ],
+            "sceneId": "S1",
+            "product": "黑色无袖高领修身长裙，正面右腿侧开衩可见",
+            "onScreenText": "somebody knew exactly what they were doing",
+            "id": "K10"
+          },
+          {
+            "start": 9.67,
+            "end": 10.63,
+            "shotSize": "中景退至全身或中远景",
+            "camera": "固定竖屏机位；人物向后走使景别拉远，非镜头运动",
+            "action": "人物从近距离位置向后退，手臂逐渐放低并向两侧打开，展示连衣裙的完整正面轮廓和走动时的开衩；没有转身",
+            "characters": [
+              "C1"
+            ],
+            "sceneId": "S1",
+            "product": "黑色修身长裙，正面开衩仍可见；背面未展示",
+            "onScreenText": "somebody knew exactly what they were doing; 约10.4秒后更新为 this is giving rich girl at midnight energy",
+            "id": "K11"
+          },
+          {
+            "start": 10.63,
+            "end": 11.03,
+            "shotSize": "全身景",
+            "camera": "固定竖屏机位；人物站在房间中部，镜头无可确认的移动。",
+            "action": "从正面展示整体造型，随后开始转向侧面；人物距离镜头没有明显突变。",
+            "characters": [
+              "C1"
+            ],
+            "sceneId": "S1",
+            "product": "黑色无袖高领修身长裙，正面开衩；浅色细带高跟鞋。",
+            "onScreenText": "this is giving rich girl at midnight energy",
+            "id": "K12"
+          },
+          {
+            "start": 11.03,
+            "end": 12.83,
+            "shotSize": "全身景",
+            "camera": "固定机位；人物原地转身，构图保持稳定。",
+            "action": "人物从侧面转向背侧并短暂停留，身体略侧向镜头；裙身侧面及背部轮廓可见。到“midnight”附近开始转回正面。步伐以转身和小幅调整为主，未见明显后退拉开距离。",
+            "characters": [
+              "C1"
+            ],
+            "sceneId": "S1",
+            "product": "长裙从腰臀至脚踝的轮廓及侧面可见；高跟鞋在停留姿势下可见。",
+            "onScreenText": "this is giving rich girl at midnight energy",
+            "id": "K13"
+          },
+          {
+            "start": 12.83,
+            "end": 13.77,
+            "shotSize": "全身景，人物走近时逐渐趋近中远景",
+            "camera": "固定机位；人物从房间中部朝镜头走来，景别变化由人物走位造成。",
+            "action": "人物转回正面，在“energy”期间向镜头走动；裙摆随步伐摆动，开衩显露腿部。鞋履仍可见，但随着靠近画面下缘及字幕区域，腿部、裙摆和鞋子受到一定遮挡。",
+            "characters": [
+              "C1"
+            ],
+            "sceneId": "S1",
+            "product": "正面整体造型、长裙开衩与走动时的裙摆动态；浅色细带高跟鞋可见。",
+            "onScreenText": "this is giving rich girl at midnight energy；约13.63秒切换为 and I'm obsessed",
+            "id": "K14"
+          },
+          {
+            "start": 13.77,
+            "end": 14.3,
+            "shotSize": "全身至中全景",
+            "camera": "固定竖屏机位；人物向镜头走近造成景别变化，无可确认的镜头运动或剪辑",
+            "action": "C1正面朝向镜头继续前行，裙摆随步伐移动，开衩随行走显露",
+            "characters": [
+              "C1"
+            ],
+            "sceneId": "S1",
+            "product": "黑色无袖高领修身长裙，前行时可见裙身和开衩",
+            "onScreenText": "and I'm obsessed",
+            "id": "K15"
+          },
+          {
+            "start": 14.3,
+            "end": 15.17,
+            "shotSize": "中景，末帧接近上半身与裙身构图",
+            "camera": "同一固定机位；人物继续靠近镜头，未见镜头推拉",
+            "action": "C1正面继续走近；在“obsessed”期间面向镜头，末段带轻微笑意。是否在片段结束前停步不确定；未见明确额外摆姿展示动作",
+            "characters": [
+              "C1"
+            ],
+            "sceneId": "S1",
+            "product": "黑色连衣裙正面轮廓与开衩仍可见，裙摆随步伐摆动",
+            "onScreenText": "and I'm obsessed",
+            "id": "K16"
+          }
+        ],
+        "productMoments": [
+          {
+            "start": 0.0,
+            "end": 0.4,
+            "product": "黑色无袖高领修身长裙",
+            "presentation": "穿着面对镜头的近距离展示",
+            "sellingPoint": "近距离突出高领、黑色面料、胸腰褶皱和修身轮廓"
+          },
+          {
+            "start": 0.4,
+            "end": 1.07,
+            "product": "黑色无袖高领修身长裙",
+            "presentation": "穿着并后退拉开距离展示",
+            "sellingPoint": "让观众看到更完整的正面剪裁、腰线、裙摆和前侧开衩"
+          },
+          {
+            "start": 1.07,
+            "end": 2.47,
+            "product": "黑色无袖高领修身长裙",
+            "presentation": "人物面向镜头，从近处后退至较远位置，展示正面轮廓",
+            "sellingPoint": "正面剪裁及开衩设计可见"
+          },
+          {
+            "start": 2.47,
+            "end": 4.0,
+            "product": "黑色无袖高领修身长裙",
+            "presentation": "全身走动展示",
+            "sellingPoint": "迈步时开衩打开并露出腿部，裙摆轻微摆动；摆幅较小"
+          },
+          {
+            "start": 4.0,
+            "end": 5.07,
+            "product": "黑色无袖修身长裙，正面开衩",
+            "presentation": "人物正面穿着并向镜头走近；颈口附近手势与裙侧手部位置可见",
+            "sellingPoint": "字幕提及行走时的观感；画面中可见正面轮廓及行走时轻微摆动的裙摆。未见背面展示。"
+          },
+          {
+            "start": 5.07,
+            "end": 6.02,
+            "product": "黑色高领无袖开衩连衣裙",
+            "presentation": "正面穿着展示",
+            "sellingPoint": "此时实际最清楚的是前方高开衩和露出的腿部；“the back”口播先行，但背部尚未被正面呈现"
+          },
+          {
+            "start": 6.02,
+            "end": 7.33,
+            "product": "黑色高领无袖开衩连衣裙",
+            "presentation": "转身展示侧面与侧后方",
+            "sellingPoint": "转身过程中展示后背露肤/开口和裙身剪裁；开衩本身因角度改变不再是最突出的视觉区域"
+          },
+          {
+            "start": 7.33,
+            "end": 8.27,
+            "product": "黑色高领无袖开衩连衣裙",
+            "presentation": "侧后方定格并回头确认",
+            "sellingPoint": "用停留姿态和回头表情确认背部与侧后方设计，不再通过扶裙强化开衩"
+          },
+          {
+            "start": 8.27,
+            "end": 9.67,
+            "product": "黑色无袖高领修身长裙",
+            "presentation": "正面穿着展示，中近景",
+            "sellingPoint": "正面修身轮廓和右腿侧开衩持续可见；人物以触发头发和面部认可表达设计效果"
+          },
+          {
+            "start": 9.67,
+            "end": 10.63,
+            "product": "黑色无袖高领修身长裙",
+            "presentation": "正面穿着展示，人物后退至更完整的全身构图",
+            "sellingPoint": "展示整体比例、裙摆和正面开衩的完整效果；没有背部展示"
+          },
+          {
+            "start": 10.63,
+            "end": 13.77,
+            "product": "黑色无袖高领修身长裙，带正面开衩；浅色细带高跟鞋",
+            "presentation": "全身试穿展示；人物先转身呈现侧面和背侧轮廓，再转回正面并朝镜头走动。",
+            "sellingPoint": "呈现裙子的整体长度、修身轮廓、开衩和行走时的裙摆动态，并将整套造型与“rich girl at midnight energy”的氛围评价联系起来。"
+          },
+          {
+            "start": 13.77,
+            "end": 15.17,
+            "product": "黑色无袖高领修身长裙，带开衩",
+            "presentation": "人物正面穿着并向镜头走近",
+            "sellingPoint": "行走中可见正面修身轮廓及开衩；具体卖点未由本段台词明确说明"
+          }
+        ],
+        "dialogue": [
+          {
+            "start": 1.073,
+            "end": 3.727,
+            "speaker": "",
+            "text": "No, because why does this look this good when I walk?"
+          },
+          {
+            "start": 5.07,
+            "end": 7.608,
+            "speaker": "",
+            "text": "The back, the slit, yeah."
+          },
+          {
+            "start": 8.27,
+            "end": 9.93,
+            "speaker": "",
+            "text": "Somebody knew exactly what they were doing."
+          },
+          {
+            "start": 10.63,
+            "end": 13.489,
+            "speaker": "",
+            "text": "This is giving rich girl at midnight energy"
+          },
+          {
+            "start": 13.773,
+            "end": 14.85,
+            "speaker": "",
+            "text": "and I'm obsessed."
+          }
+        ],
+        "overlays": [
+          {
+            "system": "底部英文口播字幕",
+            "kind": "caption",
+            "text": "no because why does this look\nthis good when I walk",
+            "position": "画面下方约 1/4，居中，横跨裙摆与腿部区域",
+            "style": "白色英文字幕，黑色描边或阴影，两行；具体字体和字号不确定",
+            "start": 1.07,
+            "end": 4.0,
+            "enter": "本段首帧已可见，具体淡入方式不确定",
+            "exit": "至 3.87 秒仍可见，之后的退出方式不确定",
+            "anchor": "口播“No, because why does this look this good when I walk?”；在“when I walk”和“walk?”时字幕仍覆盖裙摆区域"
+          },
+          {
+            "system": "底部英文口播字幕",
+            "kind": "caption",
+            "text": "no because why does this look\nthis good when I walk",
+            "position": "画面下方，居中，约下方 1/4 区域",
+            "style": "白色英文字幕，黑色描边或阴影；两行，具体字体与描边细节不确定",
+            "start": 4.0,
+            "end": 4.8,
+            "enter": "4.00 秒帧中已可见；本段内未观察到进入动画",
+            "exit": "4.80 秒帧仍可见；之后退出时间不确定",
+            "anchor": "画面字幕对应“no because why does this look this good when I walk”；逐词台词未提供，无法将字幕精确挂到本段语音词时"
+          },
+          {
+            "system": "底部英文口播字幕",
+            "kind": "caption",
+            "text": "the back",
+            "position": "画面下方约1/4区域，水平居中偏下，覆盖在裙身/腿部附近",
+            "style": "白色英文小字，带黑色描边或阴影；具体字体和淡入方式不确定",
+            "start": 5.07,
+            "end": 6.05,
+            "enter": "随口播字幕更新进入；具体动效不确定",
+            "exit": "在下一个词组更新时直接替换或消失，具体方式不确定",
+            "anchor": "台词“the back”，5.07–约6.00s"
+          },
+          {
+            "system": "底部英文口播字幕",
+            "kind": "caption",
+            "text": "the slit",
+            "position": "画面下方约1/4区域，水平居中偏下，位于裙身区域上方",
+            "style": "白色英文小字，带黑色描边或阴影；具体字体和淡入方式不确定",
+            "start": 6.07,
+            "end": 7.25,
+            "enter": "随说到“the slit”更新进入",
+            "exit": "在“yeah.”字幕更新前退出或被替换，具体方式不确定",
+            "anchor": "台词“the slit”，6.12–6.28s及其后短暂停留；与人物转向侧后方动作重合"
+          },
+          {
+            "system": "底部英文口播字幕",
+            "kind": "caption",
+            "text": "yeah.",
+            "position": "画面下方约1/4区域，水平居中偏下",
+            "style": "白色英文小字，带黑色描边或阴影；具体字体和淡入淡出方式不确定",
+            "start": 7.27,
+            "end": 8.07,
+            "enter": "随口播更新进入",
+            "exit": "约8.07s后被下一句字幕替换；网格中下一句为“somebody knew exactly what they were doing”",
+            "anchor": "台词“yeah.”，7.33s；人物停在侧后方并回头微笑"
+          },
+          {
+            "system": "底部英文口播字幕",
+            "kind": "caption",
+            "text": "somebody knew exactly what they were doing",
+            "position": "画面下方约1/4区域居中，覆盖裙身下部附近",
+            "style": "白色小号英文字幕，带黑色描边或阴影，两行排列；具体字体不确定",
+            "start": 8.27,
+            "end": 10.4,
+            "enter": "随口播逐词或逐句更新出现；具体淡入方式不确定",
+            "exit": "约10.4秒整句更新为下一条字幕，非明确淡出",
+            "anchor": "对应“Somebody knew exactly what they were doing.”"
+          },
+          {
+            "system": "底部英文口播字幕",
+            "kind": "caption",
+            "text": "this is giving rich girl at midnight energy",
+            "position": "画面下方约1/4区域居中",
+            "style": "白色英文字幕，带黑色描边或阴影；网格中为两行，具体字体和字号不确定",
+            "start": 10.4,
+            "end": 10.63,
+            "enter": "替换上一条字幕，具体切换或淡入方式不确定",
+            "exit": "本段结束时仍在画面中，后续退出时间不确定",
+            "anchor": "约10.4秒开始，挂在人物后退并展示整体造型的动作上"
+          },
+          {
+            "system": "底部英文口播字幕",
+            "kind": "caption",
+            "text": "this is giving rich girl at midnight energy",
+            "position": "画面下方约1/4区域居中，两行",
+            "style": "白色英文字幕，黑色描边或阴影；字重、字体和确切字号不确定。",
+            "start": 10.63,
+            "end": 13.62,
+            "enter": "该段起始帧已显示；具体淡入方式不确定。",
+            "exit": "约13.63秒更新为下一句字幕；具体转场方式不确定。",
+            "anchor": "对应“This is giving rich girl at midnight energy”；“rich girl”时人物转向侧面/背侧，“midnight”时开始转回正面，“energy”时朝镜头走来。"
+          },
+          {
+            "system": "底部英文口播字幕",
+            "kind": "caption",
+            "text": "and I'm obsessed",
+            "position": "画面下方居中，一行",
+            "style": "白色英文字幕，黑色描边或阴影；字重、字体和确切字号不确定。",
+            "start": 13.63,
+            "end": 13.77,
+            "enter": "替换上一条两行字幕；具体动效不确定。",
+            "exit": "本段帧网格未显示后续退出方式。",
+            "anchor": "约13.63秒切换字幕；与本段给定台词“This is giving rich girl at midnight energy”之后的口播相接。"
+          },
+          {
+            "system": "底部英文口播字幕",
+            "kind": "caption",
+            "text": "and I'm obsessed",
+            "position": "画面下方居中，叠在裙摆及腿部附近",
+            "style": "白色英文字幕，带黑色描边或阴影；具体字体和字号不确定",
+            "start": 13.77,
+            "end": 15.17,
+            "enter": "本段首帧已显示，未观察到明确进入动效",
+            "exit": "片段末帧仍可见；之后如何退出不确定",
+            "anchor": "对应口播“and”@13.77、“I'm”@13.91、“obsessed”@14.32"
+          }
+        ],
+        "viralLogic": {
+          "hook": "用“No, because why does this look this good when I walk?”制造即时惊叹和问题感，同时承诺展示服装走动时的效果。观众需要继续看才能知道究竟是什么设计让她产生这种反应。",
+          "structure": "近距离正面建立人物和服装印象，后退展示全身；以“the back”和“the slit”作为具体卖点并通过转身验证；用“Somebody knew exactly what they were doing”强化设计价值；再以“rich girl at midnight energy”提供可传播的审美标签，最后用“I’m obsessed”完成情绪回报。",
+          "whyItWorks": [
+            "口播不是平铺直叙的产品介绍，而是模拟真实试穿时的即时反应，降低广告感。",
+            "台词与动作高度同步，说到“walk”时走动，说到“back”和“slit”时转身展示对应部位。",
+            "连续镜头让观众持续等待下一个展示角度，注意力转移由人物走位完成。",
+            "黑色连衣裙的视觉重点明确，背部、开衩和整体剪裁可以在短时间内被反复确认。",
+            "“rich girl at midnight energy”将服装功能转译为身份和场景想象，便于观众形成穿着联想。",
+            "字幕覆盖口播内容，使视频在无声播放时仍能理解主要信息。"
+          ],
+          "replicateTips": [
+            "换人换货时必须保留“即时惊叹口播”和“动作验证卖点”的关系。",
+            "必须让第一句直接提出视觉效果问题或强烈反应，并在随后几秒内用动作回答。",
+            "至少安排一个由正面转向背面或侧面的角度变化，让观众看到前后不同信息。",
+            "每个被口播点名的卖点都要在同一时间窗口内进入画面重点，例如说到开衩时让开衩清晰可见。",
+            "保留一个可复述的整体氛围标签，用来把具体商品转化成生活方式想象。",
+            "结尾需要有明确的态度确认或情绪回报，即使没有直接购买指令，也要让观众知道展示者最终是否认可。"
+          ],
+          "risks": [
+            "当前素材没有价格、品牌、购买入口或尺码等转化信息，因此更偏种草展示，直接促单能力有限。",
+            "如果换货后背部、开衩或走动效果不够明显，原有台词与动作的对应关系会失效。",
+            "“rich girl at midnight energy”属于主观审美表达，可能对不同受众的共鸣强度不一致。",
+            "连续固定机位依赖人物走位和服装本身的变化，若表演幅度不足，画面可能显得单调。",
+            "提供的信息无法确认是否有背景音乐或额外音效，复制时不应把未经证实的音乐节奏当作原片必要结构。"
+          ]
+        }
+      },
+      "model": "gpt-5.6-sol",
+      "usage": {
+        "prompt_tokens": 61695,
+        "completion_tokens": 16230
+      },
+      "seconds": 387.0,
+      "at": "18:04:41",
+      "analysis_md": "# ANALYSIS.md\n\n## 作品想达成什么\n\n画面中，一位金发女性穿着黑色连衣裙，在客厅内对镜头进行展示。她通过走动、转身和调整身体角度，让观众看到裙子的正面轮廓、腿部开衩、背部设计以及穿着时的动态效果。口播从对裙子外观和走路状态的即时惊叹，推进到对背面和开衩的具体强调，最后上升到“rich girl at midnight”的身份与氛围联想，并以“I’m obsessed”完成态度确认。\n\n事实层面：视频没有可见商品链接、价格、品牌名、尺码信息或明确购买指令。主要说服方式是人物亲自穿着展示，以及带有情绪感染力的审美评价。\n\n## 故事与节奏\n\n视频基本是一镜连续完成，机械切点候选只有 0.17 秒，且从帧网格看不到明确的镜头切换。开头人物已经靠近镜头，随后向后移动，建立全身服装展示范围。她先正面走动并强调“when I walk”，接着在说到“the back”和“the slit”时转身，让口播内容和视觉动作直接对应。之后她回到正面并向镜头解释设计感，最后拉开距离、展示整体轮廓，再走回镜头，以“and I’m obsessed”收束。\n\n节奏依靠人物动作而非剪辑变化推进：近景正面吸引注意，后退露出全身，转身提供结构反转，回正后通过走动验证服装动态，最后用情绪化总结完成回报。\n\n## 视觉与声音系统\n\n### A-roll：人物试穿展示\n\n全片由同一位女性承担表演。她穿黑色无袖高领或接近高领的修身长裙，裙身有明显侧面或前侧开衩。她使用手触碰胸口、调整头发、扶裙或靠近镜头等自然动作，并通过正面、侧面、背面和远距离站位展示服装。人物位于客厅中央，背景可见沙发、开放式置物架、吉他和室内装饰。\n\n### 口播字幕\n\n画面底部持续出现与口播同步的英文白色字幕，带黑色描边或阴影，分成两行左右显示，位置通常在人物腿部下方或画面底部。字幕内容按照逐词转录出现，例如“no because why does this look / this good when I walk”“the back”“the slit”“yeah”“somebody knew exactly what they were doing”“this is giving rich girl at midnight energy”“and I’m obsessed”。字幕随台词更新，没有证据显示有额外花字、贴纸或大标题。\n\n### 服装展示动作\n\n动作与台词具有直接对应关系：说到“when I walk”时人物在镜头前走动；说到“the back”时她转向侧后方；说到“the slit”时画面突出裙摆和腿部开衩；说到“rich girl at midnight energy”时她拉开距离展示整体造型；最后重新走近镜头完成结尾。\n\n### 镜头与空间\n\n竖屏固定机位，画面高度接近人物胸口至腰部的视线范围，广角感较明显。人物通过前后移动改变景别，未见明确推拉或横摇。室内为白色或浅色墙面、木色地板和浅色家具，自然明亮，整体环境整洁且生活化。\n\n### 音乐与音效\n\n提供的信息中没有可确认的 BGM、转场音效或强调音效。可确认的声音内容为女性英文口播；是否存在低音量背景音乐不确定。\n\n## 远距离时刻之间的呼应\n\n开头人物以较近的正面姿态进入观看关系，随后后退让观众看到全身。中段转身展示背部和开衩，后段再次拉远让服装整体与走动状态成为视觉重点。结尾从远景回到近景，与开头的近距离人物状态形成呼应，并用“I’m obsessed”明确表达最终态度。\n\n## 为什么能火\n\n它把服装卖点嵌入真实的即时反应，而不是逐项罗列参数。第一句“why does this look this good when I walk?”同时提出问题并给出动态展示承诺；随后“the back”和“the slit”将观众注意力转移到两个具体设计区域；“Somebody knew exactly what they were doing”把服装设计解释为有意为之，增强设计价值感；最后“rich girl at midnight energy”提供容易被模仿和转述的审美标签。连续镜头和人物自然走位降低了广告感，字幕又保证了无声观看时的信息可读性。",
+      "timeline_md": "# TIMELINE\n\n## 0.00–1.07 · 钩子\n画面以固定竖屏机位开始，C1以非常近的正面半身距离面对镜头，黑色高领修身连衣裙的领口、褶皱、腰部贴合和前侧开衩已经占据主要视觉区域。0.00–0.40秒她基本保持正面站立并直视镜头，嘴唇从轻微闭合/抿嘴逐渐张开；没有可确认的完整台词，因此不能把口型变化对应到具体词语。\n\n约0.40秒后她开始向后退，人物从近距离半身逐渐变为更完整的上身和腿部构图，裙子的整体轮廓与开衩露出更多。约0.70–1.07秒，她一只手抬到胸口/领口附近，另一只手自然垂在身体侧方，同时继续面向镜头。这个“直视镜头—后退露出服装—手触胸口/领口”的连续动作可确认是开场吸引动作；未观察到剪辑、明显运镜或额外图形层。画面帧网格未提供可确认的环境声、BGM或音效信息。\n\n## 1.07–4.00 · 走动时的裙装效果\n固定竖屏机位中，C1 面向镜头口播，黑色高领无袖长裙的正面和开衩可见。她从较近的位置向后退，画面由较近的上半身构图逐渐变为接近全身；说到“good”前后站定展示，随后迈步并轻微换重心，裙摆随腿部动作分开、回落。说到“when I walk”及“walk?”时，开衩处能看到腿部，步幅和裙摆有轻微动态，但没有明显大幅甩摆；不确定是否有意强调露腿。\n\n底部白色英文口播字幕带黑色描边或阴影，从本段开始可见，分两行显示“no because why does this look”/“this good when I walk”，位于画面下方，覆盖裙摆和腿部区域，持续至本段末仍可见。字幕随口播更新，但这组帧里文字基本保持完整，并非只在“when I walk”时才出现。她以带惊讶和赞叹的语气抛出“why does this look this good”，动作则让观众看到裙子在站立及迈步时的正面效果。\n\n## 4.00–5.07 · 正面继续走近，尚未出现可见转身\n人物仍正面朝向镜头，在固定机位前继续向前走，画面由接近全身逐渐变成较近的全身/中景。4.00–4.60 秒，她一只手停在颈口和肩部附近；到 4.80 秒，另一只手落到裙侧。裙摆随步伐轻微摆动，正面开衩仍可见。给定帧中没有看到肩部转向、身体侧转或背面展示，因此无法确认转身何时开始，也没有证据表明手势或裙摆触发了转身。\n画面下方持续显示白字黑描边英文字幕“no because why does this look / this good when I walk”，对应上下文中延续的口播字幕；本段未提供逐词台词，不能据字幕推定具体发声时点。短暂动作保持服装正面与行走时开衩的可见性；固定构图没有可确认的镜头运动或切换。\n\n## 5.07–8.27 · 背部与开衩展示\n5.07–约6.00s，人物仍基本正面对着镜头，保持近全身/中近景构图。她一只手在肩颈附近，另一只手靠近裙身下侧；此时裙前的高开衩和露出的腿部比背部更清楚。她说到“the back”时，画面尚未真正转到背面，字幕同步显示“the back”。\n\n约6.00–7.33s，人物开始向自己的侧后方转身，身体由正面转为侧面再转向背侧；手从颈肩位置经过，另一只手沿身体下侧自然放下，没有明确扶起或拉开裙摆的动作。说到“the slit”时，转身动作开始展示裙子的侧后方和背部剪裁，但由于角度变化，前面的腿部开衩反而逐渐不再是画面中心。背部露肤/后背开口和裙身的贴合剪裁比开衩本身更突出。\n\n7.33–8.27s，人物停在侧后方姿态，回头看向镜头并露出带确认感的笑容，说“yeah.”；她没有继续拉扯裙子，主要用停留的姿势完成对背部和侧后方剪裁的确认。整个段落是同一固定机位长镜头中的动作分段，没有可确认的剪辑或镜头运动。\n\n## 8.27–10.63 · 证明\n人物保持正面朝向镜头，黑色连衣裙的高领、修身裙身和右腿前侧开衩持续可见。8.27–9.67 之间她处于较近的中近景，边说“Somebody knew exactly what they were doing.”边用左手触碰并整理头发，右手停在身体前侧；说到“exactly”时正面展示仍然稳定，表情较明亮，认可感通过眼神、微笑和手部动作加强。9.67 之后她开始向后退，画面因人物走位变为更完整的全身构图；双手逐渐放下并向身体两侧打开，姿态从近距离评论转为展示整体效果。开衩在正面一直能看到，未再次转身，因此没有看到背部或背部开衩。\n\n底部英文口播字幕为白色、带黑色描边或阴影的两行字幕，跟随口播显示“somebody knew exactly what they were doing”；约10.4秒后更新为下一句“this is giving rich girl at midnight energy”，与人物后退、展示整体造型的动作衔接。对观众的作用是把开衩等具体设计效果归因于设计者有意完成的整体造型，并从局部认可过渡到完整气质展示。\n\n## 10.63–13.77 · 信任与整体造型联想\n固定竖屏机位中，C1已处于能看到全身的距离。说“This is giving rich girl at midnight energy”时，她先由正面转成侧身并继续转向背面一侧，短暂停留展示连衣裙的侧面与背部轮廓；到“midnight”附近开始转回正面，随后在“energy”期间朝镜头走近。这里不是镜头推拉，而是人物转身、停步和走动带来的距离与姿态变化。\n\n裙摆长至脚踝附近，开衩在正面步行时露出腿部；浅色细带高跟鞋在全身构图中可见，转身停留时也能看到鞋履。步行时裙摆随步伐摆动，画面足以展示整体裙长和鞋子，但字幕覆盖画面下方，部分遮挡腿部与裙摆区域。底部两行白色英文字幕带黑色描边/阴影，显示“this is giving rich girl at / midnight energy”；约13.63秒更新为“and I'm obsessed”。没有可确认的额外贴纸、花字或特效。\n\n## 13.77–15.17 · 喜爱表达与正面收束\n固定竖屏机位中，C1继续从客厅中景向镜头走近。说到“and I’m”时，她保持正面朝向，手臂自然垂在身体两侧，裙摆随步伐摆动；“obsessed”期间仍向前靠近，正面修身轮廓和裙子开衩更显眼。末帧她已接近镜头，面向镜头露出轻微笑意，形成直接的情绪收尾；画面没有明确显示她停步，也看不出额外的定格式服装展示动作。持续在下方居中的白色英文字幕显示“and I’m obsessed”，至片段最后可见；字幕离开画面的方式无法从片段确认。此处以个人喜爱而非明确购买指令收束种草表达。"
+    }
+  },
+  "breakdown_provider": "jimmy",
+  "replacements": {
+    "characters": [
+      {
+        "source_id": "C1",
+        "action": "keep",
+        "asset_id": "a1027180115-c3e4",
+        "camera_asset_id": null,
+        "description": ""
+      }
+    ],
+    "scene": "",
+    "product": {
+      "action": "keep",
+      "asset_id": "a1027180615-ee86",
+      "description": ""
+    }
+  }
+}

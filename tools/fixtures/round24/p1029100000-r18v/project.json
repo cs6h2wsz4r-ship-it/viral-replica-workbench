@@ -1,0 +1,2708 @@
+{
+  "id": "p1029100000-r18v",
+  "name": "验证-第18轮（可删）",
+  "created_at": "2026-10-28 22:23:59",
+  "source": {
+    "file": "source/source.mp4",
+    "name": "准备.mp4",
+    "probe": {
+      "duration": 10.052,
+      "size_bytes": 3024821,
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "has_video": true,
+      "audio_stream_count": 1,
+      "width": 720,
+      "height": 1264,
+      "fps": 24.0,
+      "video_codec": "h264",
+      "ratio_hint": "9:16",
+      "audio_codec": "aac",
+      "sample_rate": "44100",
+      "channels": 2
+    },
+    "sha256": "35ba2f6a069909a6971ab8615b1e9cd8166ad0b8eadcb720774ae8102508e8cc"
+  },
+  "assets": [
+    {
+      "id": "a1028222447-602d",
+      "type": "image",
+      "label": "ChatGPT Image 2026年8月11日 17_08_40",
+      "roles": [
+        "person_identity"
+      ],
+      "file": "assets/a1028222447-602d.png",
+      "sha256": "2f86676a3c59ff4ac949a9c01fe63ac96c50c2cdffead5c47132023355208315",
+      "description": ""
+    },
+    {
+      "id": "a1028222505-83b0",
+      "type": "image",
+      "label": "ChatGPT 图像 2026年10月16日 17_33_07-4",
+      "roles": [
+        "product_truth"
+      ],
+      "file": "assets/a1028222505-83b0.png",
+      "sha256": "7cecc0bba9ef94920074fe2a0c2d1a11f1b7da1994ec6c52c7829cd163d7117b",
+      "description": ""
+    },
+    {
+      "id": "a1029085450-dc73",
+      "type": "image",
+      "label": "原片参考帧 穿裙女子 0.5s",
+      "roles": [
+        "scene"
+      ],
+      "camera_scene": "S1",
+      "frame_at": 0.5,
+      "file": "assets/frame-C1-0.50.jpg",
+      "sha256": "348790088e10066fefb5229d0ce07981263ec28134e4f98eb197bd30284a9b58",
+      "description": "原片机位/场景/构图参考（不继承人物外观）"
+    },
+    {
+      "id": "img1029085721-2d86",
+      "type": "image",
+      "label": "主镜头图 C1 · S1 停车场与打开的后备箱",
+      "roles": [
+        "target_state"
+      ],
+      "file": "assets/img1029085721-2d86.png",
+      "sha256": "0dc1ab03dc3add0b3d1c5e9a4681930b0ff5dd6d573cf218b315450583343c2d",
+      "description": "",
+      "generated": true,
+      "camera_character": "C1",
+      "camera_scene": "S1",
+      "camera_product_id": "a1028222505-83b0",
+      "camera_binding": "9a826e4fc92085b22954dd67693cc6916df6fa7f2bf89098ccdd9fd1f10318d5"
+    },
+    {
+      "id": "a1029113735-c1b6",
+      "type": "image",
+      "label": "原片参考帧 穿裙女子 3.4s",
+      "roles": [
+        "scene"
+      ],
+      "internal": true,
+      "frame_character": "C1",
+      "camera_scene": "S1",
+      "frame_at": 3.36,
+      "frame_reason": "front_product",
+      "file": "assets/frame-C1-3.36.jpg",
+      "sha256": "92ad01c980a30dfbb3d9b1547170865203e2e077a32f87f90eaa4ca7555dc4ee",
+      "description": "原片机位/场景/构图参考（不继承人物外观）",
+      "frame_warning": ""
+    }
+  ],
+  "analysis": {
+    "status": "done",
+    "provider": "jimmy",
+    "request_model": "gpt-5.6-sol",
+    "steps": {
+      "probe": {
+        "title": "01 媒体探测",
+        "tool": "ffprobe（= hypit media probe）· 本地免费",
+        "status": "done",
+        "output": {
+          "duration": 10.052,
+          "width": 720,
+          "height": 1264,
+          "fps": 24.0,
+          "audio_stream_count": 1
+        }
+      },
+      "transcribe": {
+        "title": "02 逐词转录",
+        "tool": "faster-whisper medium int8 + wav2vec2 alignment · 本地免费",
+        "status": "done",
+        "output": {
+          "sentences": 5,
+          "words": 28
+        }
+      },
+      "boundaries": {
+        "title": "03 切点检测与帧网格",
+        "tool": "hypit boundaries 同算法 + 带台词帧网格 · 本地免费",
+        "status": "done",
+        "output": {
+          "cut_candidates": 0,
+          "shots": 1,
+          "overview_every_s": 1.0,
+          "overview_grids": 1
+        }
+      },
+      "overview": {
+        "title": "04 整片理解 → ANALYSIS.md",
+        "tool": "吉米 · GPT-5.6 Sol（共用 Jimmy Key） · 外部计费",
+        "status": "done",
+        "output": {
+          "model": "gpt-5.6-sol",
+          "input": "1 张帧网格",
+          "passages": 5,
+          "systems": 3,
+          "seconds": 30.2
+        }
+      },
+      "close": {
+        "title": "05 逐段细读 → TIMELINE.md",
+        "tool": "吉米 · GPT-5.6 Sol（共用 Jimmy Key） · 外部计费",
+        "status": "done",
+        "progress": "5/5",
+        "output": {
+          "passages": 5,
+          "failed": 0,
+          "seconds": 113.1
+        }
+      },
+      "pack": {
+        "title": "06 拆解包",
+        "tool": "7 卡 + 图层表 + 文档",
+        "status": "done",
+        "output": {
+          "characters": 2,
+          "scene": 1,
+          "beats": 5,
+          "shots": 6,
+          "productMoments": 5,
+          "dialogue": 5,
+          "overlays": 5
+        }
+      }
+    },
+    "started": 1793197466.832863,
+    "shots": [
+      {
+        "index": 1,
+        "start": 0.0,
+        "end": 10.052,
+        "cut_score": null,
+        "frame": "analysis/frames/shot-001.jpg"
+      }
+    ],
+    "transcript": [
+      {
+        "start": 0.162,
+        "end": 1.979,
+        "text": "Excuse me, your dress is beautiful.",
+        "words": [
+          {
+            "word": "Excuse",
+            "start": 0.162,
+            "end": 0.586
+          },
+          {
+            "word": "me,",
+            "start": 0.626,
+            "end": 0.788
+          },
+          {
+            "word": "your",
+            "start": 0.848,
+            "end": 0.99
+          },
+          {
+            "word": "dress",
+            "start": 1.03,
+            "end": 1.313
+          },
+          {
+            "word": "is",
+            "start": 1.353,
+            "end": 1.454
+          },
+          {
+            "word": "beautiful.",
+            "start": 1.535,
+            "end": 1.979
+          }
+        ]
+      },
+      {
+        "start": 2.782,
+        "end": 3.937,
+        "text": "Oh, thank you so much.",
+        "words": [
+          {
+            "word": "Oh,",
+            "start": 2.782,
+            "end": 2.903
+          },
+          {
+            "word": "thank",
+            "start": 3.005,
+            "end": 3.207
+          },
+          {
+            "word": "you",
+            "start": 3.248,
+            "end": 3.369
+          },
+          {
+            "word": "so",
+            "start": 3.41,
+            "end": 3.572
+          },
+          {
+            "word": "much.",
+            "start": 3.633,
+            "end": 3.937
+          }
+        ]
+      },
+      {
+        "start": 5.201,
+        "end": 6.56,
+        "text": "It's so flowy and comfortable.",
+        "words": [
+          {
+            "word": "It's",
+            "start": 5.201,
+            "end": 5.322
+          },
+          {
+            "word": "so",
+            "start": 5.383,
+            "end": 5.566
+          },
+          {
+            "word": "flowy",
+            "start": 5.647,
+            "end": 6.012
+          },
+          {
+            "word": "and",
+            "start": 6.032,
+            "end": 6.134
+          },
+          {
+            "word": "comfortable.",
+            "start": 6.174,
+            "end": 6.56
+          }
+        ]
+      },
+      {
+        "start": 6.76,
+        "end": 7.578,
+        "text": "I love the open back.",
+        "words": [
+          {
+            "word": "I",
+            "start": 6.76,
+            "end": 6.78
+          },
+          {
+            "word": "love",
+            "start": 6.801,
+            "end": 6.944
+          },
+          {
+            "word": "the",
+            "start": 6.965,
+            "end": 7.046
+          },
+          {
+            "word": "open",
+            "start": 7.108,
+            "end": 7.312
+          },
+          {
+            "word": "back.",
+            "start": 7.333,
+            "end": 7.578
+          }
+        ]
+      },
+      {
+        "start": 8.14,
+        "end": 9.72,
+        "text": "The fabric is perfect for this weather.",
+        "words": [
+          {
+            "word": "The",
+            "start": 8.14,
+            "end": 8.201
+          },
+          {
+            "word": "fabric",
+            "start": 8.241,
+            "end": 8.545
+          },
+          {
+            "word": "is",
+            "start": 8.565,
+            "end": 8.626
+          },
+          {
+            "word": "perfect",
+            "start": 8.748,
+            "end": 9.072
+          },
+          {
+            "word": "for",
+            "start": 9.133,
+            "end": 9.234
+          },
+          {
+            "word": "this",
+            "start": 9.254,
+            "end": 9.396
+          },
+          {
+            "word": "weather.",
+            "start": 9.457,
+            "end": 9.72
+          }
+        ]
+      }
+    ],
+    "overview_grids": [
+      {
+        "file": "analysis/evidence/overview/ov-grid-01.jpg",
+        "cells": [
+          {
+            "t": 0.0,
+            "words": "Excuse"
+          },
+          {
+            "t": 1.0,
+            "words": "Excuse me, your dress is"
+          },
+          {
+            "t": 2.0,
+            "words": "beautiful."
+          },
+          {
+            "t": 3.0,
+            "words": "Oh, thank you so"
+          },
+          {
+            "t": 4.0,
+            "words": "so much."
+          },
+          {
+            "t": 5.0,
+            "words": "It's so"
+          },
+          {
+            "t": 6.0,
+            "words": "so flowy and comfortable."
+          },
+          {
+            "t": 7.0,
+            "words": "comfortable. I love the open back."
+          },
+          {
+            "t": 8.0,
+            "words": "back. The fabric"
+          },
+          {
+            "t": 9.0,
+            "words": "fabric is perfect for this weather."
+          }
+        ]
+      }
+    ],
+    "model": "gpt-5.6-sol",
+    "passages": [
+      {
+        "id": "P1",
+        "start": 0.0,
+        "end": 2.78,
+        "phase": "钩子",
+        "summary": "女子背对镜头站在打开的后备箱旁，露出裙子背面。画外人说“Excuse me, your dress is beautiful.”，以直接称赞建立注意力。",
+        "question": "开场是否有意先突出露背剪裁？画外声音与画面人物的距离和互动关系是什么？",
+        "every": 0.2,
+        "grids": [
+          "analysis/evidence/close/7bbdccefcf3fc7925bb6/cdc58f7e726bd27b/p1-grid-01.jpg",
+          "analysis/evidence/close/7bbdccefcf3fc7925bb6/cdc58f7e726bd27b/p1-grid-02.jpg"
+        ]
+      },
+      {
+        "id": "P2",
+        "start": 2.78,
+        "end": 5.2,
+        "phase": "信任",
+        "summary": "女子转身面向镜头，并说“Oh, thank you so much.”，从背面展示过渡到正面互动。",
+        "question": "转身动作是否与感谢同步？表情和镜头距离如何影响偶遇式交流的真实感？",
+        "every": 0.2,
+        "grids": [
+          "analysis/evidence/close/029c5fbef1f57cb1c698/7f2313f733c16edc/p2-grid-01.jpg"
+        ]
+      },
+      {
+        "id": "P3",
+        "start": 5.2,
+        "end": 6.76,
+        "phase": "卖点",
+        "summary": "女子说“It's so flowy and comfortable.”，并通过手势和裙身的垂坠表现呼应轻盈、舒适的描述。",
+        "question": "手部动作或裙摆是否具体展示了面料的垂坠与活动感？",
+        "every": 0.2,
+        "grids": [
+          "analysis/evidence/close/6fcd7b6e246274b71c0a/eebb32a72db91c52/p3-grid-01.jpg"
+        ]
+      },
+      {
+        "id": "P4",
+        "start": 6.76,
+        "end": 8.14,
+        "phase": "卖点",
+        "summary": "女子说“I love the open back.”，呼应开场已出现的背面视觉信息。",
+        "question": "这一句是否伴随转身或其他展示背部的动作？给定帧网格未显示此处再次转身。",
+        "every": 0.2,
+        "grids": [
+          "analysis/evidence/close/21323cc3e8a170a2145f/85a723adfd5f3e8e/p4-grid-01.jpg"
+        ]
+      },
+      {
+        "id": "P5",
+        "start": 8.14,
+        "end": 10.05,
+        "phase": "证明",
+        "summary": "女子说“The fabric is perfect for this weather.”，以适合当下天气作为最后一个使用场景卖点；画面仍维持正面展示，片尾没有明确口头促单。",
+        "question": "片尾是否有明确的结束表情、指向链接或其他购买引导动作？现有帧网格只能确认人物继续面向镜头。",
+        "every": 0.2,
+        "grids": [
+          "analysis/evidence/close/a87728b77cff840f0296/247087c7c5596e58/p5-grid-01.jpg"
+        ]
+      }
+    ],
+    "docs": {
+      "ANALYSIS.md": "analysis/ANALYSIS.md",
+      "TIMELINE.md": "analysis/TIMELINE.md",
+      "台词表.srt": "analysis/台词表.srt",
+      "逐词时间轴.csv": "analysis/逐词时间轴.csv",
+      "transcript.json": "analysis/transcript.json",
+      "boundaries.json": "analysis/boundaries.json",
+      "passages.json": "analysis/passages.json"
+    }
+  },
+  "breakdown": {
+    "overview": {
+      "oneLine": "停车场里，一位画外人称赞女子的紫粉色长裙；女子转身展示裙子，并用舒适、露背和适合天气等特点回应。",
+      "genre": "穿搭展示/口播带货",
+      "visualTone": "自然日光｜户外明亮｜手机竖屏手持感｜日常停车场背景",
+      "language": "en",
+      "duration": 10.052
+    },
+    "characters": [
+      {
+        "id": "C1",
+        "name": "穿裙女子",
+        "role": "穿着者/介绍者",
+        "appearance": "成年女性，金色长发，身形偏瘦；先背对镜头，之后转身面向镜头。",
+        "outfit": "细肩带紫粉色长裙，裙身有褶皱与垂坠感，背部较开放。",
+        "voice": "女性英语声线；根据对话内容应为画面中的女子发言，但音画对应仅依据给定转录和画面内容判断。",
+        "screenTime": "全片；多数时间可见"
+      },
+      {
+        "id": "C2",
+        "name": "画外称赞者",
+        "role": "画外互动者/称赞者",
+        "appearance": "未见。",
+        "outfit": "不适用。",
+        "voice": "画外英语声音；性别与具体声线特征无法仅凭提供信息可靠确认。",
+        "screenTime": "声音约0.16–1.98秒；未见"
+      }
+    ],
+    "scene": [
+      {
+        "id": "S1",
+        "name": "停车场与打开的后备箱",
+        "description": "户外停车场，一辆打开后备箱的 SUV 位于女子身后；可见车内购物袋、树木、其他车辆及停车位。女子由背对镜头转为面对镜头。",
+        "lighting": "自然日光，场景明亮；人物与地面有清晰日照阴影。",
+        "timeRanges": [
+          [
+            0,
+            10.052
+          ]
+        ]
+      }
+    ],
+    "beats": [
+      {
+        "id": "P1",
+        "start": 0.0,
+        "end": 2.78,
+        "function": "钩子",
+        "summary": "女子背对镜头站在打开的后备箱旁，露出裙子背面。画外人说“Excuse me, your dress is beautiful.”，以直接称赞建立注意力。",
+        "performance": "画外称赞者语气礼貌、自然，像是在停车场临时搭话；“beautiful”是称赞句的重心。C1 起初背对镜头继续在后备箱前活动，未见明确回应；约 2.40 秒后转身，到 2.60 秒张口并抬手靠近脸部，呈现出开始回应的反应。无法从这一小段可靠判断她的具体情绪。",
+        "sound": "可确认的声音是 0.16–1.98 秒画外英语称赞。未提供可确认的独立音效、BGM或突出环境声变化证据。"
+      },
+      {
+        "id": "P2",
+        "start": 2.78,
+        "end": 5.2,
+        "function": "信任",
+        "summary": "女子转身面向镜头，并说“Oh, thank you so much.”，从背面展示过渡到正面互动。",
+        "performance": "女子以惊喜、感激且亲切的态度回应画外称赞，交流对象更像现场的称赞者而非单纯对观众口播。“Oh”带出惊讶感，“thank you so much”语气热情。她在回应时睁大眼睛并捂嘴微笑，随后放下手、笑着低头看裙子；转身已在这句台词开始前基本完成。近距离的正面视线与自然手持构图强化了偶遇式互动感。",
+        "sound": "可确认的是女子说“Oh, thank you so much.”；本段未提供可辨认的独立音效、音乐或环境声变化证据。"
+      },
+      {
+        "id": "P3",
+        "start": 5.2,
+        "end": 6.76,
+        "function": "卖点",
+        "summary": "女子说“It's so flowy and comfortable.”，并通过手势和裙身的垂坠表现呼应轻盈、舒适的描述。",
+        "performance": "女子以轻松、肯定的口吻向镜头回应，表情自然，语气像日常分享而非强烈推销。说到“flowy”时低头看着裙身，双手松弛下垂并略向两侧展开；说到“comfortable”时抬眼面对镜头，双手向外打开。重音主要落在“flowy”和“comfortable”，未见明显夸张表情。",
+        "sound": "听到女子说“It's so flowy and comfortable.”，无可确认的独立音效、音乐变化或突出的环境声变化。"
+      },
+      {
+        "id": "P4",
+        "start": 6.76,
+        "end": 8.14,
+        "function": "卖点",
+        "summary": "女子说“I love the open back.”，呼应开场已出现的背面视觉信息。",
+        "performance": "女子以正面面对镜头、肯定而带有喜爱感的语气说出这句卖点。重音落在“I love”和“open back”，表情保持微笑或轻松愉悦；右手在说到“open back”附近抬到胸前做小幅指示手势，但没有配合转身或回头动作。她是在对镜头及画外互动者直接回应，依靠语言呼应前段已经出现过的背面视觉信息。",
+        "sound": "仅能确认女子的英语口播持续进行；未提供可确认的独立音效、音乐变化或环境声变化证据。"
+      },
+      {
+        "id": "P5",
+        "start": 8.14,
+        "end": 10.05,
+        "function": "证明",
+        "summary": "女子说“The fabric is perfect for this weather.”，以适合当下天气作为最后一个使用场景卖点；画面仍维持正面展示，片尾没有明确口头促单。",
+        "performance": "女子以平稳、友好的口播语气面向镜头，像是在补充一个实际穿着场景的优点。重音落在“perfect”和“weather”；说到“fabric”时手部开始辅助说明，随后短暂打开双手，到句尾手势收下并露出轻微微笑。可见的是温和表情与面向镜头；没有明确夸张的片尾表情、指向链接动作或其他购买引导手势。",
+        "sound": "可确认的声音信息为女子英语口播“The fabric is perfect for this weather.”；本段没有提供可确认的独立音效、音乐或环境声变化证据。"
+      }
+    ],
+    "shots": [
+      {
+        "start": 0,
+        "end": 2.78,
+        "shotSize": "竖屏中远景，全身为主；女子与打开的后备箱同框",
+        "camera": "固定观察式手机机位，轻微手持感；未见明显推拉或切镜",
+        "action": "女子先背对镜头站在后备箱前，手在购物袋附近活动；约 2.40 秒开始转身，至 2.60 秒呈侧面并抬手靠近脸部。",
+        "characters": [
+          "C1",
+          "C2"
+        ],
+        "sceneId": "S1",
+        "product": "紫粉色细肩带长裙持续穿着展示；背部露出，裙身垂地。后备箱内可见购物袋。",
+        "onScreenText": "左下角持续出现小号白色英文促销文字，内容可辨认但部分措辞不确定。",
+        "id": "K1"
+      },
+      {
+        "start": 2.78,
+        "end": 3.94,
+        "shotSize": "中景至近中景，女子约从头部至裙摆下部入画",
+        "camera": "竖屏手持视角，轻微自然晃动；固定连续镜头，无可确认切点",
+        "action": "女子已转为正面，手捂嘴回应画外称赞；感谢期间维持面向镜头，转身并未与台词同步发生",
+        "characters": [
+          "C1"
+        ],
+        "sceneId": "S1",
+        "product": "紫粉色细肩带长裙正面可见，裙身有褶皱与垂坠感",
+        "onScreenText": "左下角持续出现小号白色英文促销文案，精确字词因画面字号较小而不完全确定",
+        "id": "K2"
+      },
+      {
+        "start": 3.94,
+        "end": 5.2,
+        "shotSize": "中近景，画面逐渐更紧，裙身下部被画框裁切",
+        "camera": "同一连续手持镜头，机位似乎略向前靠近；幅度不确定",
+        "action": "女子保持正面微笑，将手从嘴边放下并低头看向裙身，随后手势向下指示或展示裙子",
+        "characters": [
+          "C1"
+        ],
+        "sceneId": "S1",
+        "product": "裙子正面褶皱与垂坠状态持续展示",
+        "onScreenText": "左下角持续出现小号白色英文促销文案，未见明显变化",
+        "id": "K3"
+      },
+      {
+        "start": 5.2,
+        "end": 6.76,
+        "shotSize": "竖屏中景，女子约从头部至小腿下部入画；裙摆底端被画幅截断",
+        "camera": "固定观察感的手机竖屏手持画面，轻微自然晃动；无可确认推拉或摇移",
+        "action": "同一连续镜头。5.20–5.60女子低头，双手在腰侧附近张开后逐渐放低；5.60–6.20双手松弛地悬在裙身两侧，手指朝下，配合“flowy”；6.20–6.60她抬眼面对镜头，双手仍在腰前；约6.60–6.76双手抬起并向外打开。没有抓、提或甩裙摆的动作。",
+        "characters": [
+          "C1"
+        ],
+        "sceneId": "S1",
+        "product": "紫粉色细肩带长裙穿在身上，胸腰处有褶皱，裙身纵向自然垂落；此段没有改变商品状态。",
+        "onScreenText": "左下角持续出现白色多行英文促销文字；可辨内容包含“I'm obsessed with this dress”、“The quality is excellent”、“it's on sale”及“Here's the link”，其中一处短语不确定。",
+        "id": "K4"
+      },
+      {
+        "start": 6.76,
+        "end": 8.14,
+        "shotSize": "正面中近景，人物上半身至裙身中段可见",
+        "camera": "单一连续手持/手机竖屏视角；无可确认的切镜、推拉或明显横移",
+        "action": "女子面向镜头说“I love the open back.”，右手在胸前附近做小幅手势；没有转身、回头或重新展示背部的动作",
+        "characters": [
+          "C1"
+        ],
+        "sceneId": "S1",
+        "product": "紫粉色细肩带长裙，身穿展示；正面可见褶皱和垂坠感，背部在此段不可见",
+        "onScreenText": "左下角持续有小号白色英文促销文字，具体字句因字号较小部分不确定",
+        "id": "K5"
+      },
+      {
+        "start": 8.14,
+        "end": 10.05,
+        "shotSize": "正面中远景，画面包含女子头部至裙身；约9.3秒后构图看起来略紧，裙摆可见范围减少",
+        "camera": "停车场实景连续镜头，手机手持感；无可确认切镜。约9.3秒后可能轻微推近或重新取景，具体原因不确定",
+        "action": "女子正面口播。起初一只手在身前做小幅说明手势，随后双手短暂向外打开；到“this weather”时手臂逐渐落下，双手靠近裙子两侧，最后保持站立面向镜头",
+        "characters": [
+          "C1"
+        ],
+        "sceneId": "S1",
+        "product": "紫粉色细肩带长裙持续穿着展示，褶皱垂坠裙身可见；无新的拿取或使用动作",
+        "onScreenText": "左下角持续出现小号白色促销文字，含“Here's the link”等字样；完整措辞因字号较小而不确定",
+        "id": "K6"
+      }
+    ],
+    "productMoments": [
+      {
+        "start": 0,
+        "end": 2.78,
+        "product": "紫粉色细肩带长裙",
+        "presentation": "女子背对镜头穿着展示；约 2.40 秒起转身，露背视角逐渐转为侧面",
+        "sellingPoint": "开场清楚呈现露背剪裁；此段台词称赞裙子美丽，但未提及具体剪裁或其他卖点。"
+      },
+      {
+        "start": 2.78,
+        "end": 5.2,
+        "product": "紫粉色细肩带长裙",
+        "presentation": "穿着展示；由正面站姿转为低头看裙身并以手势向下展示",
+        "sellingPoint": "可见裙身正面褶皱与垂坠感；本段感谢台词本身未口述具体卖点"
+      },
+      {
+        "start": 5.2,
+        "end": 6.76,
+        "product": "紫粉色细肩带长裙",
+        "presentation": "穿着展示；中景中可见腰部褶皱与纵向垂坠裙身",
+        "sellingPoint": "台词称裙子轻盈、舒适。手部在裙身两侧做松弛的张开、下垂和外展手势，但没有触碰或摆动裙摆；垂坠外观可见，活动感未被明确演示。"
+      },
+      {
+        "start": 6.76,
+        "end": 8.14,
+        "product": "紫粉色细肩带长裙",
+        "presentation": "身穿正面展示",
+        "sellingPoint": "口头强调露背设计；画面本段没有再次展示背部"
+      },
+      {
+        "start": 8.14,
+        "end": 10.05,
+        "product": "紫粉色细肩带长裙",
+        "presentation": "正面穿着展示；女子做轻微手势后双手落至裙子两侧",
+        "sellingPoint": "面料适合当下天气，对应台词“The fabric is perfect for this weather.”"
+      }
+    ],
+    "dialogue": [
+      {
+        "start": 0.162,
+        "end": 1.979,
+        "speaker": "",
+        "text": "Excuse me, your dress is beautiful."
+      },
+      {
+        "start": 2.782,
+        "end": 3.937,
+        "speaker": "",
+        "text": "Oh, thank you so much."
+      },
+      {
+        "start": 5.201,
+        "end": 6.56,
+        "speaker": "",
+        "text": "It's so flowy and comfortable."
+      },
+      {
+        "start": 6.76,
+        "end": 7.578,
+        "speaker": "",
+        "text": "I love the open back."
+      },
+      {
+        "start": 8.14,
+        "end": 9.72,
+        "speaker": "",
+        "text": "The fabric is perfect for this weather."
+      }
+    ],
+    "overlays": [
+      {
+        "system": "左下角英文促销文字",
+        "kind": "typography",
+        "text": "I'm obsessed with this dress [后续字样不确定；可见内容似为 “of clothes! The quality is excellent and it's on sale now. Here's the link!”]",
+        "bbox": [
+          0.02,
+          0.59,
+          0.2,
+          0.68
+        ],
+        "position": "画面左下方，靠近后备箱与裙子左侧",
+        "style": "小号白色英文，多行排列，带深色阴影或描边；无明显底色",
+        "start": 0,
+        "end": 2.78,
+        "enter": "片段开头已出现，未见进入动画",
+        "exit": "片段结束时仍可见",
+        "anchor": "与台词无明显逐词对应，持续作为促销信息叠加"
+      },
+      {
+        "system": "左下角英文促销文字",
+        "kind": "typography",
+        "text": "I'm obsessed with this dress / of clothes! The quality is / excellent and it's on sale / now. Here's the link!（其中第二行开头的字不确定）",
+        "bbox": [
+          0.01,
+          0.57,
+          0.23,
+          0.65
+        ],
+        "position": "画面左下方，约下方三分之一处，靠左多行排列",
+        "style": "小号白色英文无衬线字，带深色阴影或描边；具体字体不确定",
+        "start": 2.78,
+        "end": 5.2,
+        "enter": "本段开始时已在画面中，未见进入动画",
+        "exit": "本段结束时仍可见，未见退出动画",
+        "anchor": "不对应本段感谢台词；促销文案持续覆盖画面"
+      },
+      {
+        "system": "左下角英文促销文字",
+        "kind": "typography",
+        "text": "I'm obsessed with this dress / [不确定] of clothes! The quality is / excellent and it's on sale / now. Here's the link!",
+        "bbox": [
+          0.02,
+          0.75,
+          0.43,
+          0.88
+        ],
+        "position": "画面左下方，裙身左侧至腰下区域，多行左对齐",
+        "style": "小号白色英文无衬线字，带深色阴影或描边；细节因字号较小不确定",
+        "start": 5.2,
+        "end": 6.76,
+        "enter": "本段开始时已在画面中，无可见进入动画",
+        "exit": "本段结束时仍在画面中，无可见退出动画",
+        "anchor": "与当前口播无明确逐词同步；持续促销文字"
+      },
+      {
+        "system": "左下角英文促销文字",
+        "kind": "typography",
+        "text": "I'm obsessed with this dress\nThe quality! The quality is excellent and it's on sale now. Here's the link!",
+        "bbox": [
+          0.02,
+          0.6,
+          0.28,
+          0.68
+        ],
+        "position": "画面左下方约下半部，靠左排列，多行",
+        "style": "小号白色英文无衬线字，带深色阴影或描边；精确字体和部分措辞不确定",
+        "start": 6.76,
+        "end": 8.14,
+        "enter": "本段开始时已存在，未见新的进入动画",
+        "exit": "本段结束时仍持续可见，未见退出动画",
+        "anchor": "持续覆盖本段；未发现与“I love the open back.”中特定词语同步变化"
+      },
+      {
+        "system": "左下角英文促销文字",
+        "kind": "typography",
+        "text": "I'm obsessed with this dress of clothes! The quality is excellent and it's on sale now. Here's the link!（可辨认部分；“of clothes”及完整断句不确定）",
+        "bbox": [
+          0.02,
+          0.59,
+          0.38,
+          0.68
+        ],
+        "position": "画面左下方，约垂直中线以下、靠左",
+        "style": "小号白色英文，多行排版，带深色阴影或描边；具体字体不确定",
+        "start": 8.14,
+        "end": 10.05,
+        "enter": "本段开始时已在画面中，无可见进入动画",
+        "exit": "持续至片段结束，未见退出动画",
+        "anchor": "与本段台词无明显逐词同步；文字中“Here's the link”是持续存在的链接提示"
+      }
+    ],
+    "viralLogic": {
+      "hook": "先以裙子背面和画外人的即时称赞开场，让观众快速看到服装并获得外部认可。",
+      "structure": "视觉展示与社交称赞开场，穿着者转身回应，随后连续补充舒适度、露背设计和天气适配性；持续出现的促销文字另行提供优惠及链接提示。",
+      "whyItWorks": [
+        "开头把服装视觉重点与他人称赞放在一起，迅速建立注意力和初始信任。",
+        "真实对话式的问答为产品介绍提供自然语境。",
+        "口头卖点简短且具体，顺序从穿着感受推进到设计细节和使用场景。",
+        "开头展示背部与后续提及露背设计形成前后呼应。"
+      ],
+      "replicateTips": [
+        "更换人物或商品时，保留“先展示具体视觉特点，再由第三方称赞，最后由穿着者解释体验”的关系。",
+        "让每个口头卖点都能在画面动作或产品外观中找到对应证据。",
+        "促销文字应与口播承担不同功能；若保留左下角常驻文案，确保它不遮挡商品关键细节。"
+      ],
+      "risks": [
+        "促销文字字号很小，具体措辞不易辨认，部分内容无法从帧网格中核实。",
+        "视觉中的促销文案与转录的口头对话并不相同，不能把屏幕文字当作逐字字幕。",
+        "未提供音频细节以确认 BGM、环境声或音效，相关分析不作断言。",
+        "结尾未见可确认的口头购买指令或链接操作，转化动作主要依赖屏幕促销文字。"
+      ]
+    }
+  },
+  "script": {
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "request_model": "deepseek-flash",
+    "replacements_fingerprint": "f88cc179f834c0c29915df3f4afb8fb65b459f9a1fded086c30cdf532c34adfc",
+    "dialogue_mode": "keep",
+    "instruction": "",
+    "summary": "保留“背影被夸—转身道谢—三个卖点逐条回应”的偶遇式带货结构，人物与商品整套换新，场景与台词原样不动。",
+    "treatment_md": "# 新作品 Treatment\n\n## 一句话\n保留“后背示人 → 画外人搭话称赞 → 转身道谢 → 三个卖点逐条回应”的偶遇式带货结构，把出场女子与商品整套换成新素材，场景、画外称赞者与全部原台词不动。\n\n## 选角与声音\n- **出镜者（原 C1，替换）**：完全由 @image1（主镜头图）与人物身份图决定，所有视觉外观交给图片，文字不描述、不预设。表演气质沿用原片的“被陌生人夸到的惊喜 → 自然分享”。\n- **画外称赞者（原 C2，保留）**：不进入画面，只保留原片那句礼貌、临时搭话式的画外称赞，声音贴近镜头、出现在出镜者背后方向，制造“有人在现场说话”的空间感。\n- **声音策略**：dialogueMode=keep，五句台词原样保留（含商品词 dress），不改写、不翻译、不润色。语气重点是“偶遇感”：称赞句自然不夸张，回应句惊讶且热情，卖点句像分享而非叫卖。\n\n## 保留的关系\n1. **钩子关系**：画面先给背部，台词第一秒由画外人说出称赞，视觉重点与外部认可同时出现。\n2. **因果与时机**：称赞先落，人物才开始转身；转身在“Oh, thank you so much.”开口前基本完成，所以“惊喜”是由这句称赞触发的反应，而非预设表演。\n3. **反应关系**：道谢时不立刻讲产品，先给表情反应；随后视线落到产品上，才进入卖点。\n4. **呼应关系**：开场露出的背面，在“I love the open back.”被口播重新点名，画面这一段不再重复展示背面。\n5. **并行关系**：左下角常驻促销文字与口播分工——口播讲体验，文字讲质量、折扣与链接提示，两者不同步、不逐词对齐。\n6. **收尾关系**：最后一句落在“适合当下天气”的使用场景，片尾没有口头促单，转化交给常驻文字。\n\n## 重新设计的地方\n- 出镜者与商品整体替换，因此所有画面中出现的服装形态、人物形态都由新图决定；原片的紫粉色长裙、金发等外观事实不再沿用，也不写进指令。\n- 卖点与产品外观的对应关系改为“由图片决定的可信度”：口播仍按原词顺序（轻盈舒适 → 设计细节 → 面料与天气），不新增原片没有的卖点，不新增原片没有的动作。\n- 促销文字不改写，只按原片位置与样式常驻左下角，避免遮挡产品关键区域。\n- 场景保持原片的户外停车场与打开的后备箱，作为“刚买完东西、被路人搭话”的合理性来源。\n\n## 段落作用\n全片为**一条连续手持镜头**，因此只做一个段落：从背部展示与画外称赞起，经转身道谢、视线落到产品，到三个卖点逐条说完收在正面微笑。切分无必要——同一机位、同一场景、同一组参考图，且总长在单段生成上限内；价值在于连续的时间行为（转身落在哪一句之前、卖点手势与词的重合），所以用原片片段做视频参考，动作与节奏完全跟原片。",
+    "tasks": [
+      {
+        "id": "seg-01",
+        "order": 1,
+        "title": "停车场偶遇称赞：背影展示、转身道谢与三个卖点",
+        "kind": "speaker",
+        "source_start": 0,
+        "source_end": 10.052,
+        "duration": 10,
+        "ratio": "9:16",
+        "mode": "video",
+        "footage_reason": "整段是一条连续手持镜头，转身发生的时机、道谢时的捂嘴反应、三个卖点手势与词的重合都依赖原片的时间行为，静帧和文字会丢失，因此用原片片段做视频参考。",
+        "split_reason": "连续镜头，无需切分",
+        "scene_id": "S1",
+        "scene_references": [],
+        "dialogue": "Excuse me, your dress is beautiful. Oh, thank you so much. It's so flowy and comfortable. I love the open back. The fabric is perfect for this weather.",
+        "action": "The person from @image1 in the outfit from @image2, in the lot from @image1, is first caught off guard by a compliment from off-screen: polite, surprised delight on 'Oh', warm and grateful weight on 'thank you so much', addressed to the off-screen speaker rather than the lens. Then ease into friendly everyday sharing addressed to the camera: relaxed confidence on 'flowy' and 'comfortable', a flicker of genuine fondness on 'I love' and 'open back', and a calm, soft-spoken close with emphasis on 'perfect' and 'weather', ending on a light smile and steady eye contact with the lens.",
+        "story": "",
+        "direction": "",
+        "recipe": {
+          "composition-stability": "soft-locked",
+          "camera-motion": "subtle-punch-in-return",
+          "edit-rhythm": "continuous-take",
+          "performance": "natural-explainer",
+          "gesture": "natural"
+        },
+        "pace": "normal",
+        "padding": 0,
+        "estimate": 8.7,
+        "language": "en",
+        "overlays": [
+          {
+            "text": "I'm obsessed with this dress! The quality is excellent and it's on sale now. Here's the link!",
+            "textZh": "我太爱这条裙子了！质量非常好，现在正在打折，链接在这里！",
+            "kind": "typography",
+            "anchor": "全片常驻，与台词无逐词同步",
+            "position": "画面左下方，约下半部靠左，多行左对齐",
+            "style": "小号白色英文无衬线字，多行排列，带深色阴影或描边，无明显底色"
+          }
+        ],
+        "prompt": "",
+        "start_state": "",
+        "end_state": "",
+        "image_ids": [
+          "img1029085721-2d86",
+          "a1028222505-83b0"
+        ],
+        "mute_clip": true,
+        "blank_captions": true,
+        "audio_id": null,
+        "voice_approved": false,
+        "source_motion_timeline": [
+          {
+            "start": 0.0,
+            "end": 2.78,
+            "action": "女子先背对镜头站在后备箱前，手在购物袋附近活动；约 2.40 秒开始转身，至 2.60 秒呈侧面并抬手靠近脸部。",
+            "source_id": "K1"
+          },
+          {
+            "start": 2.78,
+            "end": 3.94,
+            "action": "女子已转为正面，手捂嘴回应画外称赞；感谢期间维持面向镜头，转身并未与台词同步发生",
+            "source_id": "K2"
+          },
+          {
+            "start": 3.94,
+            "end": 5.2,
+            "action": "女子保持正面微笑，将手从嘴边放下并低头看向the outfit from @image2，随后手势向下指示或展示the outfit from @image2",
+            "source_id": "K3"
+          },
+          {
+            "start": 5.2,
+            "end": 6.76,
+            "action": "同一连续镜头。5.20–5.60女子低头，双手在腰侧附近张开后逐渐放低；5.60–6.20双手松弛地悬在the outfit from @image2两侧，手指朝下，配合“flowy”；6.20–6.60她抬眼面对镜头，双手仍在腰前；约6.60–6.76双手抬起并向外打开。没有抓、提或甩the outfit from @image2的动作。",
+            "source_id": "K4"
+          },
+          {
+            "start": 6.76,
+            "end": 8.14,
+            "action": "女子面向镜头说“I love the open back.”，右手在胸前附近做小幅手势；没有转身、回头或重新展示背部的动作",
+            "source_id": "K5"
+          },
+          {
+            "start": 8.14,
+            "end": 10.052,
+            "action": "女子正面口播。起初一只手在身前做小幅说明手势，随后双手短暂向外打开；到“this weather”时手臂逐渐落下，双手靠近the outfit from @image2两侧，最后保持站立面向镜头",
+            "source_id": "K6"
+          }
+        ],
+        "dialogue_windows": [
+          {
+            "start": 0.162,
+            "end": 1.979,
+            "text": "Excuse me, your dress is beautiful.",
+            "speaker": "C2",
+            "onScreen": false,
+            "evidence": ""
+          },
+          {
+            "start": 2.782,
+            "end": 3.937,
+            "text": "Oh, thank you so much.",
+            "speaker": "C1",
+            "onScreen": true,
+            "evidence": ""
+          },
+          {
+            "start": 5.201,
+            "end": 6.56,
+            "text": "It's so flowy and comfortable.",
+            "speaker": "C1",
+            "onScreen": true,
+            "evidence": ""
+          },
+          {
+            "start": 6.76,
+            "end": 7.578,
+            "text": "I love the open back.",
+            "speaker": "C1",
+            "onScreen": true,
+            "evidence": ""
+          },
+          {
+            "start": 8.14,
+            "end": 9.72,
+            "text": "The fabric is perfect for this weather.",
+            "speaker": "C1",
+            "onScreen": true,
+            "evidence": ""
+          }
+        ],
+        "motion_warnings": [],
+        "replacement_safety": [],
+        "replacement_safety_check": {
+          "provider": "deepseek",
+          "model": "deepseek-flash",
+          "attempts": [
+            {
+              "provider": "deepseek",
+              "model": "deepseek-flash",
+              "max_tokens": 16000,
+              "success": true,
+              "reason": "完成校验"
+            }
+          ]
+        },
+        "replacement_conflicts": [],
+        "replacement_safety_key": "1d1cf5cb2d753bd254ac0f88d359599226f03e3d4322074989c03c7472f0209a",
+        "performance_cleanup": [],
+        "performance_cleanup_check": {},
+        "reference_mapping_errors": [],
+        "dialogue_lines": [
+          {
+            "start": 0.162,
+            "end": 1.979,
+            "speaker": "C2",
+            "text": "Excuse me, your dress is beautiful.",
+            "onScreen": false,
+            "evidence": ""
+          },
+          {
+            "start": 2.782,
+            "end": 3.937,
+            "speaker": "C1",
+            "text": "Oh, thank you so much.",
+            "onScreen": true,
+            "evidence": ""
+          },
+          {
+            "start": 5.201,
+            "end": 6.56,
+            "speaker": "C1",
+            "text": "It's so flowy and comfortable.",
+            "onScreen": true,
+            "evidence": ""
+          },
+          {
+            "start": 6.76,
+            "end": 7.578,
+            "speaker": "C1",
+            "text": "I love the open back.",
+            "onScreen": true,
+            "evidence": ""
+          },
+          {
+            "start": 8.14,
+            "end": 9.72,
+            "speaker": "C1",
+            "text": "The fabric is perfect for this weather.",
+            "onScreen": true,
+            "evidence": ""
+          }
+        ]
+      }
+    ],
+    "at": "09:00:25",
+    "dialogue": [
+      {
+        "segment": "seg-01",
+        "text": "Excuse me, your dress is beautiful. Oh, thank you so much. It's so flowy and comfortable. I love the open back. The fabric is perfect for this weather."
+      }
+    ]
+  },
+  "runs": {
+    "seg-01": [
+      {
+        "rev": "r1",
+        "job_id": "p1029100000-r18v-seg-01-r1",
+        "state": "superseded",
+        "model": "seedance2.0-mini-video",
+        "mode": "video",
+        "job_sha256": "0e54bf6d0f5ae30b2a52c500f04059d0db7987862a09f37a17657c9c83fe08f7",
+        "package": "packages/seg-01-r1",
+        "preview": {
+          "job_id": "p1029100000-r18v-seg-01-r1",
+          "schema_version": "jimmy-video-job.v1",
+          "tasks": [
+            {
+              "duration": 10,
+              "id": "seg-01",
+              "images": [
+                {
+                  "path": "/path/to/viral-replica-workbench/projects/p1029100000-r18v/assets/img1029085721-2d86.png",
+                  "sha256": "0dc1ab03dc3add0b3d1c5e9a4681930b0ff5dd6d573cf218b315450583343c2d",
+                  "source": "file"
+                },
+                {
+                  "path": "/path/to/viral-replica-workbench/projects/p1029100000-r18v/assets/a1028222505-83b0.png",
+                  "sha256": "7cecc0bba9ef94920074fe2a0c2d1a11f1b7da1994ec6c52c7829cd163d7117b",
+                  "source": "file"
+                }
+              ],
+              "model": "seedance2.0-mini-video",
+              "prompt": "Create a realistic vertical phone-shot talking-head video. @image1 defines the speaker's identity, face, outfit and the look of the setting; framing over time follows @video1, not @image1.\n\nOTHER REFERENCES: @image2 \"ChatGPT 图像 2026年10月16日 17_33_07-4\": product truth: preserve its colors, structure, packaging text and real proportions.\n\n@video1 is source footage carrying the performed timing: replicate its body motion, gestures, blocking, camera framing and movement, and the rhythm of its actions and cuts. Do not inherit @video1's people, faces, outfits, products, captions or any on-screen text; the visible people, products and setting come from the image references.\n\nDeliver the supplied script exactly in order with clear lip-sync. The visible person speaks every line. Do not rewrite, summarize, add, remove, or reorder words.\n\nMOTION: body motion, gestures, turns, walking path and subject distance follow @video1 exactly, in the same order and timing.\n\nFRAMING: the camera matches @video1. Framing changes come only from the subject moving as in @video1; never come closer to or move further from the lens than @video1 does at the same moment.\n\nKeep face, hands, skin texture, lighting, and motion photoreal and stable. Add no subtitles, captions, labels, logos, UI text, floating words, or other readable on-screen text.\n\nSpeak each line inside its time window, matching the pacing of @video1; do not start early.\n\nSCRIPT TO DELIVER:\n[0.162–1.979] Excuse me, your dress is beautiful.\n[2.782–3.937] Oh, thank you so much.\n[5.201–6.56] It's so flowy and comfortable.\n[6.76–7.578] I love the open back.\n[8.14–9.72] The fabric is perfect for this weather.\n\nSOURCE MOTION TIMELINE:\n@video1 carries this exact sequence. Perform every movement once, in this order and at these times; do not add, repeat, reverse or skip movements.\n[0–2.78 s] 女子先背对镜头站在后备箱前，手在购物袋附近活动；约 2.40 秒开始转身，至 2.60 秒呈侧面并抬手靠近脸部。\n[2.78–3.94 s] 女子已转为正面，手捂嘴回应画外称赞；感谢期间维持面向镜头，转身并未与台词同步发生\n[3.94–5.2 s] 女子保持正面微笑，将手从嘴边放下并低头看向the outfit from @image2，随后手势向下指示或展示the outfit from @image2\n[5.2–6.76 s] 同一连续镜头。5.20–5.60女子低头，双手在腰侧附近张开后逐渐放低；5.60–6.20双手松弛地悬在the outfit from @image2两侧，手指朝下，配合“flowy”；6.20–6.60她抬眼面对镜头，双手仍在腰前；约6.60–6.76双手抬起并向外打开。没有抓、提或甩the outfit from @image2的动作。\n[6.76–8.14 s] 女子面向镜头说“I love the open back.”，右手在胸前附近做小幅手势；没有转身、回头或重新展示背部的动作\n[8.14–10.052 s] 女子正面口播。起初一只手在身前做小幅说明手势，随后双手短暂向外打开；到“this weather”时手臂逐渐落下，双手靠近the outfit from @image2两侧，最后保持站立面向镜头\n\nPERFORMANCE DIRECTION (attitude, emphasis and facial expression only; every movement comes from SOURCE MOTION TIMELINE and @video1):\nThe person from @image1 in the outfit from @image2, in the lot from @image1, is first caught off guard by a compliment from off-screen: polite, surprised delight on 'Oh', warm and grateful weight on 'thank you so much', addressed to the off-screen speaker rather than the lens. Then ease into friendly everyday sharing addressed to the camera: relaxed confidence on 'flowy' and 'comfortable', a flicker of genuine fondness on 'I love' and 'open back', and a calm, soft-spoken close with emphasis on 'perfect' and 'weather', ending on a light smile and steady eye contact with the lens.",
+              "ratio": "9:16",
+              "reference_videos": [
+                {
+                  "path": "/path/to/viral-replica-workbench/projects/p1029100000-r18v/clips/seg-01-r1-muted.mp4",
+                  "sha256": "3914b6452c36121ed7983762d52670cd6a900b8c9b12a304566fa0acffff8dfb",
+                  "source": "file"
+                }
+              ]
+            }
+          ]
+        },
+        "billing_seconds": 20,
+        "billing_note": "输出 10s + 参考视频 10s；单价以 Jimmy 账户为准",
+        "clip": "clips/seg-01-r1-muted.mp4",
+        "caption_residue": {
+          "status": "unavailable",
+          "reason": "原片没有足够长的无字幕基准区间，无法判断残留，需人工检查",
+          "suspected": [],
+          "samples": [],
+          "baseline_times": [],
+          "threshold": 0.004,
+          "scan_padding_y": 0.06,
+          "method": "360px RGB→gray; bright (>160) horizontal strokes (>50 above both ±2px neighbors); density minus median of 3 subtitle-free source frames"
+        },
+        "source_motion_timeline": [
+          {
+            "start": 0.0,
+            "end": 2.78,
+            "action": "女子先背对镜头站在后备箱前，手在购物袋附近活动；约 2.40 秒开始转身，至 2.60 秒呈侧面并抬手靠近脸部。",
+            "source_id": "K1"
+          },
+          {
+            "start": 2.78,
+            "end": 3.94,
+            "action": "女子已转为正面，手捂嘴回应画外称赞；感谢期间维持面向镜头，转身并未与台词同步发生",
+            "source_id": "K2"
+          },
+          {
+            "start": 3.94,
+            "end": 5.2,
+            "action": "女子保持正面微笑，将手从嘴边放下并低头看向the outfit from @image2，随后手势向下指示或展示the outfit from @image2",
+            "source_id": "K3"
+          },
+          {
+            "start": 5.2,
+            "end": 6.76,
+            "action": "同一连续镜头。5.20–5.60女子低头，双手在腰侧附近张开后逐渐放低；5.60–6.20双手松弛地悬在the outfit from @image2两侧，手指朝下，配合“flowy”；6.20–6.60她抬眼面对镜头，双手仍在腰前；约6.60–6.76双手抬起并向外打开。没有抓、提或甩the outfit from @image2的动作。",
+            "source_id": "K4"
+          },
+          {
+            "start": 6.76,
+            "end": 8.14,
+            "action": "女子面向镜头说“I love the open back.”，右手在胸前附近做小幅手势；没有转身、回头或重新展示背部的动作",
+            "source_id": "K5"
+          },
+          {
+            "start": 8.14,
+            "end": 10.052,
+            "action": "女子正面口播。起初一只手在身前做小幅说明手势，随后双手短暂向外打开；到“this weather”时手臂逐渐落下，双手靠近the outfit from @image2两侧，最后保持站立面向镜头",
+            "source_id": "K6"
+          }
+        ],
+        "action_comparison": {
+          "status": "completed",
+          "provider": "deepseek",
+          "model": "deepseek-flash",
+          "attempts": [
+            {
+              "provider": "deepseek",
+              "model": "deepseek-flash",
+              "max_tokens": 4000,
+              "success": true,
+              "reason": "完成校验"
+            }
+          ],
+          "message": "动作对比由 deepseek / deepseek-flash 完成",
+          "errors": [],
+          "warnings": []
+        },
+        "dialogue_windows": [
+          {
+            "start": 0.162,
+            "end": 1.979,
+            "text": "Excuse me, your dress is beautiful."
+          },
+          {
+            "start": 2.782,
+            "end": 3.937,
+            "text": "Oh, thank you so much."
+          },
+          {
+            "start": 5.201,
+            "end": 6.56,
+            "text": "It's so flowy and comfortable."
+          },
+          {
+            "start": 6.76,
+            "end": 7.578,
+            "text": "I love the open back."
+          },
+          {
+            "start": 8.14,
+            "end": 9.72,
+            "text": "The fabric is perfect for this weather."
+          }
+        ],
+        "motion_source": {
+          "file": "source/source.mp4",
+          "sha256": "35ba2f6a069909a6971ab8615b1e9cd8166ad0b8eadcb720774ae8102508e8cc",
+          "transcript": {
+            "engine": "faster-whisper medium int8 + wav2vec2 alignment",
+            "language": "en",
+            "timing": "forced_alignment",
+            "segments": [
+              {
+                "start": 0.162,
+                "end": 1.979,
+                "text": "Excuse me, your dress is beautiful.",
+                "words": [
+                  {
+                    "word": "Excuse",
+                    "start": 0.162,
+                    "end": 0.586
+                  },
+                  {
+                    "word": "me,",
+                    "start": 0.626,
+                    "end": 0.788
+                  },
+                  {
+                    "word": "your",
+                    "start": 0.848,
+                    "end": 0.99
+                  },
+                  {
+                    "word": "dress",
+                    "start": 1.03,
+                    "end": 1.313
+                  },
+                  {
+                    "word": "is",
+                    "start": 1.353,
+                    "end": 1.454
+                  },
+                  {
+                    "word": "beautiful.",
+                    "start": 1.535,
+                    "end": 1.979
+                  }
+                ]
+              },
+              {
+                "start": 2.782,
+                "end": 3.937,
+                "text": "Oh, thank you so much.",
+                "words": [
+                  {
+                    "word": "Oh,",
+                    "start": 2.782,
+                    "end": 2.903
+                  },
+                  {
+                    "word": "thank",
+                    "start": 3.005,
+                    "end": 3.207
+                  },
+                  {
+                    "word": "you",
+                    "start": 3.248,
+                    "end": 3.369
+                  },
+                  {
+                    "word": "so",
+                    "start": 3.41,
+                    "end": 3.572
+                  },
+                  {
+                    "word": "much.",
+                    "start": 3.633,
+                    "end": 3.937
+                  }
+                ]
+              },
+              {
+                "start": 5.201,
+                "end": 6.56,
+                "text": "It's so flowy and comfortable.",
+                "words": [
+                  {
+                    "word": "It's",
+                    "start": 5.201,
+                    "end": 5.322
+                  },
+                  {
+                    "word": "so",
+                    "start": 5.383,
+                    "end": 5.566
+                  },
+                  {
+                    "word": "flowy",
+                    "start": 5.647,
+                    "end": 6.012
+                  },
+                  {
+                    "word": "and",
+                    "start": 6.032,
+                    "end": 6.134
+                  },
+                  {
+                    "word": "comfortable.",
+                    "start": 6.174,
+                    "end": 6.56
+                  }
+                ]
+              },
+              {
+                "start": 6.76,
+                "end": 7.578,
+                "text": "I love the open back.",
+                "words": [
+                  {
+                    "word": "I",
+                    "start": 6.76,
+                    "end": 6.78
+                  },
+                  {
+                    "word": "love",
+                    "start": 6.801,
+                    "end": 6.944
+                  },
+                  {
+                    "word": "the",
+                    "start": 6.965,
+                    "end": 7.046
+                  },
+                  {
+                    "word": "open",
+                    "start": 7.108,
+                    "end": 7.312
+                  },
+                  {
+                    "word": "back.",
+                    "start": 7.333,
+                    "end": 7.578
+                  }
+                ]
+              },
+              {
+                "start": 8.14,
+                "end": 9.72,
+                "text": "The fabric is perfect for this weather.",
+                "words": [
+                  {
+                    "word": "The",
+                    "start": 8.14,
+                    "end": 8.201
+                  },
+                  {
+                    "word": "fabric",
+                    "start": 8.241,
+                    "end": 8.545
+                  },
+                  {
+                    "word": "is",
+                    "start": 8.565,
+                    "end": 8.626
+                  },
+                  {
+                    "word": "perfect",
+                    "start": 8.748,
+                    "end": 9.072
+                  },
+                  {
+                    "word": "for",
+                    "start": 9.133,
+                    "end": 9.234
+                  },
+                  {
+                    "word": "this",
+                    "start": 9.254,
+                    "end": 9.396
+                  },
+                  {
+                    "word": "weather.",
+                    "start": 9.457,
+                    "end": 9.72
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "warnings": [
+          "台词提到原片外观‘open back（露背）’，新服装/新人物（C1）可能没有这个特征；如需匹配，请在第 04 步把台词模式改为 rewrite，并说明要改的句子",
+          "台词提到原片外观‘flowy（垂坠）’，新服装/新人物（C1）可能没有这个特征；如需匹配，请在第 04 步把台词模式改为 rewrite，并说明要改的句子",
+          "台词提到原片外观‘dress（连衣裙）’，新服装/新人物（C1）可能没有这个特征；如需匹配，请在第 04 步把台词模式改为 rewrite，并说明要改的句子",
+          "台词提到原片外观‘open back（露背）’，新商品（product）可能没有这个特征；如需匹配，请在第 04 步把台词模式改为 rewrite，并说明要改的句子",
+          "台词提到原片外观‘flowy（垂坠）’，新商品（product）可能没有这个特征；如需匹配，请在第 04 步把台词模式改为 rewrite，并说明要改的句子",
+          "台词提到原片外观‘dress（连衣裙）’，新商品（product）可能没有这个特征；如需匹配，请在第 04 步把台词模式改为 rewrite，并说明要改的句子"
+        ],
+        "clip_processing": {
+          "masks": [
+            {
+              "bbox": [
+                0,
+                0.485,
+                0.45999999999999996,
+                0.7849999999999999
+              ],
+              "start": 0.0,
+              "end": 10.052,
+              "text": "I'm obsessed with this dress [后续字样不确定；可见内容似为 “of clothes! The quality is excellent and it's on sale now. Here's the link!”] / I'm obsessed with this dress / of clothes! The quality is / excellent and it's on sale / now. Here's the link!（其中第二行开头的字不确定） / I'm obsessed with this dress / [不确定] of clothes! The quality is / excellent and it's on sale / now. Here's the link! / I'm obsessed with this dress\nThe quality! The quality is excellent and it's on sale now. Here's the link! / I'm obsessed with this dress of clothes! The quality is excellent and it's on sale now. Here's the link!（可辨认部分；“of clothes”及完整断句不确定）",
+              "kind": "typography",
+              "system": "左下角英文促销文字",
+              "source_bboxes": [
+                [
+                  0.02,
+                  0.59,
+                  0.2,
+                  0.68
+                ],
+                [
+                  0.01,
+                  0.57,
+                  0.23,
+                  0.65
+                ],
+                [
+                  0.02,
+                  0.75,
+                  0.43,
+                  0.88
+                ],
+                [
+                  0.02,
+                  0.6,
+                  0.28,
+                  0.68
+                ],
+                [
+                  0.02,
+                  0.59,
+                  0.38,
+                  0.68
+                ]
+              ],
+              "union_bbox": [
+                0.01,
+                0.57,
+                0.43,
+                0.88
+              ],
+              "motion_warning": "遮挡条带覆盖画面高度 48.5–78.5%，全身镜头时会遮住腿部，下半身动作的参考会变弱",
+              "padding": {
+                "x": 0.03,
+                "y": 0.04,
+                "time": 0.15
+              },
+              "height_limit_reason": "并集外扩后超过画面高度 0.30，按各框中心的中位数重新定位 0.30 高条带"
+            }
+          ],
+          "muted": true,
+          "blank_captions": true,
+          "mute_reason": "原声会把旧人物的声音带进来，Seedance 会按新人物生成声音。"
+        },
+        "source_range": [
+          0.0,
+          10.052
+        ],
+        "preflight_fingerprint": "63b893c87b0dacd4d156561e9f05bb0fcc562bdd69de804ef8cd304a4667d6bd",
+        "person_replaced": true,
+        "created": "09:58:08",
+        "retryable": false
+      },
+      {
+        "rev": "r2",
+        "job_id": "p1029100000-r18v-seg-01-r2",
+        "state": "pending_confirmation",
+        "model": "seedance2.0-mini-video",
+        "mode": "video",
+        "job_sha256": "1d2e2ee7562d0690c53c6675b2c69cbc12a5e773c909c66e751fe2d61ce83f07",
+        "package": "packages/seg-01-r2",
+        "preview": {
+          "job_id": "p1029100000-r18v-seg-01-r2",
+          "schema_version": "jimmy-video-job.v1",
+          "tasks": [
+            {
+              "duration": 10,
+              "id": "seg-01",
+              "images": [
+                {
+                  "path": "/path/to/viral-replica-workbench/projects/p1029100000-r18v/assets/img1029085721-2d86.png",
+                  "sha256": "0dc1ab03dc3add0b3d1c5e9a4681930b0ff5dd6d573cf218b315450583343c2d",
+                  "source": "file"
+                },
+                {
+                  "path": "/path/to/viral-replica-workbench/projects/p1029100000-r18v/assets/a1028222505-83b0.png",
+                  "sha256": "7cecc0bba9ef94920074fe2a0c2d1a11f1b7da1994ec6c52c7829cd163d7117b",
+                  "source": "file"
+                }
+              ],
+              "model": "seedance2.0-mini-video",
+              "prompt": "Create a realistic vertical phone-shot talking-head video. @image1 defines the speaker's identity, face, outfit and the look of the setting; framing over time follows @video1, not @image1.\n\nOTHER REFERENCES: @image2 \"ChatGPT 图像 2026年10月16日 17_33_07-4\": product truth: preserve its colors, structure, packaging text and real proportions.\n\n@video1 is source footage carrying the performed timing: replicate its body motion, gestures, blocking, camera framing and movement, and the rhythm of its actions and cuts. Do not inherit @video1's people, faces, outfits, products, captions or any on-screen text; the visible people, products and setting come from the image references.\n\nDeliver the supplied script exactly in order with clear lip-sync for ON-SCREEN lines only. Lines marked OFF-SCREEN are spoken by an unseen person behind the camera; the visible person does not mouth them and only listens and reacts. The visible person speaks only the lines marked ON-SCREEN. For UNKNOWN lines, speaker placement is unconfirmed; do not assign them to the visible person by default. Do not rewrite, summarize, add, remove, or reorder words.\n\nMOTION: body motion, gestures, turns, walking path and subject distance follow @video1 exactly, in the same order and timing.\n\nFRAMING: the camera matches @video1. Framing changes come only from the subject moving as in @video1; never come closer to or move further from the lens than @video1 does at the same moment.\n\nKeep face, hands, skin texture, lighting, and motion photoreal and stable. Add no subtitles, captions, labels, logos, UI text, floating words, or other readable on-screen text.\n\nSpeak each line inside its time window; do not start early. Lip-sync applies only to ON-SCREEN lines.\n\nSCRIPT TO DELIVER:\n[0.162–1.979] OFF-SCREEN (C2 画外称赞者, voice from behind the camera): Excuse me, your dress is beautiful.\n[2.782–3.937] ON-SCREEN (the person from @image1): Oh, thank you so much.\n[5.201–6.56] ON-SCREEN (the person from @image1): It's so flowy and comfortable.\n[6.76–7.578] ON-SCREEN (the person from @image1): I love the open back.\n[8.14–9.72] ON-SCREEN (the person from @image1): The fabric is perfect for this weather.\n\nSOURCE MOTION TIMELINE:\n@video1 carries this exact sequence. Perform every movement once, in this order and at these times; do not add, repeat, reverse or skip movements.\n[0–2.78 s] 女子先背对镜头站在后备箱前，手在购物袋附近活动；约 2.40 秒开始转身，至 2.60 秒呈侧面并抬手靠近脸部。\n[2.78–3.94 s] 女子已转为正面，手捂嘴回应画外称赞；感谢期间维持面向镜头，转身并未与台词同步发生\n[3.94–5.2 s] 女子保持正面微笑，将手从嘴边放下并低头看向the outfit from @image2，随后手势向下指示或展示the outfit from @image2\n[5.2–6.76 s] 同一连续镜头。5.20–5.60女子低头，双手在腰侧附近张开后逐渐放低；5.60–6.20双手松弛地悬在the outfit from @image2两侧，手指朝下，配合“flowy”；6.20–6.60她抬眼面对镜头，双手仍在腰前；约6.60–6.76双手抬起并向外打开。没有抓、提或甩the outfit from @image2的动作。\n[6.76–8.14 s] 女子面向镜头说“I love the open back.”，右手在胸前附近做小幅手势；没有转身、回头或重新展示背部的动作\n[8.14–10.052 s] 女子正面口播。起初一只手在身前做小幅说明手势，随后双手短暂向外打开；到“this weather”时手臂逐渐落下，双手靠近the outfit from @image2两侧，最后保持站立面向镜头\n\nPERFORMANCE DIRECTION (attitude, emphasis and facial expression only; every movement comes from SOURCE MOTION TIMELINE and @video1):\nThe person from @image1 in the outfit from @image2, in the lot from @image1, is first caught off guard by a compliment from off-screen: polite, surprised delight on 'Oh', warm and grateful weight on 'thank you so much', addressed to the off-screen speaker rather than the lens. Then ease into friendly everyday sharing addressed to the camera: relaxed confidence on 'flowy' and 'comfortable', a flicker of genuine fondness on 'I love' and 'open back', and a calm, soft-spoken close with emphasis on 'perfect' and 'weather', ending on a light smile and steady eye contact with the lens.",
+              "ratio": "9:16",
+              "reference_videos": [
+                {
+                  "path": "/path/to/viral-replica-workbench/projects/p1029100000-r18v/clips/seg-01-r2-muted.mp4",
+                  "sha256": "3914b6452c36121ed7983762d52670cd6a900b8c9b12a304566fa0acffff8dfb",
+                  "source": "file"
+                }
+              ]
+            }
+          ]
+        },
+        "billing_seconds": 20,
+        "billing_note": "输出 10s + 参考视频 10s；单价以 Jimmy 账户为准",
+        "clip": "clips/seg-01-r2-muted.mp4",
+        "caption_residue": {
+          "status": "unavailable",
+          "reason": "原片没有足够长的无字幕基准区间，无法判断残留，需人工检查",
+          "suspected": [],
+          "samples": [],
+          "baseline_times": [],
+          "threshold": 0.004,
+          "scan_padding_y": 0.06,
+          "method": "360px RGB→gray; bright (>160) horizontal strokes (>50 above both ±2px neighbors); density minus median of 3 subtitle-free source frames"
+        },
+        "source_motion_timeline": [
+          {
+            "start": 0.0,
+            "end": 2.78,
+            "action": "女子先背对镜头站在后备箱前，手在购物袋附近活动；约 2.40 秒开始转身，至 2.60 秒呈侧面并抬手靠近脸部。",
+            "source_id": "K1"
+          },
+          {
+            "start": 2.78,
+            "end": 3.94,
+            "action": "女子已转为正面，手捂嘴回应画外称赞；感谢期间维持面向镜头，转身并未与台词同步发生",
+            "source_id": "K2"
+          },
+          {
+            "start": 3.94,
+            "end": 5.2,
+            "action": "女子保持正面微笑，将手从嘴边放下并低头看向the outfit from @image2，随后手势向下指示或展示the outfit from @image2",
+            "source_id": "K3"
+          },
+          {
+            "start": 5.2,
+            "end": 6.76,
+            "action": "同一连续镜头。5.20–5.60女子低头，双手在腰侧附近张开后逐渐放低；5.60–6.20双手松弛地悬在the outfit from @image2两侧，手指朝下，配合“flowy”；6.20–6.60她抬眼面对镜头，双手仍在腰前；约6.60–6.76双手抬起并向外打开。没有抓、提或甩the outfit from @image2的动作。",
+            "source_id": "K4"
+          },
+          {
+            "start": 6.76,
+            "end": 8.14,
+            "action": "女子面向镜头说“I love the open back.”，右手在胸前附近做小幅手势；没有转身、回头或重新展示背部的动作",
+            "source_id": "K5"
+          },
+          {
+            "start": 8.14,
+            "end": 10.052,
+            "action": "女子正面口播。起初一只手在身前做小幅说明手势，随后双手短暂向外打开；到“this weather”时手臂逐渐落下，双手靠近the outfit from @image2两侧，最后保持站立面向镜头",
+            "source_id": "K6"
+          }
+        ],
+        "action_comparison": {
+          "status": "completed",
+          "provider": "deepseek",
+          "model": "deepseek-flash",
+          "attempts": [
+            {
+              "provider": "deepseek",
+              "model": "deepseek-flash",
+              "max_tokens": 4000,
+              "success": true,
+              "reason": "完成校验"
+            }
+          ],
+          "message": "动作对比由 deepseek / deepseek-flash 完成",
+          "errors": [],
+          "warnings": []
+        },
+        "dialogue_windows": [
+          {
+            "start": 0.162,
+            "end": 1.979,
+            "text": "Excuse me, your dress is beautiful.",
+            "speaker": "C2",
+            "onScreen": false,
+            "evidence": ""
+          },
+          {
+            "start": 2.782,
+            "end": 3.937,
+            "text": "Oh, thank you so much.",
+            "speaker": "C1",
+            "onScreen": true,
+            "evidence": ""
+          },
+          {
+            "start": 5.201,
+            "end": 6.56,
+            "text": "It's so flowy and comfortable.",
+            "speaker": "C1",
+            "onScreen": true,
+            "evidence": ""
+          },
+          {
+            "start": 6.76,
+            "end": 7.578,
+            "text": "I love the open back.",
+            "speaker": "C1",
+            "onScreen": true,
+            "evidence": ""
+          },
+          {
+            "start": 8.14,
+            "end": 9.72,
+            "text": "The fabric is perfect for this weather.",
+            "speaker": "C1",
+            "onScreen": true,
+            "evidence": ""
+          }
+        ],
+        "motion_source": {
+          "file": "source/source.mp4",
+          "sha256": "35ba2f6a069909a6971ab8615b1e9cd8166ad0b8eadcb720774ae8102508e8cc",
+          "transcript": {
+            "engine": "faster-whisper medium int8 + wav2vec2 alignment",
+            "language": "en",
+            "timing": "forced_alignment",
+            "segments": [
+              {
+                "start": 0.162,
+                "end": 1.979,
+                "text": "Excuse me, your dress is beautiful.",
+                "words": [
+                  {
+                    "word": "Excuse",
+                    "start": 0.162,
+                    "end": 0.586
+                  },
+                  {
+                    "word": "me,",
+                    "start": 0.626,
+                    "end": 0.788
+                  },
+                  {
+                    "word": "your",
+                    "start": 0.848,
+                    "end": 0.99
+                  },
+                  {
+                    "word": "dress",
+                    "start": 1.03,
+                    "end": 1.313
+                  },
+                  {
+                    "word": "is",
+                    "start": 1.353,
+                    "end": 1.454
+                  },
+                  {
+                    "word": "beautiful.",
+                    "start": 1.535,
+                    "end": 1.979
+                  }
+                ]
+              },
+              {
+                "start": 2.782,
+                "end": 3.937,
+                "text": "Oh, thank you so much.",
+                "words": [
+                  {
+                    "word": "Oh,",
+                    "start": 2.782,
+                    "end": 2.903
+                  },
+                  {
+                    "word": "thank",
+                    "start": 3.005,
+                    "end": 3.207
+                  },
+                  {
+                    "word": "you",
+                    "start": 3.248,
+                    "end": 3.369
+                  },
+                  {
+                    "word": "so",
+                    "start": 3.41,
+                    "end": 3.572
+                  },
+                  {
+                    "word": "much.",
+                    "start": 3.633,
+                    "end": 3.937
+                  }
+                ]
+              },
+              {
+                "start": 5.201,
+                "end": 6.56,
+                "text": "It's so flowy and comfortable.",
+                "words": [
+                  {
+                    "word": "It's",
+                    "start": 5.201,
+                    "end": 5.322
+                  },
+                  {
+                    "word": "so",
+                    "start": 5.383,
+                    "end": 5.566
+                  },
+                  {
+                    "word": "flowy",
+                    "start": 5.647,
+                    "end": 6.012
+                  },
+                  {
+                    "word": "and",
+                    "start": 6.032,
+                    "end": 6.134
+                  },
+                  {
+                    "word": "comfortable.",
+                    "start": 6.174,
+                    "end": 6.56
+                  }
+                ]
+              },
+              {
+                "start": 6.76,
+                "end": 7.578,
+                "text": "I love the open back.",
+                "words": [
+                  {
+                    "word": "I",
+                    "start": 6.76,
+                    "end": 6.78
+                  },
+                  {
+                    "word": "love",
+                    "start": 6.801,
+                    "end": 6.944
+                  },
+                  {
+                    "word": "the",
+                    "start": 6.965,
+                    "end": 7.046
+                  },
+                  {
+                    "word": "open",
+                    "start": 7.108,
+                    "end": 7.312
+                  },
+                  {
+                    "word": "back.",
+                    "start": 7.333,
+                    "end": 7.578
+                  }
+                ]
+              },
+              {
+                "start": 8.14,
+                "end": 9.72,
+                "text": "The fabric is perfect for this weather.",
+                "words": [
+                  {
+                    "word": "The",
+                    "start": 8.14,
+                    "end": 8.201
+                  },
+                  {
+                    "word": "fabric",
+                    "start": 8.241,
+                    "end": 8.545
+                  },
+                  {
+                    "word": "is",
+                    "start": 8.565,
+                    "end": 8.626
+                  },
+                  {
+                    "word": "perfect",
+                    "start": 8.748,
+                    "end": 9.072
+                  },
+                  {
+                    "word": "for",
+                    "start": 9.133,
+                    "end": 9.234
+                  },
+                  {
+                    "word": "this",
+                    "start": 9.254,
+                    "end": 9.396
+                  },
+                  {
+                    "word": "weather.",
+                    "start": 9.457,
+                    "end": 9.72
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "warnings": [
+          "台词里有 3 处提到原片的服装特征（dress、flowy、open back），和新商品可能不符；点下方‘生成台词改写方案’，模型会先给出改写版本，你确认后再采用；也可以选‘保持原台词’"
+        ],
+        "clip_processing": {
+          "masks": [
+            {
+              "bbox": [
+                0,
+                0.485,
+                0.45999999999999996,
+                0.7849999999999999
+              ],
+              "start": 0.0,
+              "end": 10.052,
+              "text": "I'm obsessed with this dress [后续字样不确定；可见内容似为 “of clothes! The quality is excellent and it's on sale now. Here's the link!”] / I'm obsessed with this dress / of clothes! The quality is / excellent and it's on sale / now. Here's the link!（其中第二行开头的字不确定） / I'm obsessed with this dress / [不确定] of clothes! The quality is / excellent and it's on sale / now. Here's the link! / I'm obsessed with this dress\nThe quality! The quality is excellent and it's on sale now. Here's the link! / I'm obsessed with this dress of clothes! The quality is excellent and it's on sale now. Here's the link!（可辨认部分；“of clothes”及完整断句不确定）",
+              "kind": "typography",
+              "system": "左下角英文促销文字",
+              "source_bboxes": [
+                [
+                  0.02,
+                  0.59,
+                  0.2,
+                  0.68
+                ],
+                [
+                  0.01,
+                  0.57,
+                  0.23,
+                  0.65
+                ],
+                [
+                  0.02,
+                  0.75,
+                  0.43,
+                  0.88
+                ],
+                [
+                  0.02,
+                  0.6,
+                  0.28,
+                  0.68
+                ],
+                [
+                  0.02,
+                  0.59,
+                  0.38,
+                  0.68
+                ]
+              ],
+              "union_bbox": [
+                0.01,
+                0.57,
+                0.43,
+                0.88
+              ],
+              "motion_warning": "遮挡条带覆盖画面高度 48.5–78.5%，全身镜头时会遮住腿部，下半身动作的参考会变弱",
+              "padding": {
+                "x": 0.03,
+                "y": 0.04,
+                "time": 0.15
+              },
+              "height_limit_reason": "并集外扩后超过画面高度 0.30，按各框中心的中位数重新定位 0.30 高条带"
+            }
+          ],
+          "muted": true,
+          "blank_captions": true,
+          "mute_reason": "原声会把旧人物的声音带进来，Seedance 会按新人物生成声音。"
+        },
+        "source_range": [
+          0.0,
+          10.052
+        ],
+        "preflight_fingerprint": "d0f15b291bd235e85ede6d081a681a5b1921a2a398b4db558988661d5334e9d3",
+        "person_replaced": true,
+        "created": "10:32:12",
+        "retryable": false
+      }
+    ]
+  },
+  "images": {
+    "img1029082809-c45b": {
+      "id": "img1029082809-c45b",
+      "state": "completed",
+      "for_task": "camera:C1:S1",
+      "preview": {
+        "id": "img1029082809-c45b",
+        "images": [
+          {
+            "format": "png",
+            "height": 1086,
+            "path": "/path/to/viral-replica-workbench/projects/p1028222359-9b21/assets/a1028222447-602d.png",
+            "sha256": "2f86676a3c59ff4ac949a9c01fe63ac96c50c2cdffead5c47132023355208315",
+            "source": "file",
+            "width": 1448
+          },
+          {
+            "format": "jpeg",
+            "height": 1264,
+            "path": "/path/to/viral-replica-workbench/projects/p1028222359-9b21/assets/frame-C1-0.50.jpg",
+            "sha256": "348790088e10066fefb5229d0ce07981263ec28134e4f98eb197bd30284a9b58",
+            "source": "file",
+            "width": 720
+          }
+        ],
+        "metadata": {
+          "purpose": "补齐目标状态图（camera:C1:S1）"
+        },
+        "model": "gpt-image-2",
+        "n": 1,
+        "prompt": "图1确定人物身份，图2为原片参考帧（只取机位、场景和构图）。生成一个实际机位的一帧完整画面，不要多角度、分格、拼贴；不得继承原片人物外观或冲突的旧商品。\n\nA photograph captured as a single frame from a video actually shot on an iPhone, with the texture of real iPhone footage. The image looks real, without an oily, overprocessed finish. The background is clearly visible, with no depth-of-field blur. Skin texture is natural and fine, and the lighting is natural. The image is coherent and free of visual artifacts.\n\nThe person from reference image 1, a 28-year-old girl with striking, natural-featured beauty: warm hazel eyes, defined brows, and long, dark, softly tousled hair. Dress her in a flowing mauve-pink spaghetti-strap maxi dress with a softly pleated drape and an open back; do not retain the black top from her identity reference.\n\nA full-length vertical view from behind, matching reference image 2: she stands centered beneath the raised SUV hatch, facing into the trunk and reaching toward the shopping bags. Keep her back and the dress’s open back visible as she continues the unhurried motion of handling a bag, with the car and surrounding parking lot in frame.\n\nUse the sunny outdoor parking lot, open SUV trunk, shopping bags inside, nearby parked cars, and leafy trees from reference image 2. Preserve its rear-facing composition and bright natural daylight; keep the palette centered on mauve-pink fabric against the dark SUV, with green trees and pale pavement around it. Change only the woman’s identity and appearance to match reference image 1 while keeping the described mauve-pink dress.",
+        "quality": "auto",
+        "ratio": "9:16",
+        "resolution": "1k",
+        "schema_version": "chain5.image-job.v1"
+      },
+      "run_dir": "image-runs/img1029082809-c45b",
+      "summary": "{\"id\": \"img1029082809-c45b\", \"phase\": \"prepared\", \"run_dir\": \"/path/to/viral-replica-workbench/projects/p1028222359-9b21/image-runs/img1029082809-c45b\"}",
+      "camera_character": "C1",
+      "camera_scene": "S1",
+      "camera_product_id": null,
+      "camera_binding": "b380051eb5720034b6149f39d4ea2094f60244bc71a2f1f8b5ca7f104765a85d",
+      "image_ids": [
+        "a1028222447-602d",
+        "a1029082745-4f0f"
+      ],
+      "frame_asset_id": "a1029082745-4f0f",
+      "frame_at": 0.5,
+      "anchor_asset_id": null,
+      "upload_retries": 0,
+      "error": "Image execution stopped: Jimmy image task reported an unrecognized status",
+      "asset_id": "img1029082809-c45b",
+      "result": "assets/img1029082809-c45b.png"
+    },
+    "img1029085721-2d86": {
+      "id": "img1029085721-2d86",
+      "state": "completed",
+      "for_task": "camera:C1:S1",
+      "preview": {
+        "id": "img1029085721-2d86",
+        "images": [
+          {
+            "format": "png",
+            "height": 1086,
+            "path": "/path/to/viral-replica-workbench/projects/p1028222359-9b21/assets/a1028222447-602d.png",
+            "sha256": "2f86676a3c59ff4ac949a9c01fe63ac96c50c2cdffead5c47132023355208315",
+            "source": "file",
+            "width": 1448
+          },
+          {
+            "format": "png",
+            "height": 1402,
+            "path": "/path/to/viral-replica-workbench/projects/p1028222359-9b21/assets/a1028222505-83b0.png",
+            "sha256": "7cecc0bba9ef94920074fe2a0c2d1a11f1b7da1994ec6c52c7829cd163d7117b",
+            "source": "file",
+            "width": 1122
+          },
+          {
+            "format": "jpeg",
+            "height": 1264,
+            "path": "/path/to/viral-replica-workbench/projects/p1028222359-9b21/assets/frame-C1-0.50.jpg",
+            "sha256": "348790088e10066fefb5229d0ce07981263ec28134e4f98eb197bd30284a9b58",
+            "source": "file",
+            "width": 720
+          }
+        ],
+        "metadata": {
+          "purpose": "补齐目标状态图（camera:C1:S1）"
+        },
+        "model": "gpt-image-2",
+        "n": 1,
+        "prompt": "图1确定人物身份，图2确定服装/商品的真实外观，图3为原片参考帧（只取机位、场景和构图）。生成一个实际机位的一帧完整画面，不要多角度、分格、拼贴；不得继承原片人物外观或冲突的旧商品。\n\nA photograph captured as a single frame from a video actually shot on an iPhone, with the texture of real iPhone footage. The image looks real, without an oily, overprocessed finish. The background is clearly visible, with no depth-of-field blur. Skin texture is natural and fine, and the lighting is natural. The image is coherent and free of visual artifacts.\n\nA 27-year-old girl, the person from reference image 1, with her long dark brown hair and warm hazel eyes, strikingly beautiful in an understated, natural way. She wears the exact outfit from reference image 2: a delicate white floral tie-front blouse, a soft pink knit cardigan, and a white skirt with pearl-like buttons.\n\nShe stands centered behind the open rear of an SUV, seen from behind at full length as she leans slightly into the cargo area and reaches toward a shopping bag, holding that easy, ongoing motion. Frame her from head to shoes, with the raised hatch arching overhead and the open trunk around her; keep her face turned away, matching the reference frame’s rear view and vertical composition. An unseen person just behind the phone compliments her outfit; she is beginning to turn toward them while continuing to handle the bag.\n\nA sunlit outdoor parking lot, carrying over reference image 3’s vertical phone framing, open SUV hatch, rear-facing central figure, shopping bags in the trunk, parked cars, and trees. Change the woman to the person from reference image 1 and replace the original mauve open-back dress with the exact floral blouse, pink cardigan, and white buttoned skirt from reference image 2. Keep the palette softly coordinated in blush pink, white, and leafy green against the dark SUV.",
+        "quality": "auto",
+        "ratio": "9:16",
+        "resolution": "1k",
+        "schema_version": "chain5.image-job.v1"
+      },
+      "run_dir": "image-runs/img1029085721-2d86",
+      "summary": "{\"id\": \"img1029085721-2d86\", \"phase\": \"prepared\", \"run_dir\": \"/path/to/viral-replica-workbench/projects/p1028222359-9b21/image-runs/img1029085721-2d86\"}",
+      "camera_character": "C1",
+      "camera_scene": "S1",
+      "camera_product_id": "a1028222505-83b0",
+      "camera_binding": "9a826e4fc92085b22954dd67693cc6916df6fa7f2bf89098ccdd9fd1f10318d5",
+      "image_ids": [
+        "a1028222447-602d",
+        "a1028222505-83b0",
+        "a1029085450-dc73"
+      ],
+      "frame_asset_id": "a1029085450-dc73",
+      "frame_at": 0.5,
+      "anchor_asset_id": null,
+      "upload_retries": 0,
+      "error": "Image execution stopped: Jimmy image task reported an unrecognized status",
+      "asset_id": "img1029085721-2d86",
+      "result": "assets/img1029085721-2d86.png"
+    },
+    "img1029113749-210c": {
+      "id": "img1029113749-210c",
+      "state": "pending_confirmation",
+      "channel": "official",
+      "for_task": "camera:C1:S1",
+      "preview": {
+        "schema_version": "chain5.image-job.v1",
+        "id": "img1029113749-210c",
+        "model": "gpt-image-2",
+        "prompt": "图1确定人物身份，图2确定服装/商品的真实外观，图3为原片参考帧（只取机位、场景和构图）。生成一个实际机位的一帧完整画面，不要多角度、分格、拼贴；不得继承原片人物外观或冲突的旧商品。\n\nA photograph captured as a single frame from a video actually shot on an iPhone, with the texture of real iPhone footage. The image looks real, without an oily, overprocessed finish. The background is clearly visible, with no depth-of-field blur. Skin texture is natural and fine, and the lighting is natural. The image is coherent and free of visual artifacts.\n\nThe person from reference image 1, a 25-year-old girl with striking natural beauty, an elegant angular face, hazel-green eyes, and long dark brown hair worn loose. She is dressed exactly in the outfit from reference image 2: an open blush-pink chunky-knit cardigan with voluminous sleeves and pearl-style buttons, a cream floral blouse with a ruffled tie neckline and delicate pink, lavender, and green flowers, and a high-waisted white pleated mini skirt with pearl-style side buttons.\n\nShe faces the camera and continues speaking enthusiastically to the off-camera person who complimented her outfit, lightly holding one open edge of the cardigan while making a relaxed conversational gesture with her other hand. Match reference image 3 with a vertical, nearly full-body composition from a slightly low standing-phone viewpoint: her face is front-facing near the upper center, her body occupies the center-right, and the complete layered outfit remains unobstructed and clearly visible from neckline through the skirt hem. Keep the open SUV trunk framing her head and shoulders above and behind her.\n\nUse the same sunny outdoor parking lot, camera position, and composition as reference image 3, including the black SUV with its rear hatch raised, light-colored cargo interior, several plain shopping bags in the trunk, asphalt parking spaces, leafy trees, and parked cars in the distance. Replace only the original blonde woman and purple maxi dress with the new dark-haired person and the exact floral blouse, pink cardigan, and white skirt from reference images 1 and 2. Use an intentional blush pink, ivory white, soft green, and black color palette.",
+        "ratio": "9:16",
+        "resolution": "2k",
+        "images": [
+          {
+            "source": "file",
+            "path": "/path/to/viral-replica-workbench/projects/p1029100000-r18v/assets/a1028222447-602d.png",
+            "sha256": "2f86676a3c59ff4ac949a9c01fe63ac96c50c2cdffead5c47132023355208315"
+          },
+          {
+            "source": "file",
+            "path": "/path/to/viral-replica-workbench/projects/p1029100000-r18v/assets/a1028222505-83b0.png",
+            "sha256": "7cecc0bba9ef94920074fe2a0c2d1a11f1b7da1994ec6c52c7829cd163d7117b"
+          },
+          {
+            "source": "file",
+            "path": "/path/to/viral-replica-workbench/projects/p1029100000-r18v/assets/frame-C1-3.36.jpg",
+            "sha256": "92ad01c980a30dfbb3d9b1547170865203e2e077a32f87f90eaa4ca7555dc4ee"
+          }
+        ],
+        "metadata": {
+          "purpose": "补齐目标状态图（camera:C1:S1）"
+        },
+        "quality": "auto",
+        "channel": "official",
+        "size": "1024x1536",
+        "n": 1
+      },
+      "preview_sha256": "9666b9dc42215e8f9a4f0e15edc582588352f7b94d363d9c321e51954d2c5377",
+      "run_dir": "image-runs/img1029113749-210c",
+      "summary": "官方生图免费预览；确认后按 OpenAI 计费",
+      "camera_character": "C1",
+      "camera_scene": "S1",
+      "camera_product_id": "a1028222505-83b0",
+      "camera_binding": "9a826e4fc92085b22954dd67693cc6916df6fa7f2bf89098ccdd9fd1f10318d5",
+      "image_ids": [
+        "a1028222447-602d",
+        "a1028222505-83b0",
+        "a1029113735-c1b6"
+      ],
+      "frame_asset_id": "a1029113735-c1b6",
+      "frame_at": 3.36,
+      "frame_reason": "front_product",
+      "frame_warning": "",
+      "anchor_asset_id": null
+    },
+    "img1029121320-febb": {
+      "id": "img1029121320-febb",
+      "state": "pending_confirmation",
+      "channel": "official",
+      "for_task": "camera:C1:S1",
+      "preview": {
+        "schema_version": "chain5.image-job.v1",
+        "id": "img1029121320-febb",
+        "model": "gpt-image-2",
+        "prompt": "图1确定人物身份，图2确定服装/商品的真实外观，图3为原片参考帧（只取机位、场景和构图）。生成一个实际机位的一帧完整画面，不要多角度、分格、拼贴；不得继承原片人物外观或冲突的旧商品。参考帧里的字幕、贴纸、水印一律不要画出来。\n\nA photograph captured as a single frame from a video actually shot on an iPhone, with the texture of real iPhone footage. The image looks real, without an oily, overprocessed finish. The background is clearly visible, with no depth-of-field blur. Skin texture is natural and fine, and the lighting is natural. The image is coherent and free of visual artifacts.\n\nThe person from reference image 1, a strikingly beautiful 25-year-old girl with refined natural beauty, olive-toned skin, hazel eyes, strong dark brows, and long loose dark-brown hair. She wears the exact coordinated outfit from reference image 2: an open blush-pink chunky-knit cardigan with balloon sleeves and pearl-style buttons, an ivory floral blouse with a ruffled tie neckline, and a high-waisted white A-line mini skirt with pearl-style side buttons.\n\nShe stands front-facing in the center of the frame beside the open SUV trunk, speaking to the person holding the phone while making a relaxed, ongoing presentation gesture with one hand near her waist. Match reference image 3's eye-level vertical framing and subject placement, showing her clearly from head to mid-thigh so her unobstructed face, blouse, cardigan, and skirt details remain fully visible; the raised tailgate frames the area above her head and the SUV occupies the left and central background.\n\nUse the same bright outdoor parking lot, open dark SUV tailgate, visible cargo area with plain unbranded shopping bags, asphalt parking lines, leafy trees, and parked cars from reference image 3. Preserve its camera position, daylight direction, and overall composition, but replace the original blonde woman and purple maxi dress with the new dark-haired person and the exact pink, floral, and white outfit from reference images 1 and 2. The intentional palette is blush pink, ivory white, leafy green, and charcoal black. No captions, stickers, watermarks, logos, or other readable on-screen text.\nDo not reproduce any captions, subtitles, stickers, watermarks, logos or other on-screen text from the reference frame; the image contains no readable text except what is printed on the real product itself.",
+        "ratio": "9:16",
+        "resolution": "2k",
+        "images": [
+          {
+            "source": "file",
+            "path": "/path/to/viral-replica-workbench/projects/p1029100000-r18v/assets/a1028222447-602d.png",
+            "sha256": "2f86676a3c59ff4ac949a9c01fe63ac96c50c2cdffead5c47132023355208315"
+          },
+          {
+            "source": "file",
+            "path": "/path/to/viral-replica-workbench/projects/p1029100000-r18v/assets/a1028222505-83b0.png",
+            "sha256": "7cecc0bba9ef94920074fe2a0c2d1a11f1b7da1994ec6c52c7829cd163d7117b"
+          },
+          {
+            "source": "file",
+            "path": "/path/to/viral-replica-workbench/projects/p1029100000-r18v/assets/clean-a1029113735-c1b6-fccf74fd5fea.png",
+            "sha256": "2f66d353407871719e107f69dee6dfe7b4638b35f01cd6dece1ab5a0a0ad132e"
+          }
+        ],
+        "metadata": {
+          "purpose": "补齐目标状态图（camera:C1:S1）"
+        },
+        "quality": "auto",
+        "channel": "official",
+        "size": "1024x1536",
+        "n": 1
+      },
+      "preview_sha256": "0b6dc8320843c446889d2a6dedb6752e59036734a7b711d23f5b7d279094151e",
+      "run_dir": "image-runs/img1029121320-febb",
+      "summary": "官方生图免费预览；确认后按 OpenAI 计费",
+      "camera_character": "C1",
+      "camera_scene": "S1",
+      "camera_product_id": "a1028222505-83b0",
+      "camera_binding": "9a826e4fc92085b22954dd67693cc6916df6fa7f2bf89098ccdd9fd1f10318d5",
+      "image_ids": [
+        "a1028222447-602d",
+        "a1028222505-83b0",
+        "a1029120031-ac7d"
+      ],
+      "frame_asset_id": "a1029113735-c1b6",
+      "frame_at": 3.36,
+      "frame_reason": "front_product",
+      "frame_warning": "",
+      "anchor_asset_id": null,
+      "clean_frame_asset_id": "a1029120031-ac7d",
+      "caption_overlap_warning": "参考帧的字幕区域与人物/商品重叠，已模糊处理，生成后请检查这一块",
+      "caption_residue": {
+        "status": "checked",
+        "reason": "",
+        "suspected": [],
+        "samples": [
+          {
+            "time": 0.0,
+            "source_time": 3.36,
+            "score": 0.00098071,
+            "density": 0.00098071,
+            "baseline": 0.0,
+            "suspected": false,
+            "system": "左下角英文促销文字",
+            "scan_bbox": [
+              0.0,
+              0.425,
+              0.45999999999999996,
+              0.845
+            ]
+          }
+        ],
+        "baseline_times": [],
+        "threshold": 0.004,
+        "scan_padding_y": 0.06,
+        "method": "360px RGB→gray; bright (>160) horizontal strokes (>50 above both ±2px neighbors); density (no subtitle-free baseline)",
+        "baseline_note": "原片没有无字幕基准；静态帧按同一亮细笔画密度直接检查，仅作提示"
+      }
+    }
+  },
+  "final": null,
+  "log": [
+    {
+      "t": "22:24:21",
+      "level": "info",
+      "msg": "已上传参考视频 准备.mp4（10.1s，720x1264）"
+    },
+    {
+      "t": "22:27:23",
+      "level": "info",
+      "msg": "拆解完成（吉米 · GPT-5.6 Sol（共用 Jimmy Key））：5 个段落、6 个分镜、5 条字幕/花字图层"
+    },
+    {
+      "t": "08:25:42",
+      "level": "info",
+      "msg": "Treatment 与 1 个可表演段落已生成（吉米 · GPT-5.6 Sol（共用 Jimmy Key））"
+    },
+    {
+      "t": "08:28:31",
+      "level": "error",
+      "msg": "生成目标状态图失败：Image execution stopped: Jimmy image task reported an unrecognized status"
+    },
+    {
+      "t": "08:29:49",
+      "level": "info",
+      "msg": "目标状态图已生成并加入素材库：主镜头图 C1 · S1 停车场与打开的后备箱（请检查后再用于视频）"
+    },
+    {
+      "t": "08:32:16",
+      "level": "info",
+      "msg": "Treatment 与 1 个可表演段落已生成（DeepSeek V4.1 Flash）"
+    },
+    {
+      "t": "08:57:51",
+      "level": "error",
+      "msg": "生成目标状态图失败：Image execution stopped: Jimmy image task reported an unrecognized status"
+    },
+    {
+      "t": "08:59:33",
+      "level": "info",
+      "msg": "目标状态图已生成并加入素材库：主镜头图 C1 · S1 停车场与打开的后备箱（请检查后再用于视频）"
+    },
+    {
+      "t": "09:00:59",
+      "level": "info",
+      "msg": "Treatment 与 1 个可表演段落已生成（DeepSeek V4.1 Flash）"
+    }
+  ],
+  "breakdown_versions": {
+    "jimmy": {
+      "provider": "jimmy",
+      "input": "帧网格",
+      "pack": {
+        "overview": {
+          "oneLine": "停车场里，一位画外人称赞女子的紫粉色长裙；女子转身展示裙子，并用舒适、露背和适合天气等特点回应。",
+          "genre": "穿搭展示/口播带货",
+          "visualTone": "自然日光｜户外明亮｜手机竖屏手持感｜日常停车场背景",
+          "language": "en",
+          "duration": 10.052
+        },
+        "characters": [
+          {
+            "id": "C1",
+            "name": "穿裙女子",
+            "role": "穿着者/介绍者",
+            "appearance": "成年女性，金色长发，身形偏瘦；先背对镜头，之后转身面向镜头。",
+            "outfit": "细肩带紫粉色长裙，裙身有褶皱与垂坠感，背部较开放。",
+            "voice": "女性英语声线；根据对话内容应为画面中的女子发言，但音画对应仅依据给定转录和画面内容判断。",
+            "screenTime": "全片；多数时间可见"
+          },
+          {
+            "id": "C2",
+            "name": "画外称赞者",
+            "role": "画外互动者/称赞者",
+            "appearance": "未见。",
+            "outfit": "不适用。",
+            "voice": "画外英语声音；性别与具体声线特征无法仅凭提供信息可靠确认。",
+            "screenTime": "声音约0.16–1.98秒；未见"
+          }
+        ],
+        "scene": [
+          {
+            "id": "S1",
+            "name": "停车场与打开的后备箱",
+            "description": "户外停车场，一辆打开后备箱的 SUV 位于女子身后；可见车内购物袋、树木、其他车辆及停车位。女子由背对镜头转为面对镜头。",
+            "lighting": "自然日光，场景明亮；人物与地面有清晰日照阴影。",
+            "timeRanges": [
+              [
+                0,
+                10.052
+              ]
+            ]
+          }
+        ],
+        "beats": [
+          {
+            "id": "P1",
+            "start": 0.0,
+            "end": 2.78,
+            "function": "钩子",
+            "summary": "女子背对镜头站在打开的后备箱旁，露出裙子背面。画外人说“Excuse me, your dress is beautiful.”，以直接称赞建立注意力。",
+            "performance": "画外称赞者语气礼貌、自然，像是在停车场临时搭话；“beautiful”是称赞句的重心。C1 起初背对镜头继续在后备箱前活动，未见明确回应；约 2.40 秒后转身，到 2.60 秒张口并抬手靠近脸部，呈现出开始回应的反应。无法从这一小段可靠判断她的具体情绪。",
+            "sound": "可确认的声音是 0.16–1.98 秒画外英语称赞。未提供可确认的独立音效、BGM或突出环境声变化证据。"
+          },
+          {
+            "id": "P2",
+            "start": 2.78,
+            "end": 5.2,
+            "function": "信任",
+            "summary": "女子转身面向镜头，并说“Oh, thank you so much.”，从背面展示过渡到正面互动。",
+            "performance": "女子以惊喜、感激且亲切的态度回应画外称赞，交流对象更像现场的称赞者而非单纯对观众口播。“Oh”带出惊讶感，“thank you so much”语气热情。她在回应时睁大眼睛并捂嘴微笑，随后放下手、笑着低头看裙子；转身已在这句台词开始前基本完成。近距离的正面视线与自然手持构图强化了偶遇式互动感。",
+            "sound": "可确认的是女子说“Oh, thank you so much.”；本段未提供可辨认的独立音效、音乐或环境声变化证据。"
+          },
+          {
+            "id": "P3",
+            "start": 5.2,
+            "end": 6.76,
+            "function": "卖点",
+            "summary": "女子说“It's so flowy and comfortable.”，并通过手势和裙身的垂坠表现呼应轻盈、舒适的描述。",
+            "performance": "女子以轻松、肯定的口吻向镜头回应，表情自然，语气像日常分享而非强烈推销。说到“flowy”时低头看着裙身，双手松弛下垂并略向两侧展开；说到“comfortable”时抬眼面对镜头，双手向外打开。重音主要落在“flowy”和“comfortable”，未见明显夸张表情。",
+            "sound": "听到女子说“It's so flowy and comfortable.”，无可确认的独立音效、音乐变化或突出的环境声变化。"
+          },
+          {
+            "id": "P4",
+            "start": 6.76,
+            "end": 8.14,
+            "function": "卖点",
+            "summary": "女子说“I love the open back.”，呼应开场已出现的背面视觉信息。",
+            "performance": "女子以正面面对镜头、肯定而带有喜爱感的语气说出这句卖点。重音落在“I love”和“open back”，表情保持微笑或轻松愉悦；右手在说到“open back”附近抬到胸前做小幅指示手势，但没有配合转身或回头动作。她是在对镜头及画外互动者直接回应，依靠语言呼应前段已经出现过的背面视觉信息。",
+            "sound": "仅能确认女子的英语口播持续进行；未提供可确认的独立音效、音乐变化或环境声变化证据。"
+          },
+          {
+            "id": "P5",
+            "start": 8.14,
+            "end": 10.05,
+            "function": "证明",
+            "summary": "女子说“The fabric is perfect for this weather.”，以适合当下天气作为最后一个使用场景卖点；画面仍维持正面展示，片尾没有明确口头促单。",
+            "performance": "女子以平稳、友好的口播语气面向镜头，像是在补充一个实际穿着场景的优点。重音落在“perfect”和“weather”；说到“fabric”时手部开始辅助说明，随后短暂打开双手，到句尾手势收下并露出轻微微笑。可见的是温和表情与面向镜头；没有明确夸张的片尾表情、指向链接动作或其他购买引导手势。",
+            "sound": "可确认的声音信息为女子英语口播“The fabric is perfect for this weather.”；本段没有提供可确认的独立音效、音乐或环境声变化证据。"
+          }
+        ],
+        "shots": [
+          {
+            "start": 0,
+            "end": 2.78,
+            "shotSize": "竖屏中远景，全身为主；女子与打开的后备箱同框",
+            "camera": "固定观察式手机机位，轻微手持感；未见明显推拉或切镜",
+            "action": "女子先背对镜头站在后备箱前，手在购物袋附近活动；约 2.40 秒开始转身，至 2.60 秒呈侧面并抬手靠近脸部。",
+            "characters": [
+              "C1",
+              "C2"
+            ],
+            "sceneId": "S1",
+            "product": "紫粉色细肩带长裙持续穿着展示；背部露出，裙身垂地。后备箱内可见购物袋。",
+            "onScreenText": "左下角持续出现小号白色英文促销文字，内容可辨认但部分措辞不确定。",
+            "id": "K1"
+          },
+          {
+            "start": 2.78,
+            "end": 3.94,
+            "shotSize": "中景至近中景，女子约从头部至裙摆下部入画",
+            "camera": "竖屏手持视角，轻微自然晃动；固定连续镜头，无可确认切点",
+            "action": "女子已转为正面，手捂嘴回应画外称赞；感谢期间维持面向镜头，转身并未与台词同步发生",
+            "characters": [
+              "C1"
+            ],
+            "sceneId": "S1",
+            "product": "紫粉色细肩带长裙正面可见，裙身有褶皱与垂坠感",
+            "onScreenText": "左下角持续出现小号白色英文促销文案，精确字词因画面字号较小而不完全确定",
+            "id": "K2"
+          },
+          {
+            "start": 3.94,
+            "end": 5.2,
+            "shotSize": "中近景，画面逐渐更紧，裙身下部被画框裁切",
+            "camera": "同一连续手持镜头，机位似乎略向前靠近；幅度不确定",
+            "action": "女子保持正面微笑，将手从嘴边放下并低头看向裙身，随后手势向下指示或展示裙子",
+            "characters": [
+              "C1"
+            ],
+            "sceneId": "S1",
+            "product": "裙子正面褶皱与垂坠状态持续展示",
+            "onScreenText": "左下角持续出现小号白色英文促销文案，未见明显变化",
+            "id": "K3"
+          },
+          {
+            "start": 5.2,
+            "end": 6.76,
+            "shotSize": "竖屏中景，女子约从头部至小腿下部入画；裙摆底端被画幅截断",
+            "camera": "固定观察感的手机竖屏手持画面，轻微自然晃动；无可确认推拉或摇移",
+            "action": "同一连续镜头。5.20–5.60女子低头，双手在腰侧附近张开后逐渐放低；5.60–6.20双手松弛地悬在裙身两侧，手指朝下，配合“flowy”；6.20–6.60她抬眼面对镜头，双手仍在腰前；约6.60–6.76双手抬起并向外打开。没有抓、提或甩裙摆的动作。",
+            "characters": [
+              "C1"
+            ],
+            "sceneId": "S1",
+            "product": "紫粉色细肩带长裙穿在身上，胸腰处有褶皱，裙身纵向自然垂落；此段没有改变商品状态。",
+            "onScreenText": "左下角持续出现白色多行英文促销文字；可辨内容包含“I'm obsessed with this dress”、“The quality is excellent”、“it's on sale”及“Here's the link”，其中一处短语不确定。",
+            "id": "K4"
+          },
+          {
+            "start": 6.76,
+            "end": 8.14,
+            "shotSize": "正面中近景，人物上半身至裙身中段可见",
+            "camera": "单一连续手持/手机竖屏视角；无可确认的切镜、推拉或明显横移",
+            "action": "女子面向镜头说“I love the open back.”，右手在胸前附近做小幅手势；没有转身、回头或重新展示背部的动作",
+            "characters": [
+              "C1"
+            ],
+            "sceneId": "S1",
+            "product": "紫粉色细肩带长裙，身穿展示；正面可见褶皱和垂坠感，背部在此段不可见",
+            "onScreenText": "左下角持续有小号白色英文促销文字，具体字句因字号较小部分不确定",
+            "id": "K5"
+          },
+          {
+            "start": 8.14,
+            "end": 10.05,
+            "shotSize": "正面中远景，画面包含女子头部至裙身；约9.3秒后构图看起来略紧，裙摆可见范围减少",
+            "camera": "停车场实景连续镜头，手机手持感；无可确认切镜。约9.3秒后可能轻微推近或重新取景，具体原因不确定",
+            "action": "女子正面口播。起初一只手在身前做小幅说明手势，随后双手短暂向外打开；到“this weather”时手臂逐渐落下，双手靠近裙子两侧，最后保持站立面向镜头",
+            "characters": [
+              "C1"
+            ],
+            "sceneId": "S1",
+            "product": "紫粉色细肩带长裙持续穿着展示，褶皱垂坠裙身可见；无新的拿取或使用动作",
+            "onScreenText": "左下角持续出现小号白色促销文字，含“Here's the link”等字样；完整措辞因字号较小而不确定",
+            "id": "K6"
+          }
+        ],
+        "productMoments": [
+          {
+            "start": 0,
+            "end": 2.78,
+            "product": "紫粉色细肩带长裙",
+            "presentation": "女子背对镜头穿着展示；约 2.40 秒起转身，露背视角逐渐转为侧面",
+            "sellingPoint": "开场清楚呈现露背剪裁；此段台词称赞裙子美丽，但未提及具体剪裁或其他卖点。"
+          },
+          {
+            "start": 2.78,
+            "end": 5.2,
+            "product": "紫粉色细肩带长裙",
+            "presentation": "穿着展示；由正面站姿转为低头看裙身并以手势向下展示",
+            "sellingPoint": "可见裙身正面褶皱与垂坠感；本段感谢台词本身未口述具体卖点"
+          },
+          {
+            "start": 5.2,
+            "end": 6.76,
+            "product": "紫粉色细肩带长裙",
+            "presentation": "穿着展示；中景中可见腰部褶皱与纵向垂坠裙身",
+            "sellingPoint": "台词称裙子轻盈、舒适。手部在裙身两侧做松弛的张开、下垂和外展手势，但没有触碰或摆动裙摆；垂坠外观可见，活动感未被明确演示。"
+          },
+          {
+            "start": 6.76,
+            "end": 8.14,
+            "product": "紫粉色细肩带长裙",
+            "presentation": "身穿正面展示",
+            "sellingPoint": "口头强调露背设计；画面本段没有再次展示背部"
+          },
+          {
+            "start": 8.14,
+            "end": 10.05,
+            "product": "紫粉色细肩带长裙",
+            "presentation": "正面穿着展示；女子做轻微手势后双手落至裙子两侧",
+            "sellingPoint": "面料适合当下天气，对应台词“The fabric is perfect for this weather.”"
+          }
+        ],
+        "dialogue": [
+          {
+            "start": 0.162,
+            "end": 1.979,
+            "speaker": "",
+            "text": "Excuse me, your dress is beautiful."
+          },
+          {
+            "start": 2.782,
+            "end": 3.937,
+            "speaker": "",
+            "text": "Oh, thank you so much."
+          },
+          {
+            "start": 5.201,
+            "end": 6.56,
+            "speaker": "",
+            "text": "It's so flowy and comfortable."
+          },
+          {
+            "start": 6.76,
+            "end": 7.578,
+            "speaker": "",
+            "text": "I love the open back."
+          },
+          {
+            "start": 8.14,
+            "end": 9.72,
+            "speaker": "",
+            "text": "The fabric is perfect for this weather."
+          }
+        ],
+        "overlays": [
+          {
+            "system": "左下角英文促销文字",
+            "kind": "typography",
+            "text": "I'm obsessed with this dress [后续字样不确定；可见内容似为 “of clothes! The quality is excellent and it's on sale now. Here's the link!”]",
+            "bbox": [
+              0.02,
+              0.59,
+              0.2,
+              0.68
+            ],
+            "position": "画面左下方，靠近后备箱与裙子左侧",
+            "style": "小号白色英文，多行排列，带深色阴影或描边；无明显底色",
+            "start": 0,
+            "end": 2.78,
+            "enter": "片段开头已出现，未见进入动画",
+            "exit": "片段结束时仍可见",
+            "anchor": "与台词无明显逐词对应，持续作为促销信息叠加"
+          },
+          {
+            "system": "左下角英文促销文字",
+            "kind": "typography",
+            "text": "I'm obsessed with this dress / of clothes! The quality is / excellent and it's on sale / now. Here's the link!（其中第二行开头的字不确定）",
+            "bbox": [
+              0.01,
+              0.57,
+              0.23,
+              0.65
+            ],
+            "position": "画面左下方，约下方三分之一处，靠左多行排列",
+            "style": "小号白色英文无衬线字，带深色阴影或描边；具体字体不确定",
+            "start": 2.78,
+            "end": 5.2,
+            "enter": "本段开始时已在画面中，未见进入动画",
+            "exit": "本段结束时仍可见，未见退出动画",
+            "anchor": "不对应本段感谢台词；促销文案持续覆盖画面"
+          },
+          {
+            "system": "左下角英文促销文字",
+            "kind": "typography",
+            "text": "I'm obsessed with this dress / [不确定] of clothes! The quality is / excellent and it's on sale / now. Here's the link!",
+            "bbox": [
+              0.02,
+              0.75,
+              0.43,
+              0.88
+            ],
+            "position": "画面左下方，裙身左侧至腰下区域，多行左对齐",
+            "style": "小号白色英文无衬线字，带深色阴影或描边；细节因字号较小不确定",
+            "start": 5.2,
+            "end": 6.76,
+            "enter": "本段开始时已在画面中，无可见进入动画",
+            "exit": "本段结束时仍在画面中，无可见退出动画",
+            "anchor": "与当前口播无明确逐词同步；持续促销文字"
+          },
+          {
+            "system": "左下角英文促销文字",
+            "kind": "typography",
+            "text": "I'm obsessed with this dress\nThe quality! The quality is excellent and it's on sale now. Here's the link!",
+            "bbox": [
+              0.02,
+              0.6,
+              0.28,
+              0.68
+            ],
+            "position": "画面左下方约下半部，靠左排列，多行",
+            "style": "小号白色英文无衬线字，带深色阴影或描边；精确字体和部分措辞不确定",
+            "start": 6.76,
+            "end": 8.14,
+            "enter": "本段开始时已存在，未见新的进入动画",
+            "exit": "本段结束时仍持续可见，未见退出动画",
+            "anchor": "持续覆盖本段；未发现与“I love the open back.”中特定词语同步变化"
+          },
+          {
+            "system": "左下角英文促销文字",
+            "kind": "typography",
+            "text": "I'm obsessed with this dress of clothes! The quality is excellent and it's on sale now. Here's the link!（可辨认部分；“of clothes”及完整断句不确定）",
+            "bbox": [
+              0.02,
+              0.59,
+              0.38,
+              0.68
+            ],
+            "position": "画面左下方，约垂直中线以下、靠左",
+            "style": "小号白色英文，多行排版，带深色阴影或描边；具体字体不确定",
+            "start": 8.14,
+            "end": 10.05,
+            "enter": "本段开始时已在画面中，无可见进入动画",
+            "exit": "持续至片段结束，未见退出动画",
+            "anchor": "与本段台词无明显逐词同步；文字中“Here's the link”是持续存在的链接提示"
+          }
+        ],
+        "viralLogic": {
+          "hook": "先以裙子背面和画外人的即时称赞开场，让观众快速看到服装并获得外部认可。",
+          "structure": "视觉展示与社交称赞开场，穿着者转身回应，随后连续补充舒适度、露背设计和天气适配性；持续出现的促销文字另行提供优惠及链接提示。",
+          "whyItWorks": [
+            "开头把服装视觉重点与他人称赞放在一起，迅速建立注意力和初始信任。",
+            "真实对话式的问答为产品介绍提供自然语境。",
+            "口头卖点简短且具体，顺序从穿着感受推进到设计细节和使用场景。",
+            "开头展示背部与后续提及露背设计形成前后呼应。"
+          ],
+          "replicateTips": [
+            "更换人物或商品时，保留“先展示具体视觉特点，再由第三方称赞，最后由穿着者解释体验”的关系。",
+            "让每个口头卖点都能在画面动作或产品外观中找到对应证据。",
+            "促销文字应与口播承担不同功能；若保留左下角常驻文案，确保它不遮挡商品关键细节。"
+          ],
+          "risks": [
+            "促销文字字号很小，具体措辞不易辨认，部分内容无法从帧网格中核实。",
+            "视觉中的促销文案与转录的口头对话并不相同，不能把屏幕文字当作逐字字幕。",
+            "未提供音频细节以确认 BGM、环境声或音效，相关分析不作断言。",
+            "结尾未见可确认的口头购买指令或链接操作，转化动作主要依赖屏幕促销文字。"
+          ]
+        }
+      },
+      "model": "gpt-5.6-sol",
+      "usage": {
+        "prompt_tokens": 47648,
+        "completion_tokens": 9784
+      },
+      "seconds": 143.3,
+      "at": "22:27:23",
+      "analysis_md": "## 作品想达成什么\n**画面与声音事实：** 一位女子站在打开后备箱的 SUV 旁，先背对镜头，随后转身面向镜头并做手势。画外声音先称赞她的裙子；女子随后感谢，并提到裙子轻盈舒适、露背设计和适合当前天气。画面左下方持续出现一段较小的英文促销文字，能辨认出大意包括“I'm obsessed with this dress … The quality is excellent and it's on sale now. Here's the link!”；其中个别单词因字号小而不确定。\n\n**解读：** 视频以日常偶遇式称赞建立社交证明，再让穿着者自然地补充产品特点。画面上的促销文案比口头对话更直接地承担转化提示；声音中的对话则让展示显得像真实互动。\n\n## 故事与节奏\n0–2秒先呈现裙子的露背效果，画外人开口称赞，形成视觉展示与社交钩子。约2.8–4秒女子转身回应感谢，人物关系由背影展示转为正面互动。约5.2秒起，她连续说出面料垂坠舒适、露背设计和适合天气等卖点；镜头保持同一场景，靠手势、表情和服装细节维持注意力。片尾停在她面向镜头的状态，没有看到明确的口头下单指令。\n\n## 视觉与声音系统\n- **主画面/A-roll：** 单一户外停车场场景。女子在 SUV 后备箱旁，先背对镜头，随后转身并面对镜头讲话；后半段用手势配合描述。取景为竖屏中景到全身，背景中的车辆、树木和停车位持续可见。没有证据显示插入 B-roll 或明显转场特效。\n- **促销文字：** 左下区域有小号白色英文多行文字，带深色阴影或描边以提高对比度；帧网格中从开头到结尾都可见。内容似乎是对裙子的热情推荐、质量评价、促销和链接提示。具体完整措辞及是否逐字变化不确定，不能视为已核实的口播字幕。\n- **声音：** 转录中先出现画外称赞，女子随后回应并介绍裙子。未提供可确认的音乐或独立音效信息，因此不判断是否存在 BGM 或音效。\n\n## 远距离呼应\n开头背部朝向镜头的画面，与约6.8秒口头提到“I love the open back”形成对应：服装细节先被展示，之后又成为对话中的明确卖点。左下方促销文字贯穿全片，与口头介绍形成“画面提示购买、对话补充体验”的并行关系。\n\n## 为什么能火\n- 开场直接给出醒目的服装背面，并由画外人发出称赞，迅速建立观看理由。\n- 偶遇式对话把产品介绍包装成自然交流，减少硬性讲解感。\n- 卖点具体且连续：垂坠舒适、露背设计、适合当前天气。\n- 服装展示与口头卖点相互对应，观众可以同时看到穿着效果并听到体验描述。\n- 持续出现的促销文字补上优惠和链接信息，但画面中是否真的有可点击链接无法确认。",
+      "timeline_md": "# TIMELINE\n\n## 0.00–2.78 · 露背展示与画外称赞\n镜头从一开始就以中远景呈现女子背对镜头站在打开的 SUV 后备箱前：她穿着紫粉色细肩带长裙，背部大面积露出，裙身垂至地面。露背剪裁在开场已清晰可见，构图和持续的背面朝向让它成为醒目的视觉信息；但无法仅凭这些帧确认这是刻意摆出的展示动作。她面向后备箱，手在购物袋附近活动，像是在整理或拿取物品。\n\n0.16–1.98 秒，画外人以正常交谈距离说“Excuse me, your dress is beautiful.”，称赞落在“beautiful”上。声音来自镜头外，听起来像在对女子直接搭话；女子起初仍背对镜头，没有可见的回应动作。镜头保持同一机位和景别，仅有轻微手持变化，没有可确认的切镜。约 2.40 秒后，女子开始转向镜头；到 2.60 秒她已转成侧面，抬手靠近脸部并张口，像是准备回应。持续的左下角促销文字与称赞对话并行出现。\n\n## 2.78–5.20 · 信任与回应\n同一段连续的手机竖屏实拍中，女子已从背对镜头转为正面，站在打开的 SUV 后备箱前。她在说“Oh, thank you so much.”时把手捂在嘴边，眼睛睁大并带笑；转身在这段感谢开始前已基本完成，因此不是边转身边说。惊喜的表情和捂嘴动作让回应显得像对画外称赞的即时反应，而非对镜头预设的讲解。\n\n约 3.9 秒后，她仍面向镜头，笑意延续，手从嘴边放下，视线逐渐落向裙身；镜头也显得稍近，裙子的正面褶皱和垂坠感更醒目。左下角促销文案持续存在，但与感谢台词无明显同步动效。此段没有独立产品特写或可确认的音乐、音效变化。\n\n## 5.20–6.76 · 卖点：轻盈与舒适\n停车场后备箱前的同一竖屏中景持续拍摄，没有可确认的镜头切换。女子先低头看向身前，双手在腰部两侧下方轻轻张开、手指放松；说到“flowy”时双手保持松垂并略向外展开，随后抬眼看向镜头，说到“comfortable”时双手再次抬高、向两侧打开。紫粉色长裙保持穿着状态，裙身褶皱自然向下垂挂；画面没有展示她抓起或甩动裙摆，因此能看到垂坠外观，但看不到明确的裙摆摆动或面料活动测试。手势配合台词强调轻盈、舒适的说法，实际展示效果较克制。\n左下角持续叠有小号白色英文促销文字，多行排列并带深色阴影/描边；具体全文受字号限制，部分词不确定。此段未见明显进入、退出或位置变化。\n\n## 6.76–8.14 · 露背卖点口播\n同一连续镜头中，女子已面向镜头站在打开的 SUV 后备箱前，保持正面中近景/全身上半部构图。她没有再次转身，也没有展示裙子背面；在说到“I love the open back.”时主要用右手在胸前附近做小幅指示性手势，随后保持正面面对镜头。裙子处于身穿展示状态，正面可见细肩带、胸前褶皱和垂坠裙身，但露背部分在这一段没有画面证据。该句通过口头补充此前已经建立的背面视觉信息，强化露背这一卖点。\n\n## 8.14–10.05 · 天气适用性收尾\n同一段户外正面口播连续镜头中，女子面对镜头说“The fabric is perfect for this weather.”，把裙子的面料与当下天气联系起来作为最后一个使用场景卖点。她先在胸腹前做轻微开放手势，随后把双手放到裙子两侧；说到“weather”时保持面向镜头，末尾露出轻微微笑。画面略有靠近或取景变紧的感觉，但不确定是运镜还是人物姿态变化。没有明确的指向链接、结束手势或口头促单；左下角原有促销文字仍在画面中，因此文字本身包含链接提示，但此段没有配合新的指向动作。"
+    }
+  },
+  "replacements": {
+    "characters": [
+      {
+        "source_id": "C1",
+        "action": "replace",
+        "asset_id": "a1028222447-602d",
+        "camera_assets": {
+          "S1": "img1029082809-c45b"
+        },
+        "description": ""
+      },
+      {
+        "source_id": "C2",
+        "action": "keep",
+        "asset_id": null,
+        "camera_assets": {},
+        "description": ""
+      }
+    ],
+    "scene": "",
+    "product": {
+      "action": "replace",
+      "asset_id": "a1028222505-83b0",
+      "description": ""
+    }
+  },
+  "breakdown_provider": "jimmy",
+  "action_comparisons": {
+    "seg-01": {
+      "fingerprint": "d0f15b291bd235e85ede6d081a681a5b1921a2a398b4db558988661d5334e9d3",
+      "comparison": {
+        "status": "completed",
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "attempts": [
+          {
+            "provider": "deepseek",
+            "model": "deepseek-flash",
+            "max_tokens": 4000,
+            "success": true,
+            "reason": "完成校验"
+          }
+        ],
+        "message": "动作对比由 deepseek / deepseek-flash 完成",
+        "errors": [],
+        "warnings": []
+      }
+    }
+  },
+  "usage": [
+    {
+      "at": "2026-10-29T11:37:49+08:00",
+      "step": "camera_prompt",
+      "channel": "openai",
+      "model": "gpt-5.6-sol",
+      "kind": "reason",
+      "ok": true,
+      "tokens": {
+        "prompt": 5877,
+        "completion": 556,
+        "reasoning": 111
+      },
+      "billing": {
+        "unit": "tokens",
+        "amount": 6433
+      },
+      "error_kind": null
+    },
+    {
+      "at": "2026-10-29T11:37:49+08:00",
+      "step": "camera_image",
+      "channel": "official",
+      "model": "gpt-image-2",
+      "kind": "image",
+      "ok": true,
+      "tokens": {
+        "prompt": null,
+        "completion": null,
+        "reasoning": null
+      },
+      "billing": {
+        "unit": "tokens",
+        "amount": null
+      },
+      "error_kind": null
+    },
+    {
+      "at": "2026-10-29T12:00:47+08:00",
+      "step": "camera_prompt",
+      "channel": "openai",
+      "model": "gpt-5.6-sol",
+      "kind": "reason",
+      "ok": true,
+      "tokens": {
+        "prompt": 5949,
+        "completion": 658,
+        "reasoning": 183
+      },
+      "billing": {
+        "unit": "tokens",
+        "amount": 6607
+      },
+      "error_kind": null
+    },
+    {
+      "at": "2026-10-29T12:00:47+08:00",
+      "step": "camera_image",
+      "channel": "official",
+      "model": "gpt-image-2",
+      "kind": "preview",
+      "ok": true,
+      "tokens": {
+        "prompt": null,
+        "completion": null,
+        "reasoning": null
+      },
+      "billing": {
+        "unit": "tokens",
+        "amount": null
+      },
+      "error_kind": null,
+      "network_request": false
+    },
+    {
+      "at": "2026-10-29T12:13:20+08:00",
+      "step": "camera_prompt",
+      "channel": "openai",
+      "model": "gpt-5.6-sol",
+      "kind": "reason",
+      "ok": true,
+      "tokens": {
+        "prompt": 5949,
+        "completion": 582,
+        "reasoning": 120
+      },
+      "billing": {
+        "unit": "tokens",
+        "amount": 6531
+      },
+      "error_kind": null
+    },
+    {
+      "at": "2026-10-29T12:13:20+08:00",
+      "step": "camera_image",
+      "channel": "official",
+      "model": "gpt-image-2",
+      "kind": "preview",
+      "ok": true,
+      "tokens": {
+        "prompt": null,
+        "completion": null,
+        "reasoning": null
+      },
+      "billing": {
+        "unit": "tokens",
+        "amount": null
+      },
+      "error_kind": null,
+      "network_request": false
+    }
+  ]
+}

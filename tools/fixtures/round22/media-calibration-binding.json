@@ -1,0 +1,17 @@
+{
+  "provenance": "Round22 subtitle-only changes; calibrated code is byte-identical to round11-bound media.py. Original measurements and source hashes are unchanged.",
+  "previous_media_sha256": "d959618a0680cec177bfd6f58755de54370a45aa3be707719abb9bd8a4b3b572",
+  "current_media_sha256": "070a6290a4ac563a0a64be8aab0e206aa5ab6459a887dbf47d5d914a6e677c61",
+  "calibrated_source_sha256": {
+    "MediaError": "fca72f431a46f004a27d667f2f79fc2e61d5807f478a7692d4660db1dd2f024a",
+    "require_ffmpeg": "db1e57ec3712f182881c5baec16817f04f1441f1ac7aedb5d244a6caad18908e",
+    "_run": "3326518352775b37f4904cf7df9c8ca04be5c5d92c631db3cbe34ce0631f5b5b",
+    "extract_audio_wav": "a5db80094dc8d4d79706fc7e1e51b4264cebb6d15405f86607ed4d08c6f99274",
+    "_motion_energy": "90323c841ff1536021a1fd2897b9998a72d8714ce83d0fe01b4c83c0c2f257be",
+    "_motion_correlation": "631021fc363f679aff1ceee4a90a81aa3effb47152cef416bddcfcb998d31f4a",
+    "_speech_lags": "5a033aa207e637db20ba2020ab01500a50e27063ec94ebe57bc906675d22f7a7",
+    "motion_alignment": "c1e9babdbe06257d9fcd2bacb2449a207aeef49ec06fa7ce8660c49ac7a18923",
+    "MOTION_LAG_THRESHOLD": "d315f6157231cf11287dd6e68eab7ea52b02468130a34f5ccd51e5ccdd4c8847",
+    "MOTION_MIN_CORRELATION": "0482d5751b4b68a5952012ce89b64cba258e924ecd7c7a1d56b031fb0e9de2dd"
+  }
+}
