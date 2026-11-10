@@ -46,9 +46,12 @@ git clone https://github.com/cs6h2wsz4r-ship-it/viral-replica-workbench.git
 
 ### 第 1 步：拿到三方渠道 Key（ViralTok）
 
-1. 打开 ViralTok 官网（`viraltok.ai`，现在会跳转到 `viralwave.ai`），注册并登录。
-2. 在账户里找到 **API / 开放平台** 页面，创建一个 API Key，复制下来。
-3. 账户里需要有余额或点数，生成时按次扣费。
+1. 打开注册链接注册并登录：https://api.viraltok.ai/register?invite=rZKGj5bp
+2. 登录后进入 **开放平台控制台**，点 **API 密钥** 标签页。
+3. 点右边的 **＋ 创建 API 密钥**，创建好后点密钥旁边的复制按钮，复制下来（以 `sk_` 开头）。
+4. 同一个页面上方的 **可用余额** 要有余额才能生成，没有的话点 **立即充值**。生成时按次扣费。
+
+> 页面上的 “API 基础地址” `https://api.viraltok.ai/api/open-api/v1` 工作台已经默认填好了，不用改。
 
 ### 第 2 步：（可选）拿到官方 OpenAI Key
 
