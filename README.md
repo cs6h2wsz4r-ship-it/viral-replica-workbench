@@ -16,7 +16,7 @@
 **1. 下载**：点本页右上角绿色的 **Code → Download ZIP**，解压到任意文件夹；会用 git 的话也可以：
 
 ```bash
-git clone https://github.com/cs6h2wsz4r-ship-it/viral-replica-workbench.git
+git clone https://github.com/alyunzhangu/viral-replica-workbench.git
 ```
 
 **2. 双击启动**：macOS 双击 `start.command`，Windows 双击 `start.bat`。
