@@ -18,7 +18,7 @@ def chat(provider: str, messages: list[dict], *, temperature: float = 0.4, max_t
             exc = LLMError(str(exc), kind="auth" if any(word in str(exc) for word in ("还没配置", "还没填")) else "invalid_request")
         exc.channel = channel_name(provider)
         exc.model = exc.model or model or ""
-        if provider == "openai":
+        if provider == "openai" and (getattr(exc, 'error_detail', {}) or {}).get('error_type') != 'local_request_limit':
             exc.retryable_elsewhere = True
             if "改用三方渠道重试" not in str(exc):
                 exc.message = str(exc) + "；可选择“改用三方渠道重试”"

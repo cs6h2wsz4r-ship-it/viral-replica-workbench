@@ -19,6 +19,8 @@ for i in 1 2 3 4 5 6 7 8 9 10; do lsof -ti tcp:$PORT -sTCP:LISTEN >/dev/null 2>&
 if lsof -ti tcp:$PORT -sTCP:LISTEN >/dev/null 2>&1; then
   echo "端口 $PORT 被别的程序占用（不是工作台），请先关闭它。"; read -n1 -p "按任意键退出"; exit 1
 fi
+echo "正在检查更新…"
+runtime/venv/bin/python updater.py --auto || true
 export PATH="$PWD/runtime/ffmpeg:$PATH"
 (sleep 1.5 && open "http://127.0.0.1:$PORT") &
 exec runtime/venv/bin/python server.py

@@ -100,3 +100,19 @@ git clone https://github.com/alyunzhangu/viral-replica-workbench.git
 ## 致谢和许可
 
 拆解流程（媒体探测、逐词转录、镜头切点、带台词的帧网格）参考了 [Hypit](https://github.com/hypit-ai/hypit) 的做法，`console/kits.py` 中的 Seedance / GPT Image 提示词模板文字取自 Hypit。按 Hypit 许可证的要求，本项目以同样的许可证发布，详见 `LICENSE` 和 `THIRD_PARTY_NOTICES.md`：可以自用、改、再发布，但不能拿去收费分发或做成多租户服务。
+
+## 更新现有安装
+
+**已经是新版（右上角有“软件更新”按钮）**：什么都不用做。每次双击 `start.command`（macOS）或 `start.bat`（Windows），启动前都会自动检查更新，有新版本就自动更新程序代码。检查通常只需几秒，网络不通会跳过，直接打开本地版本；检查最多约 15 秒，下载新版可能稍久。
+
+不想自动更新，可以设置环境变量 `VRC_NO_AUTO_UPDATE=1`。也可以随时点击右上角“软件更新”手动检查。用 `git clone` 安装的目录会跳过自动更新，请用 `git pull` 更新。
+
+**老版本（右上角没有“软件更新”按钮）**：只需覆盖一次，之后就可以自动更新。
+
+1. 关掉工作台和它的启动窗口。
+2. 打开 [GitHub 仓库](https://github.com/alyunzhangu/viral-replica-workbench)，点击 **Code → Download ZIP**，下载最新 ZIP。
+3. 解压 ZIP，打开解压出的文件夹，把**里面的全部文件**拖进原来的工作台安装文件夹（`server.py` 所在的文件夹）。
+4. 提示文件重名时，选择“全部替换”。
+5. 双击原目录里的 `start.command`（macOS）或 `start.bat`（Windows）启动。
+
+这样覆盖是安全的：GitHub ZIP 里只有程序代码和随附说明，不含你的项目、素材、Key、模型和已安装的运行环境，覆盖不会动这些内容，也不用重新安装。请保留原安装文件夹。

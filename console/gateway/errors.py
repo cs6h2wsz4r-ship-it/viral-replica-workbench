@@ -91,11 +91,17 @@ class JSONResponseError(LLMError):
 class CheckedLLMError(LLMError):
     def __init__(self, attempts: list[dict]):
         self.attempts = attempts
+        last = attempts[-1] if attempts else {}
+        if (last.get('error_detail') or {}).get('error_type') == 'local_request_limit':
+            # No model response exists: changing channels or output token limits
+            # cannot fix a shared, local request-size guard.
+            super().__init__(last['reason'], kind='too_large', channel=last.get('provider', ''),
+                             model=last.get('model', ''), error_detail=last['error_detail'])
+            return
         detail = '；'.join(f"第 {i} 次（{a['provider']} / {a['model']}，上限 {a['max_tokens']}）：{a['reason']}"
                           for i, a in enumerate(attempts, 1))
         official = any(a['provider'] == 'openai' for a in attempts)
         hint = '；可选择“改用三方渠道重试”' if official else ''
-        last = attempts[-1] if attempts else {}
         super().__init__(f'模型校验未完成：{detail}{hint}', kind=last.get('kind', 'unknown'),
                          channel=last.get('provider', ''), model=last.get('model', ''), retryable_elsewhere=official,
                          error_detail=last.get('error_detail'))

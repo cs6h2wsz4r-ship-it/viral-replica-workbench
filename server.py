@@ -26,6 +26,13 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+import updater
+
+if __name__ == "__main__":
+    _INSTALL_LOCK = updater.acquire_lock(Path(__file__).resolve().parent)
+    if updater.recover(Path(__file__).resolve().parent):
+        os.execv(sys.executable, [sys.executable] + sys.argv)
+
 from console import runtime_env  # noqa: E402  (must run before anything that downloads models)
 
 runtime_env.apply()
@@ -43,6 +50,7 @@ WEB = Path(__file__).resolve().parent / "web"
 VERSION_FILE = WEB.parent / "VERSION"
 PID_FILE = runtime_env.RUNTIME / "server.pid"
 RESTART_BLOCKED = ""
+UPDATES = updater.Updater(WEB.parent)
 _project_requests: dict[str, int] = {}  # Guarded by each project's store._lock.
 
 
@@ -81,7 +89,7 @@ def _cleanup_trash() -> None:
                 _remove_trash(path)
 
 
-SERVER_FILES = [Path(__file__).resolve(), VERSION_FILE]
+SERVER_FILES = [Path(__file__).resolve(), VERSION_FILE, WEB.parent / "updater.py"]
 
 
 def _build_file(path: Path) -> bool:
@@ -359,6 +367,12 @@ class Handler(BaseHTTPRequestHandler):
             self._json({"error": user_message(f"内部错误：{exc}")}, 500)
 
     def _api(self, method: str, parts: list[str], query: dict):
+        if parts[:1] == ['updates'] or parts == ['status']:
+            return self._api_action(method, parts, query)
+        with UPDATES.activity():
+            return self._api_action(method, parts, query)
+
+    def _api_action(self, method: str, parts: list[str], query: dict):
         if method in {"POST", "PUT", "PATCH", "DELETE"}:
             current = build_status()
             headers = getattr(self, 'headers', {})
@@ -370,6 +384,20 @@ class Handler(BaseHTTPRequestHandler):
                 raise ApiError("页面缺少版本信息，为避免写坏数据已拒绝本次保存，请刷新页面", 409)
             if ((server_build or web_build) and (server_build != current['server_build'] or web_build != current['web_build'])) or (client_build and client_build != current['build']):
                 raise ApiError("页面版本过旧，为避免写坏数据已拒绝本次保存，请刷新页面", 409)
+        if parts[:1] == ['updates']:
+            if method == 'GET' and parts == ['updates']:
+                return UPDATES.status()
+            if method != 'POST': raise ApiError('更新操作不支持此请求', 405)
+            origin = getattr(self, 'headers', {}).get('Origin')
+            host = getattr(self, 'headers', {}).get('Host', '')
+            if origin and origin not in ('http://' + host, 'https://' + host):
+                raise ApiError('更新请求必须来自当前工作台页面', 403)
+            if parts == ['updates', 'check']: return UPDATES.check()
+            if parts == ['updates', 'apply']:
+                return UPDATES.start(self._body_json().get('sha', ''), busy=jobs.any_running, validate=lambda: updater.validate_installed(WEB.parent))
+            if parts == ['updates', 'rollback']:
+                return UPDATES.start(busy=jobs.any_running, rollback_only=True)
+            raise ApiError('未知的更新操作', 404)
         if parts == ["status"]:
             route_values = config.load()
             return {**build_status(), "restart_blocked": RESTART_BLOCKED,
@@ -788,7 +816,7 @@ def _watch_code_and_restart() -> None:
             if now != before:
                 before = now
                 changed_at = _t.monotonic()
-            if changed_at is None or _t.monotonic() - changed_at < 5 or jobs.any_running():
+            if changed_at is None or _t.monotonic() - changed_at < 5 or jobs.any_running() or UPDATES.applying():
                 continue
             reason = _check_new_code()
             after = snapshot()
@@ -801,7 +829,7 @@ def _watch_code_and_restart() -> None:
                 _server_log(f"代码更新重启被拦下，继续运行旧版本：{reason}")
                 changed_at = None  # Retry only when another file change is observed.
                 continue
-            if jobs.any_running():
+            if jobs.any_running() or UPDATES.applying():
                 continue
             _server_log("检测到代码更新，工作台自动重启…")
             os.execv(sys.executable, [sys.executable] + sys.argv)

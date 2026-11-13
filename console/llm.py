@@ -39,6 +39,10 @@ def official_error(status: int, detail: str) -> str:
 
 _IMAGE_CACHE = config.ROOT / "runtime/temp/llm-images"
 _REQUEST_LIMIT = 3_500_000  # Decimal MB, including base64, text and JSON overhead.
+# Preserve resolution first, then lower it gradually. Never discard image evidence
+# or shrink below this floor merely to make an arbitrarily large request fit.
+_REQUEST_IMAGE_STEPS = ((1536, 3), (1536, 5), (1280, 5), (1024, 5),
+                        (896, 6), (768, 6), (640, 7))
 
 
 def _local_media_tool(name: str) -> str:
@@ -61,11 +65,11 @@ def _image_mime(data: bytes) -> str:
     raise LLMError("无法识别参考图片格式，请使用 PNG、JPEG 或 WebP 图片")
 
 
-def _prepare_image(path: Path, long_side: int = 1536, *, force: bool = False) -> Path:
+def _prepare_image(path: Path, long_side: int = 1536, *, force: bool = False, quality: int = 3) -> Path:
     """Normalize a copy only; cache identity includes source bytes and all encoding parameters."""
     original = path.read_bytes()
     digest = hashlib.sha256(original).hexdigest()
-    cached = _IMAGE_CACHE / f"{digest}-s{long_side}-q3-white-v1.jpg"
+    cached = _IMAGE_CACHE / f"{digest}-s{long_side}-q{quality}-white-v1.jpg"
     if cached.is_file() and cached.stat().st_size:
         return cached
     try:
@@ -90,7 +94,7 @@ def _prepare_image(path: Path, long_side: int = 1536, *, force: bool = False) ->
             # FFmpeg uses qscale rather than percentage quality; q=3 is approximately JPEG 85.
             media._run([_local_media_tool("ffmpeg"), "-hide_banner", "-loglevel", "error", "-y",
                         "-i", str(path), "-filter_complex", filters, "-map", "[out]", "-frames:v", "1",
-                        "-q:v", "3", str(output)], 120)
+                        "-q:v", str(quality), str(output)], 120)
             if not output.stat().st_size:
                 raise ValueError("empty JPEG")
             output.replace(cached)  # Atomic publication: parallel callers never see a partial JPEG.
@@ -129,7 +133,7 @@ def _request_images(body: dict) -> list[tuple[dict, str]]:
     return images
 
 
-def _smaller_inline_image(encoded: str) -> str:
+def _smaller_inline_image(encoded: str, long_side: int = 1024, quality: int = 3) -> str:
     try:
         data = base64.b64decode(encoded, validate=True)
     except ValueError:
@@ -138,7 +142,7 @@ def _smaller_inline_image(encoded: str) -> str:
     with tempfile.TemporaryDirectory(dir=_IMAGE_CACHE) as folder:
         source = Path(folder) / "source"
         source.write_bytes(data)
-        return base64.b64encode(_prepare_image(source, 1024, force=True).read_bytes()).decode()
+        return base64.b64encode(_prepare_image(source, long_side, force=True, quality=quality).read_bytes()).decode()
 
 
 def _request_data(body: dict) -> tuple[bytes, int]:
@@ -154,9 +158,8 @@ def _request_data(body: dict) -> tuple[bytes, int]:
         return payload, count
     # A JSON copy also separates aliased parts, without mutating the caller's retry history.
     prepared = json.loads(payload)
-    images = sorted(_request_images(prepared), key=lambda item: len(item[0][item[1]]), reverse=True)
-    size, converted = len(payload), {}
-    for field, key in images:
+    images = []
+    for field, key in _request_images(prepared):
         value = field[key]
         if key == "url":
             head, sep, encoded = value.partition(",")
@@ -164,25 +167,38 @@ def _request_data(body: dict) -> tuple[bytes, int]:
                 continue  # Remote references are counted, but never fetched locally.
         else:
             encoded = value
-        if encoded not in converted:
-            converted[encoded] = _smaller_inline_image(encoded)
-        smaller = converted[encoded]
-        replacement = "data:image/jpeg;base64," + smaller if key == "url" else smaller
-        saving = len(value) - len(replacement)
-        if key == "data":
-            saving += len(field["mime_type"]) - len("image/jpeg")
-        if saving > 0:
-            field[key] = replacement
+        images.append((field, key, encoded))
+    size = len(payload)
+    for long_side, quality in _REQUEST_IMAGE_STEPS:
+        converted = {}
+        # Use the current wire sizes to spend quality only where it saves most.
+        for field, key, original in sorted(images, key=lambda item: len(item[0][item[1]]), reverse=True):
+            # Always encode from the input, not from the previous lossy attempt.
+            if original not in converted:
+                converted[original] = _smaller_inline_image(original, long_side, quality)
+            smaller = converted[original]
+            replacement = "data:image/jpeg;base64," + smaller if key == "url" else smaller
+            saving = len(field[key]) - len(replacement)
             if key == "data":
-                field["mime_type"] = "image/jpeg"
-            size -= saving
+                saving += len(field["mime_type"]) - len("image/jpeg")
+            if saving > 0:
+                field[key] = replacement
+                if key == "data":
+                    field["mime_type"] = "image/jpeg"
+                size -= saving
+            if size <= _REQUEST_LIMIT:
+                break
         if size <= _REQUEST_LIMIT:
             break
     payload = json.dumps(prepared, ensure_ascii=False).encode("utf-8")
     if len(payload) > _REQUEST_LIMIT:
-        raise LLMError(f"图片太多或太大（约 {len(payload) / 1_000_000:.2f} MB），超过模型渠道的请求上限，请减少参考图",
+        message = ('已尝试自动压缩图片，' if images else '') + (
+            f"请求仍超过本地安全上限（约 {len(payload) / 1_000_000:.2f} MB，"
+            f"上限 {_REQUEST_LIMIT / 1_000_000:.2f} MB，图片 {count} 张），未发送到模型。"
+            + ('请减少分镜数量或参考素材后重试。' if count else '请缩短输入文字后重试。'))
+        raise LLMError(message,
                        kind='too_large', error_detail=dict(http_status=None, error_type='local_request_limit',
-                           message='图片太多或太大，超过模型渠道的请求上限', image_count=count, request_bytes=len(payload)))
+                           message=message, image_count=count, request_bytes=len(payload)))
     return payload, count
 
 

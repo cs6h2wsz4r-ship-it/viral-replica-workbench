@@ -17,6 +17,7 @@
   <button class="ghost" id="statusToggle" aria-expanded="false" aria-controls="statusPills">状态</button>
   <div class="status" id="statusPills"></div>
   <button class="ghost" data-library-open>素材库</button>
+  <button class="ghost" id="updatesBtn">软件更新</button>
   <button class="ghost" id="settingsBtn">设置</button>
 </header>
 
@@ -139,6 +140,23 @@
 <section id="fissionPanel" class="fission-panel" role="dialog" aria-modal="true" aria-label="批量裂变" tabindex="-1" hidden></section>
 <section id="libraryPanel" class="fission-panel library-panel" role="dialog" aria-modal="true" aria-label="素材库" tabindex="-1" hidden></section>
 
+<dialog id="updateDialog" aria-labelledby="updateTitle">
+  <h2 id="updateTitle">软件更新</h2>
+  <p class="hint">只更新程序代码，保留项目、素材、Key、模型和依赖。</p>
+  <div id="updateInfo"></div>
+  <section id="updateConfirmation" hidden>
+    <p id="updateConfirmText"></p>
+    <div class="row end"><button class="ghost" id="cancelCodeUpdateBtn">取消</button><button id="confirmCodeUpdateBtn">确认并继续</button></div>
+  </section>
+  <div class="row wrap end">
+    <button class="ghost" id="rollbackUpdateBtn" hidden>恢复上个代码版本</button>
+    <button class="ghost" id="closeUpdateBtn">关闭</button>
+    <button class="ghost" id="checkUpdateBtn">检查更新</button>
+    <button id="applyUpdateBtn" hidden>更新代码</button>
+    <button id="refreshUpdatedBtn" hidden>刷新页面</button>
+  </div>
+</dialog>
+
 <dialog id="settingsDialog">
   <form method="dialog" id="settingsForm">
     <h2>设置</h2>
@@ -153,5 +171,6 @@
 <div id="pageConfirmation" class="page-confirmation" role="dialog" aria-modal="true" aria-labelledby="pageConfirmationTitle" hidden></div>
 <div class="toast" id="toast"></div>
 <script src="/static/app.js"></script>
+<script src="/static/update.js"></script>
 </body>
 </html>

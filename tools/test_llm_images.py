@@ -163,17 +163,19 @@ class LLMImageTests(unittest.TestCase):
         self.assertLessEqual(len(self.requests[0]), LIMIT)
         sent = json.loads(self.requests[0])["messages"][1]["content"]
         self.assertEqual(sent[0], small)
-        self.assertLessEqual(max(dimensions(self.save_part(sent[1]))), 1024)
+        self.assertLessEqual(max(dimensions(self.save_part(sent[1]))), 1536)
         self.assertEqual(messages, before)
 
     def test_still_over_limit_rejects_without_urlopen(self):
         messages = self.messages([raw_part(PORTRAIT)] * 20)
-        with self.assertRaisesRegex(llm.LLMError, r"图片太多或太大（约 .* MB），超过模型渠道的请求上限，请减少参考图"):
-            llm.chat("jimmy", messages)
+        with patch.object(llm, '_REQUEST_LIMIT', 256):
+            with self.assertRaisesRegex(llm.LLMError, r"超过本地安全上限.*未发送到模型"):
+                llm.chat("jimmy", messages)
         self.request.assert_not_called()
         cached = list((self.temp / "cache").glob("*.jpg"))
         self.assertTrue(cached)
-        self.assertTrue(all(max(dimensions(p)) <= 1024 for p in cached))
+        self.assertTrue(all(max(dimensions(p)) <= 1536 for p in cached))
+        self.assertTrue(any('-s640-' in p.name for p in cached))
 
     def test_gemini_inline_images_are_also_reduced(self):
         self.payload = {"code": 0, "data": {"candidates": [{"content": {"parts": [{"text": "ok"}]}}]}}
@@ -195,7 +197,7 @@ class LLMImageTests(unittest.TestCase):
     def test_gemini_mixed_video_and_image_still_enforces_total_limit(self):
         video = self.temp / "mock-video.mp4"
         video.write_bytes(b"offline mock video" * 160_000)
-        with self.assertRaisesRegex(llm.LLMError, "超过模型渠道的请求上限"):
+        with self.assertRaisesRegex(llm.LLMError, "超过本地安全上限"):
             llm.chat("jimmy", self.messages([llm.video_part(video), raw_part(FRAME)]), model="gemini-offline")
         self.request.assert_not_called()
 
