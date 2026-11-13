@@ -43,7 +43,17 @@ def _whisper(model: str) -> dict:
 
 def report(model: str) -> list[dict]:
     rows = [_whisper(model)]
-    for item in align_models.report():
+    import importlib.util
+    if importlib.util.find_spec('whisperx') is None:
+        # WhisperX is an optional add-on (./install.sh --whisperx). Without it the workbench
+        # transcribes with faster-whisper, so its alignment models are not needed at all.
+        rows.append({'name': '中文 / 英文对齐模型（可选）', 'status': 'optional', 'path': 'runtime/models',
+                     'detail': '没装 WhisperX，台词识别会自动用上面的 faster-whisper，拆解不受影响。想要更准的逐词时间，'
+                               '可运行 install.bat -WhisperX（Mac：./install.sh --whisperx）再装，约 2GB。'})
+        align_items = []
+    else:
+        align_items = align_models.report()
+    for item in align_items:
         row = {**item, 'name': {'zh': '中文对齐模型', 'en': '英文对齐模型'}.get(item['language'], item['language'] + '对齐模型')}
         if row['status'] == 'broken' and not row.get('detail'):
             row['detail'] = '模型文件不完整或损坏'

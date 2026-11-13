@@ -4966,8 +4966,8 @@ function changeSettingsCard(select) {
   renderSettingsKeys();
 }
 function localModelsHtml(models) {
-  return models.map(model=>`<div class="local-model-row" data-local-model-state="${esc(model.status)}"><p><span class="model-light ${model.status==='ok' ? 'ok' : 'bad'}" aria-label="${model.status==='ok' ? '已安装' : '不可用'}">●</span> ${esc(model.name)}　${esc(model.status==='ok' ? '已安装' : model.status==='missing' ? '缺失' : '不可用：'+(model.detail || '模型文件不完整或损坏'))}</p>
-    ${model.path || model.model || model.download_url ? `<details><summary>查看详情</summary><p class="hint mono">${model.model ? '模型：'+esc(model.model)+'<br>' : ''}${model.path ? '路径：'+esc(model.path)+'<br>' : ''}${model.download_url ? '下载来源：'+esc(model.download_url) : ''}</p></details>` : ''}</div>`).join('');
+  return models.map(model=>`<div class="local-model-row" data-local-model-state="${esc(model.status)}"><p><span class="model-light ${model.status==='ok' ? 'ok' : model.status==='optional' ? 'optional' : 'bad'}" aria-label="${model.status==='ok' ? '已安装' : model.status==='optional' ? '可选，未安装' : '不可用'}">●</span> ${esc(model.name)}　${esc(model.status==='ok' ? '已安装' : model.status==='optional' ? '未安装（可选，不影响使用）' : model.status==='missing' ? '缺失' : '不可用：'+(model.detail || '模型文件不完整或损坏'))}</p>
+    ${model.path || model.model || model.download_url ? `<details><summary>查看详情</summary><p class="hint mono">${model.status==='optional' && model.detail ? esc(model.detail)+'<br>' : ''}${model.model ? '模型：'+esc(model.model)+'<br>' : ''}${model.path ? '路径：'+esc(model.path)+'<br>' : ''}${model.download_url ? '下载来源：'+esc(model.download_url) : ''}</p></details>` : ''}</div>`).join('');
 }
 async function checkLocalModels(button) {
   const box=$('#localModelsInfo');

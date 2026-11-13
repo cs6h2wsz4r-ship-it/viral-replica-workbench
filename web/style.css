@@ -177,6 +177,7 @@ dialog h3 { margin-top: 16px; }
 .settings-channel-key { margin-top: 12px; }
 .key-ready, .model-light.ok { color: var(--accent); }
 .model-light.bad { color: #b73535; }
+.model-light.optional { color: #a3a3a8; }
 #settingsAdvanced { margin: 18px 0; }
 #settingsAdvanced > summary { cursor: pointer; color: var(--muted, #6b7280); }
 .settings-utilities { border-top: 1px solid var(--line, #d3dcd5); padding: 14px 0; }
